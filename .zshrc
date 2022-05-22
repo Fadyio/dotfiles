@@ -1,9 +1,21 @@
-#    Zsh config by Fady Nagh 
-#    Email: fadinagh0@gmail.com
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-######### source zinit plugin manager
+#    		  This is my Zsh config 
+#    		  Email:fadinagh0@gmail.com
+#		  Github:@fady0    
+#
+#
+################################################################
+################ source zinit plugin manager
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
+ZINIT[MAN_DIR]=~/.zshplugins/plugins
+ZINIT[PLUGINS_DIR]=~/.zshplugins/plugins
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -37,12 +49,10 @@ export LC_CTYPE="en_US.UTF-8"
 autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
 bindkey '^e' edit-command-line
 
-
-
 ########################## source alias and Plugins ####################
 
 source ~/.zshplugins/zsh_plugin.zsh
-source ~/.zshplugins/alias.zsh
+source ~/.zshplugins/alias.txt
 
 #################### start tmux automatically ##########################
 tmux attach &> /dev/null
@@ -52,9 +62,3 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-
-
-
-
-
