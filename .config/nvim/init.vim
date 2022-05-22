@@ -132,8 +132,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ianding1/leetcode.vim'
 " zinit syntax
 Plug 'zdharma-continuum/zinit-vim-syntax'
-
-
+" startup screen
+Plug 'glepnir/dashboard-nvim'
+let g:dashboard_default_executive ='telescope'
 
 
 Plug 'EdenEast/nightfox.nvim'

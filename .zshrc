@@ -3,12 +3,14 @@
 #		  Github:@fady0    
 #
 #
-################################################################
-################ source zinit plugin manager
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-source "${ZINIT_HOME}/zinit.zsh"
-ZINIT[MAN_DIR]=~/.zshplugins/plugins
-ZINIT[PLUGINS_DIR]=~/.zshplugins/plugins
+#####################################################################
+################ source Znap plugin manager ########################
+# Download Znap, if it's not there yet.
+[[ -f ~/.zshplugins/plugins/zsh-snap/znap.zsh ]] ||
+    git clone --depth 1 -- \
+        https://github.com/marlonrichert/zsh-snap.git ~/.zshplugins/plugins/zsh-snap
+
+source ~/.zshplugins/plugins/zsh-snap/znap.zsh  # Start Znap
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
