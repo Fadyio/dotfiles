@@ -135,8 +135,7 @@ Plug 'zdharma-continuum/zinit-vim-syntax'
 " startup screen
 Plug 'glepnir/dashboard-nvim'
 let g:dashboard_default_executive ='telescope'
-
-
+" nightfox theme
 Plug 'EdenEast/nightfox.nvim'
 
 " List ends here. Plugins become visible to Vim after this call.
@@ -179,7 +178,7 @@ endif
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
+" Remap for do codeAction of selected region
 
 " don't show the mode bar
 set noshowmode
@@ -219,3 +218,5 @@ let g:leetcode_browser = 'firefox'
 " default: 0
 let g:mkdp_auto_start = 0
 
+" Spelling Checker for (Neo)vim
+"
