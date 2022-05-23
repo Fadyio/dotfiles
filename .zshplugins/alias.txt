@@ -34,3 +34,4 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias hosts='sudo nvim /etc/hosts'
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
+  alias x='extract'

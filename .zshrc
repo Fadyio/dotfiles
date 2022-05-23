@@ -6,11 +6,7 @@
 #####################################################################
 ################ source Znap plugin manager ########################
 # Download Znap, if it's not there yet.
-[[ -f ~/.zshplugins/plugins/zsh-snap/znap.zsh ]] ||
-    git clone --depth 1 -- \
-        https://github.com/marlonrichert/zsh-snap.git ~/.zshplugins/plugins/zsh-snap
-
-source ~/.zshplugins/plugins/zsh-snap/znap.zsh  # Start Znap
+source ~/.zshplugins/plugins/zsh-snap/znap.zsh
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -41,6 +37,7 @@ export EDITOR="nvim"
 export VISUAL='nvim'
 export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
+export BROWSER=firefox
 autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
 bindkey '^e' edit-command-line
 
@@ -64,4 +61,3 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-

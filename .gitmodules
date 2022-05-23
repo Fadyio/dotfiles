@@ -1,0 +1,39 @@
+[submodule ".zshplugins/plugins/zsh-vi-mode"]
+	path = .zshplugins/plugins/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode
+[submodule ".zshplugins/plugins/powerlevel10k"]
+	path = .zshplugins/plugins/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule ".zshplugins/plugins/fast-syntax-highlighting"]
+	path = .zshplugins/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule ".zshplugins/plugins/zsh-autosuggestions"]
+	path = .zshplugins/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".zshplugins/plugins/zsh-navigation-tools"]
+	path = .zshplugins/plugins/zsh-navigation-tools
+	url = https://github.com/zdharma-continuum/zsh-navigation-tools
+[submodule ".zshplugins/plugins/zsh-auto-notify"]
+	path = .zshplugins/plugins/zsh-auto-notify
+	url = https://github.com/MichaelAquilina/zsh-auto-notify
+[submodule ".zshplugins/plugins/zsh-autopair"]
+	path = .zshplugins/plugins/zsh-autopair
+	url = https://github.com/hlissner/zsh-autopair
+[submodule ".zshplugins/plugins/git-my"]
+	path = .zshplugins/plugins/git-my
+	url = https://github.com/davidosomething/git-my
+[submodule ".zshplugins/plugins/fz"]
+	path = .zshplugins/plugins/fz
+	url = https://github.com/changyuheng/fz
+[submodule ".zshplugins/plugins/zsh-history-substring-search"]
+	path = .zshplugins/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule ".zshplugins/plugins/fzf-tab"]
+	path = .zshplugins/plugins/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab
+[submodule ".zshplugins/plugins/zsh-extract"]
+	path = .zshplugins/plugins/zsh-extract
+	url = https://github.com/le0me55i/zsh-extract
+[submodule ".zshplugins/plugins/forgit"]
+	path = .zshplugins/plugins/forgit
+	url = https://github.com/wfxr/forgit
