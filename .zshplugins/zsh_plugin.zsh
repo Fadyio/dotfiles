@@ -23,4 +23,5 @@ znap source hlissner/zsh-autopair
 # plugin expands regular aliases, global aliases and incorrect spellings and phrases with the spacebar key
 znap source MenkeTechnologies/zsh-expand
 
-
+# plugin that seamlessly adds fuzzy search to tab completion of z,
+znap source changyuheng/fz
