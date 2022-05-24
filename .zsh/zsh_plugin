@@ -1,0 +1,39 @@
+################# Plugins ####################
+# zsh syntax highlighting
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
+
+# Zsh Vi Mode
+zinit light jeffreytse/zsh-vi-mode
+
+# Load powerlevel10k theme
+zinit ice depth"1" # git clone depth
+zinit light romkatv/powerlevel10k
+
+# zsh-autopair
+zinit snippet https://raw.githubusercontent.com/hlissner/zsh-autopair/master/autopair.zsh
+
+# git-extra-commands
+zinit light unixorn/git-extra-commands
+
+# you should use one of your existing aliases 
+zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-auto-notify/master/auto-notify.plugin.zsh
+
+# ZSH Auto-Notify
+#source ~/.dotfiles/.zsh/plugins/auto-notify.plugin.zsh
+
+# plugin defines a function extracts the archive file
+zinit snippet https://raw.githubusercontent.com/le0me55i/zsh-extract/master/extract.plugin.zsh
+
+# Replace zsh's default completion selection menu with fzf
+zinit light Aloxaf/fzf-tab
+
+
+
+
+
