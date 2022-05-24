@@ -29,9 +29,9 @@ stow nvim
 ```
 ## Screenshots
 
-  <img src="https://i.imgur.com/pVGr7tX.png">
-  <img src="https://i.imgur.com/pVGr7tX.png">
-  <img src="https://i.imgur.com/pVGr7tX.png">
+  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen1.png">
+  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen2.png">
+  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen3.png">
 
 
 <!-- LICENSE -->
