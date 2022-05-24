@@ -22,10 +22,10 @@ zinit snippet https://raw.githubusercontent.com/hlissner/zsh-autopair/master/aut
 zinit light unixorn/git-extra-commands
 
 # you should use one of your existing aliases 
-zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-auto-notify/master/auto-notify.plugin.zsh
+zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-you-should-use/master/you-should-use.plugin.zsh
 
 # ZSH Auto-Notify
-#source ~/.dotfiles/.zsh/plugins/auto-notify.plugin.zsh
+zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-auto-notify/master/auto-notify.plugin.zsh
 
 # plugin defines a function extracts the archive file
 zinit snippet https://raw.githubusercontent.com/le0me55i/zsh-extract/master/extract.plugin.zsh
