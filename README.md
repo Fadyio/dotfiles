@@ -29,6 +29,9 @@ stow nvim
 ```
 ## Screenshots
 
+  <img src="https://i.imgur.com/pVGr7tX.png">
+  <img src="https://i.imgur.com/pVGr7tX.png">
+  <img src="https://i.imgur.com/pVGr7tX.png">
 
 
 <!-- LICENSE -->
