@@ -4,9 +4,13 @@
 #
 #
 #####################################################################
-################ source Znap plugin manager ########################
-# Download Znap, if it's not there yet.
-source ~/.zshplugins/plugins/zsh-snap/znap.zsh
+################ source antigen plugin manager ########################
+
+# load zgenom
+if [[ ! -f ~/.zpm/zpm.zsh ]]; then
+  git clone --recursive https://github.com/zpm-zsh/zpm ~/.zpm
+fi
+source ~/.zshplugins/plugins/zpm/zpm.zsh
 
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -37,15 +41,12 @@ export EDITOR="nvim"
 export VISUAL='nvim'
 export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
-export BROWSER=firefox
 autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
 bindkey '^e' edit-command-line
-
 ########################## source alias and Plugins ####################
 
 source ~/.zshplugins/zsh_plugin.zsh
 source ~/.zshplugins/alias.txt
-
 #################### start tmux automatically ##########################
 tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
