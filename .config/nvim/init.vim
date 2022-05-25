@@ -139,6 +139,8 @@ Plug 'glepnir/dashboard-nvim'
 let g:dashboard_default_executive ='telescope'
 " nightfox theme
 Plug 'EdenEast/nightfox.nvim'
+" A vim plugin wrapper for prettier
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

@@ -13,7 +13,7 @@ ZINIT[SNIPPETS_DIR]=~/.dotfiles/.zsh/plugins
 
 ######################### End of Zinit's installer chunk
 ######################### export
-export PATH="$HOME/.local/bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
 export EDITOR="nvim"
 export VISUAL='nvim'
 export LANG=en_US.UTF-8
@@ -56,6 +56,5 @@ tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
-
 
 
