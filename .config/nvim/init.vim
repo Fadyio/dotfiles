@@ -128,6 +128,8 @@ Plug 'github/copilot.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " vim-solarized
 Plug 'altercation/vim-colors-solarized'
+"  VS Code's GitLens plugin.
+Plug 'APZelos/blamer.nvim'
 " leetcode plugin
 Plug 'ianding1/leetcode.vim'
 " zinit syntax
