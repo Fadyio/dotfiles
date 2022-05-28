@@ -5,6 +5,7 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias history='fc -il 1' # for HIST_STAMPS in oh-my-zsh
   alias gdw="git diff --color-words"
   alias rg='rg -S'
+  alias r='ranger'
   alias l="exa -lha"
   alias lt="exa -lhT"
   alias ..='cd ..'

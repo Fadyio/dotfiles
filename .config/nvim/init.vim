@@ -141,10 +141,10 @@ let g:dashboard_default_executive ='telescope'
 Plug 'EdenEast/nightfox.nvim'
 " A vim plugin wrapper for prettier
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-
+" A high-performance color highlighter
+Plug 'norcalli/nvim-colorizer.lua'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
-
 
 "" ----------------------------------------------------------------------------------------
 ""                                    settings for coc.nvim
