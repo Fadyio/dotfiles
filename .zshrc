@@ -57,7 +57,7 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 ########################## zsh-autocomplete ###########################3
-
+eval `keychain --eval --agents ssh id_rsa`
 
 
 
