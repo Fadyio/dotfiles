@@ -57,7 +57,6 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 ########################## zsh-autocomplete ###########################3
-gnome-keyring-daemon --start
 
 
 
