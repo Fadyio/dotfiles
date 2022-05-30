@@ -6,4 +6,4 @@ dropbox &
 copyq &
 flameshot &
 redshift-gtk &
-
+unclutter &
