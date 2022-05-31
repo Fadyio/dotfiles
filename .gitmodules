@@ -1,3 +1,7 @@
+# submodule for zsh plugins
+[submodule ".zshplugins/plugins/zinit"]
+	path = .zshplugins/plugins/zinit
+	url = https://github.com/zdharma-continuum/zinit
 [submodule ".zshplugins/plugins/zsh-vi-mode"]
 	path = .zshplugins/plugins/zsh-vi-mode
 	url = https://github.com/jeffreytse/zsh-vi-mode
@@ -37,3 +41,27 @@
 [submodule ".zshplugins/plugins/forgit"]
 	path = .zshplugins/plugins/forgit
 	url = https://github.com/wfxr/forgit
+[submodule ".scripts/i3-easyfocus"]
+	path = .scripts/i3-easyfocus
+	url = https://github.com/cornerman/i3-easyfocus
+
+# submodule ulauncher
+[submodule ".config/ulauncher/user-themes/WhiteSur-Dark-ulauncher"]
+	path = .config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
+	url = https://github.com/Raayib/WhiteSur-Dark-ulauncher
+[submodule ".config/ulauncher/user-themes/zorin-blue-dark"]
+	path = .config/ulauncher/user-themes/zorin-blue-dark
+	url = https://github.com/NayamAmarshe/ulauncher-zorinBlueDark
+
+
+# submodule tmux
+[submodule ".tmux/plugins/tmux-sensible"]
+	path = .tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule ".tmux/plugins/nord-tmux"]
+	path = .tmux/plugins/nord-tmux
+	url = https://github.com/arcticicestudio/nord-tmux
+
+
+
+

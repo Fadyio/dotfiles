@@ -7,3 +7,5 @@ copyq &
 flameshot &
 redshift-gtk &
 unclutter &
+picom &
+gammastep &

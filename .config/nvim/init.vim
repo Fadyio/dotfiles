@@ -143,6 +143,10 @@ Plug 'EdenEast/nightfox.nvim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 " A high-performance color highlighter
 Plug 'norcalli/nvim-colorizer.lua'
+" Vim Script
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
