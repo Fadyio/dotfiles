@@ -11,6 +11,9 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias ..='cd ..'
   alias ...='cd ../..'
   alias ....='cd ../../..'
+  alias cd..='cd ..'
+  alias mdkir='mkdir'
+  alias sudp='sudo'
   alias v='nvim'
   alias home='cd ~'
   alias htp=wkhtmltopdf
@@ -27,6 +30,7 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias vi='nvim'
   alias vim='nvim'
   alias :q="exit"
+  alias q='exit'
   alias calc="insect"
   alias c='clear'
   alias nvimconfig='nvim ~/.config/nvim/init.vim'
