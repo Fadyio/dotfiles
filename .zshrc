@@ -51,6 +51,7 @@ setopt noglob
 source ~/.dotfiles/.zsh/zsh_plugin
 source ~/.dotfiles/.zsh/zsh-alias
 
+
 #################### start tmux automatically ##########################
 tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
