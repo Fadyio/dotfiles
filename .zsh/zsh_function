@@ -1,0 +1,9 @@
+fay() {
+	packages=$(awk {'print $1'} <<< $(yay -Ss $1 | awk 'NR%2 {printf "\033[1;32m%s \033[0;36m%s\033[0m — ",$1,$2;next;}{ print substr($0, 5, length($0) - 4); }' | fzf -m --ansi))
+	[ "$packages" ] && yay -S $(echo "$packages" | tr "\n" " ")
+}
+
+fzfman() {
+	packages="$(awk {'print $1'} <<< $(pacman -Ss $1 | awk 'NR%2 {printf "\033[1;32m%s \033[0;36m%s\033[0m — ",$1,$2;next;}{ print substr($0, 5, length($0) - 4); }' | fzf -m --ansi --select-1))"
+	[ "$packages" ] && pacman -S $(echo "$packages" | tr "\n" " ")
+}
