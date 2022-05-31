@@ -49,9 +49,6 @@
 [submodule ".tmux/plugins/nord-tmux"]
 	path = .tmux/plugins/nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux
-[submodule ".tmux/plugins/tmux-autoreload"]
-	path = .tmux/plugins/tmux-autoreload
-	url = https://github.com/b0o/tmux-autoreload
 [submodule ".tmux/plugins/tmux-menus"]
 	path = .tmux/plugins/tmux-menus
 	url = https://github.com/jaclu/tmux-menus
@@ -61,4 +58,6 @@
 [submodule ".tmux/plugins/tmux-tilish"]
 	path = .tmux/plugins/tmux-tilish
 	url = https://github.com/jabirali/tmux-tilish
-
+[submodule ".tmux/plugins/tmux-resurrect"]
+	path = .tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
