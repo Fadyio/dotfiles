@@ -40,5 +40,8 @@ zinit light joshskidmore/zsh-fzf-history-search
 # undo your last commit in git 
 zinit light Bhupesh-V/ugit
 
+# zsh-history-substring-search
+zinit light zsh-users/zsh-history-substring-search
+
 # z for zsh
 zinit load agkozak/zsh-z

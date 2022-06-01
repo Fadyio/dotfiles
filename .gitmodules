@@ -32,6 +32,9 @@
 [submodule ".zsh/plugins/zsh-users---zsh-completions"]
 	path = .zsh/plugins/zsh-users---zsh-completions
 	url = https://github.com/zsh-users/zsh-completions
+[submodule ".zsh/plugins/agkozak---zsh-z"]
+	path = .zsh/plugins/agkozak---zsh-z
+	url = https://github.com/agkozak/zsh-z
 
 # submodule ulauncher
 [submodule ".config/ulauncher/user-themes/WhiteSur-Dark-ulauncher"]

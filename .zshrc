@@ -52,13 +52,26 @@ source ~/.dotfiles/.zsh/zsh_plugin
 source ~/.dotfiles/.zsh/zsh_alias
 source ~/.dotfiles/.zsh/zsh_function
 
-
 #################### start tmux automatically ##########################
 tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
-########################## zsh-autocomplete ###########################3
+########################## zsh-autocomplete ###########################
+# completions
+autoload -Uz compinit
+zstyle ':completion:*' menu select
+# zstyle ':completion::complete:lsof:*' menu yes select
+zmodload zsh/complist
+# compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+##################### zsh-history-substring-search ################
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 eval `keychain --eval --agents ssh id_rsa`
 
 export NVM_DIR="$HOME/.nvm"
