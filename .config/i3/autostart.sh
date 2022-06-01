@@ -5,7 +5,7 @@ megasync &
 dropbox &
 copyq &
 flameshot &
-redshift-gtk &
 unclutter &
 picom &
 gammastep &
+sh ~/.dotfiles/.scripts/feh-wall.sh &

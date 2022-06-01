@@ -17,8 +17,8 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias v='nvim'
   alias home='cd ~'
   alias htp=wkhtmltopdf
-  alias ytvid='yt-dlp -ciw --format mp4 -o "%(title)s.%(ext)s"'
-  alias ytlist='yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias ytvid='yt-dlp -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
+  alias ytlist='yt-dlp -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias dict='dict -d gcide'
   alias ls="exa --icons --color-scale --long --header --git --sort=extension"
