@@ -55,6 +55,7 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
 
-
+-- format code with leader p 
+keymap("n", "<leader>p", ":Format<cr>", opts)
 
 
