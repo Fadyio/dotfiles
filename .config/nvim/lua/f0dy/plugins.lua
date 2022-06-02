@@ -53,7 +53,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" 		-- Useful lua functions used ny lots of plugins
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
- --------- Autocompletion, LSP, Snippets ---------------------------
+  use "numToStr/Comment.nvim" -- Easily comment stuff
+  --------- Autocompletion, LSP, Snippets ---------------------------
   use {
      'VonHeikemen/lsp-zero.nvim',
       requires = {
@@ -74,9 +75,12 @@ return packer.startup(function(use)
       {'rafamadriz/friendly-snippets'},
   }
 }
- -- Telescope
+ -- Telescope, fzf. file tree
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+
 ----------------  colorscheme  ----------------------------
   use "EdenEast/nightfox.nvim"
 -- Treesitter
@@ -85,6 +89,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
 
+  use {'akinsho/bufferline.nvim', tag = "v2.*"}
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
