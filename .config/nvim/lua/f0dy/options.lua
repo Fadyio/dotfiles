@@ -49,6 +49,15 @@ vim.opt.shiftwidth = 2 		              		-- Size of an indent
 vim.opt.tabstop = 2					-- Number of spaces tabs count for
 vim.opt.numberwidth = 2                         	-- set number column width to 2 {default 4}
 
+--- colorscheme
+local colorscheme = "nightfox"
+
+local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
+if not status_ok then
+  vim.notify("colorscheme " .. colorscheme .. " not found!")
+  return
+end
+
 
 
 

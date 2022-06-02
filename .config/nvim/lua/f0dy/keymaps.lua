@@ -51,4 +51,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
+--- Telescope
+keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>t", "<cmd>Telescope live_grep<cr>", opts)
+
+
+
 

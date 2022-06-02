@@ -4,35 +4,31 @@
 colors:
   # Default colors
   primary:
-    background: '0x24292e'
-    foreground: '0xd1d5da'
+    background: '#101421'
+    foreground: '#fffbf6'
 
   # Normal colors
   normal:
-    black: '0x24292e'
-    red: '0xf14c4c'
-    green: '0x23d18b'
-    yellow: '0xe2e210'
-    blue: '0x3b8eea'
-    magenta: '0xbc3fbc'
-    cyan: '0x29b7da'
-    white: '0xd1d5da'
+    black: '#2e2e2e'
+    red: '#eb4129'
+    green: '#abe047'
+    yellow: '#f6c744'
+    blue: '#47a0f3'
+    magenta: '#7b5cb0'
+    cyan: '#64dbed'
+    white: '#e5e9f0'
 
   # Bright colors
   bright:
-    black: '0x666666'
-    red: '0xf14c4c'
-    green: '0x23d18b'
-    yellow: '0xf5f543'
-    blue: '0x3b8eea'
-    magenta: '0xd670d6'
-    cyan: '0x29b7da'
-    white: '0xd1d5da'
-
-  indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf14c4c' }
-theme: github_dark
+    black: '#565656'
+    red: '#ec5357'
+    green: '#c0e17d'
+    yellow: '#f9da6a'
+    blue: '#49a4f8'
+    magenta: '#a47de9'
+    cyan: '#99faf2'
+    white: '#ffffff'
+theme: iTerm-Default
 
 # Font configuration
 font:

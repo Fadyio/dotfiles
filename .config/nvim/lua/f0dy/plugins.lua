@@ -1,3 +1,9 @@
+--[[
+        http://github.com/fady0
+---------------------------------------------------------------------
+                                 plugins
+---------------------------------------------------------------------
+--]]
 local fn = vim.fn
 
 -- Automatically install packer
@@ -45,6 +51,39 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" 		-- Have packer manage itself
   use "nvim-lua/popup.nvim" 		-- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" 		-- Useful lua functions used ny lots of plugins
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+ --------- Autocompletion, LSP, Snippets ---------------------------
+  use {
+     'VonHeikemen/lsp-zero.nvim',
+      requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/nvim-lsp-installer'},
+ 
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+  }
+}
+ -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+----------------  colorscheme  ----------------------------
+  use "EdenEast/nightfox.nvim"
+-- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

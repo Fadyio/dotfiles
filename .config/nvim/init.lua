@@ -1,3 +1,7 @@
 require "f0dy.options"
 require "f0dy.keymaps"
 require "f0dy.plugins"
+require "f0dy.cmp"
+require "f0dy.telescope"
+require "f0dy.treesitter"
+require "f0dy.autopairs"
