@@ -71,7 +71,7 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-
+# Enable keychain in zsh 
 eval `keychain --eval --agents ssh id_rsa`
 
 export NVM_DIR="$HOME/.nvm"

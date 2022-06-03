@@ -1,11 +1,8 @@
-require "f0dy.options"
-require "f0dy.keymaps"
-require "f0dy.plugins"
-require "f0dy.cmp"
-require "f0dy.telescope"
-require "f0dy.treesitter"
-require "f0dy.autopairs"
-require "f0dy.comment"
-require "f0dy.tree"
-require "f0dy.bufferline"
-require "f0dy.null"
+-- sourcing config files.
+require("settings")
+require("plugins")
+require("theme")
+require("maps")
+
+local user_settings_file = require("user_settings")
+user_settings_file.other_configs()

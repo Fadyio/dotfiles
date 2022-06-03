@@ -1,34 +1,38 @@
-# Nightfox Alacritty Colors
-# Style: nightfox
-# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/nightfox/nightfox_alacritty.yml
+# TokyoNight Alacritty Colors
 colors:
   # Default colors
   primary:
-    background: '#101421'
-    foreground: '#fffbf6'
+    background: '0x24283b'
+    foreground: '0xc0caf5'
 
   # Normal colors
   normal:
-    black: '#2e2e2e'
-    red: '#eb4129'
-    green: '#abe047'
-    yellow: '#f6c744'
-    blue: '#47a0f3'
-    magenta: '#7b5cb0'
-    cyan: '#64dbed'
-    white: '#e5e9f0'
+    black:   '0x1D202F'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
 
   # Bright colors
   bright:
-    black: '#565656'
-    red: '#ec5357'
-    green: '#c0e17d'
-    yellow: '#f9da6a'
-    blue: '#49a4f8'
-    magenta: '#a47de9'
-    cyan: '#99faf2'
-    white: '#ffffff'
-theme: iTerm-Default
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+    
+  ## Copyright (C) 2020-2021 Aditya Shakya <adi1090x@gmail.com>
+## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 # Font configuration
 font:
@@ -54,10 +58,12 @@ font:
 
   # Point size
   size: 13
+
   # Offset
   #offset:
   #  x: 0
   #  y: 0
+
   # Glyph offset
   #glyph_offset:
   #  x: 0
