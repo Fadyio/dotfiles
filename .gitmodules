@@ -35,6 +35,9 @@
 [submodule ".zsh/plugins/agkozak---zsh-z"]
 	path = .zsh/plugins/agkozak---zsh-z
 	url = https://github.com/agkozak/zsh-z
+[submodule ".zsh/plugins/zsh-users---zsh-history-substring-search"]
+	path = .zsh/plugins/zsh-users---zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
 
 # submodule ulauncher
 [submodule ".config/ulauncher/user-themes/WhiteSur-Dark-ulauncher"]

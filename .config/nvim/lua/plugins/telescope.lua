@@ -59,12 +59,7 @@ local telescope_config = {
     prompt_prefix = "   ",
     selection_caret = " ",
   },
-  pickers = {
-    find_files = {
-      find_command = { finder, "--type=file", "--follow", "--exclude=.git" },
-    },
-  },
-  extensions = {},
+    extensions = {},
 }
 
 if require("utils").is_plugin_installed("telescope-fzf-native.nvim") then

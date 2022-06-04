@@ -161,6 +161,14 @@ return require("packer").startup({
       end,
       disable = disable_plugins.lualine,
     })
+    use({
+      "SmiteshP/nvim-gps",
+       config = function()
+        require("plugins/gps")
+      end,
+      disable = disable_plugins.gps,
+    })
+
     -- TreeSitter.
     use({
       "nvim-treesitter/nvim-treesitter",
@@ -278,6 +286,15 @@ return require("packer").startup({
       disable = disable_plugins.symbols_outline,
     })
 
+     use({
+      "wakatime/vim-wakatime",
+      disable = disable_plugins.wakatime,
+      })
+
+     use({
+      "github/copilot.vim",
+      disable = disable_plugins.copilot,
+      })
     use({
       "rafamadriz/friendly-snippets",
       event = "InsertEnter",
@@ -462,17 +479,15 @@ return require("packer").startup({
       after = "nvim-treesitter",
       disable = disable_plugins.ts_context_commentstring,
     })
--- Lua
-use {
-  "folke/trouble.nvim",
-    config = function()
-    require("trouble").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end
-}
+
+   use({
+      "folke/trouble.nvim",
+       config = function()
+        require("plugins.trouble")
+      end,
+      disable = disable_plugins.trouble,
+    })
+
     -- match-up is a plugin that lets you highlight, navigate, and operate on sets of matching text.
     use({
       "andymass/vim-matchup",

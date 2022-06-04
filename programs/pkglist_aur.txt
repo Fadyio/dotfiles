@@ -1,0 +1,11 @@
+alacritty-themes
+cava
+dropbox
+google-chrome
+microsoft-edge-stable-bin
+spotify-adblock-git
+tumbler-devel
+tumbler-extra-thumbnailers
+ulauncher
+vscodium-bin
+zeal
