@@ -1,10 +1,3 @@
--- init.lua
-
--- OR
-
--- setup with all defaults
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
--- nested options are documented by accessing them with `.` (eg: `:help nvim-tree.view.mappings.list`).
 require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   create_in_closed_folder = false,
@@ -41,6 +34,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     add_trailing = false,
     group_empty = false,
     highlight_git = false,
+    full_name = false,
     highlight_opened_files = "none",
     root_folder_modifier = ":~",
     indent_markers = {
@@ -48,6 +42,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       icons = {
         corner = "└ ",
         edge = "│ ",
+        item = "│ ",
         none = "  ",
       },
     },
@@ -117,6 +112,10 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     custom = {},
     exclude = {},
   },
+  filesystem_watchers = {
+    enable = false,
+    interval = 100,
+  },
   git = {
     enable = true,
     ignore = true,
@@ -149,7 +148,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     },
   },
   trash = {
-    cmd = "trash",
+    cmd = "gio trash",
     require_confirm = true,
   },
   live_filter = {
@@ -166,6 +165,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
       diagnostics = false,
       git = false,
       profile = false,
+      watcher = false,
     },
   },
 } -- END_DEFAULT_OPTS

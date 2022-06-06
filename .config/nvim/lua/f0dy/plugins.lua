@@ -44,50 +44,66 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use "lewis6991/impatient.nvim"  -- Improve startup time for Neovim 
+  use "karb94/neoscroll.nvim" -- a smooth scrolling
+
+  use "lukas-reineke/indent-blankline.nvim" -- Indent guides for Neovim 
+  use "folke/which-key.nvim"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "folke/which-key.nvim"
-  use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
-  -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
 
-  -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
 
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
+  --------- Autocompletion, LSP, Snippets ---------------------------
+  use {
+     'VonHeikemen/lsp-zero.nvim',
+      requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},
+      {'williamboman/nvim-lsp-installer'},
+ 
+      -- Autocompletion
+      {'hrsh7th/nvim-cmp'},
+      {'hrsh7th/cmp-buffer'},
+      {'hrsh7th/cmp-path'},
+      {'saadparwaiz1/cmp_luasnip'},
+      {'hrsh7th/cmp-nvim-lsp'},
+      {'hrsh7th/cmp-nvim-lua'},
+      
+      -- Snippets
+      {'L3MON4D3/LuaSnip'},
+      {'rafamadriz/friendly-snippets'},
+  }
+}
+ -- Telescope, fzf. file tree
+  use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+  use 'kyazdani42/nvim-web-devicons'
+  use "kyazdani42/nvim-tree.lua" -- A file explorer tree for neovim written in lua 
+  use  "AckslD/nvim-neoclip.lua"
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
 
-  -- Treesitter
+----------------  colorscheme  ----------------------------
+  use "EdenEast/nightfox.nvim"
+  use "folke/tokyonight.nvim"
+  use "navarasu/onedark.nvim"
+  use "projekt0n/github-nvim-theme"
+  use "mhartington/oceanic-next"
   use {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+      -- Colorizer (for highlighting color codes).
+  use "norcalli/nvim-colorizer.lua"
+  use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
+  use "goolord/alpha-nvim"  
+  use {'akinsho/bufferline.nvim', tag = "v2.*"}
+use 'JoosepAlviste/nvim-ts-context-commentstring'
+
 
   -- Git
   use "lewis6991/gitsigns.nvim"
