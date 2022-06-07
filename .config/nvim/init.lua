@@ -1,18 +1,23 @@
-require "f0dy.options"
-require "f0dy.keymaps"
-require "f0dy.plugins"
-require "f0dy.telescope"
-require "f0dy.treesitter"
-require "f0dy.autopairs"
-require "f0dy.comment"
-require "f0dy.gitsigns"
-require "f0dy.nvim-tree"
-require "f0dy.bufferline"
-require "f0dy.feline"
-require "f0dy.impatient"
-require "f0dy.indentline"
-require "f0dy.alpha"
-require "f0dy.whichkey"
-require "f0dy.autocommands"
-require "f0dy.cmp"
-require "f0dy.utils"
+local present, impatient = pcall(require, "impatient")
+
+if present then
+   impatient.enable_profile()
+end
+
+-- Global config namespace
+-- We namespace the config so that when we reload our modules it picks up all
+-- the files in that scope and clears the package cache
+-- Ref: https://www.reddit.com/r/neovim/comments/puuskh/comment/he5vnqc
+_G.config_namespace = "f0dy"
+
+-- Allow us to use :source $MYVIMRC to reload portions of our config
+_G.load = function(module)
+   package.loaded[module] = nil
+   return require(module)
+end
+
+local ok, _ = load(config_namespace .. ".core")
+
+if not ok then
+    vim.notify("Error: Could not load default modules")
+end
