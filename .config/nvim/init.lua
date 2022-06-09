@@ -1,23 +1,30 @@
-local present, impatient = pcall(require, "impatient")
+--[[
+        http://github.com/fady0
+---------------------------------------------------------------------
+                                 My Neovim Config
+---------------------------------------------------------------------
+--]]
 
-if present then
-   impatient.enable_profile()
+-- Neovim Lua script to dynamically load .lua config files
+function requirePath(path) 
+  local files = io.popen('find "$HOME"/.config/nvim/lua/' .. path .. ' -type f')
+
+  for file in files:lines() do
+    local req_file = file:gmatch('%/lua%/(.+).lua$'){0}:gsub('/', '.')
+    status_ok, _ = pcall(require, req_file)
+
+    if not status_ok then
+      vim.notify('Failed loading ' .. req_file, vim.log.levels.ERROR)
+    end
+  end
 end
+------------------------------------------------------
 
--- Global config namespace
--- We namespace the config so that when we reload our modules it picks up all
--- the files in that scope and clears the package cache
--- Ref: https://www.reddit.com/r/neovim/comments/puuskh/comment/he5vnqc
-_G.config_namespace = "f0dy"
+--- All My Settings
+require('options')
+--- All My plugins
+require('plugins')
+--- All My Keybindings
+require('keybindings')
 
--- Allow us to use :source $MYVIMRC to reload portions of our config
-_G.load = function(module)
-   package.loaded[module] = nil
-   return require(module)
-end
-
-local ok, _ = load(config_namespace .. ".core")
-
-if not ok then
-    vim.notify("Error: Could not load default modules")
-end
+requirePath('config')
