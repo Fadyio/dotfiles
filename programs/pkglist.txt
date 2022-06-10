@@ -218,6 +218,7 @@ sed
 shadow
 shellcheck
 shotwell
+sqlite
 snapd
 sof-firmware
 spectre-meltdown-checker
