@@ -1,7 +1,7 @@
 #!/bin/bash/
 #######################################
-# Bash script to install apps on a new system (Ubuntu)
-# Written by @AamnahAkram from http://aamnah.com
+# Bash script to install apps on a new system (Arch Linux)
+# Written by @Fadynagh from http://fadyio.com
 #######################################
 
 ## Update packages and Upgrade system
