@@ -37,8 +37,8 @@ zinit light Aloxaf/fzf-tab
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
 
-# undo your last commit in git 
-zinit light Bhupesh-V/ugit
+# Utility tool for using git interactively
+zinit load wfxr/forgit
 
 # zsh-history-substring-search
 zinit light zsh-users/zsh-history-substring-search

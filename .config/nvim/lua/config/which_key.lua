@@ -97,12 +97,12 @@ local mappings = {
   ["P"] = { "<cmd>Telescope projects<cr>", "Projects" },
 
   p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
+    name = "Paq",
+    c = { "<cmd>PaqClean<cr>", "Clean" },
+    i = { "<cmd>PaqInstall<cr>", "Install" },
+    s = { "<cmd>PaqSync<cr>", "Sync" },
+    S = { "<cmd>PaqList<cr>", "List" },
+    u = { "<cmd>PaqUpdate<cr>", "Update" },
   },
 
   g = {
