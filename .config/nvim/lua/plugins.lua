@@ -47,14 +47,14 @@ require "paq" {
 "SmiteshP/nvim-gps";
 -- Start your search from a more comfortable place
 "VonHeikemen/searchbox.nvim";
--- This tiny plugin adds vscode-like pictograms to neovim built-in lsp
-"onsails/lspkind.nvim";
+--A fancy, configurable, notification manager for NeoVim
+"rcarriga/nvim-notify";
 -- nvim-treesitter
 {"nvim-treesitter/nvim-treesitter", run=TSUpdate};
 "JoosepAlviste/nvim-ts-context-commentstring";
 "RRethy/nvim-treesitter-endwise";
 "windwp/nvim-ts-autotag";
-
+"p00f/nvim-ts-rainbow";
 
 
 
@@ -74,6 +74,9 @@ require "paq" {
 {'hrsh7th/cmp-nvim-lsp'};
 {'hrsh7th/cmp-nvim-lua'};
 
+-- null-ls.nvim 
+"jose-elias-alvarez/null-ls.nvim";
+
 -- Snippets
 {'L3MON4D3/LuaSnip'};
 {'rafamadriz/friendly-snippets'};
@@ -92,8 +95,10 @@ require "paq" {
 "kyazdani42/nvim-tree.lua";
 --TODO Easily jumb between files
 "ThePrimeagen/harpoon";
---TODO
+-- GIT
 "lewis6991/gitsigns.nvim";
+"TimUntersberger/neogit";
+"sindrets/diffview.nvim";
 --TODO
 "folke/trouble.nvim";
 --TODO white_check_mark Highlight, list and search todo comments in your projects 
