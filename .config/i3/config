@@ -36,6 +36,8 @@ bindsym $mod+r mode "Resize"
 # start program launcher
 bindsym $mod+d 	exec --no-startup-id ulauncher-toggle
 
+# launch flameshot gui for screenshot
+bindsym Print exec flameshot gui
 
 # change focus VIM_LIKE
 bindsym $mod+h focus left

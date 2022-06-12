@@ -23,9 +23,9 @@
 [submodule ".scripts/i3-easyfocus"]
 	path = .scripts/i3-easyfocus
 	url = https://github.com/cornerman/i3-easyfocus
-[submodule ".zsh/plugins/Bhupesh-V---ugit"]
-	path = .zsh/plugins/Bhupesh-V---ugit
-	url = https://github.com/Bhupesh-V/ugit
+[submodule ".zsh/plugins/wfxr---forgit"]
+	path = .zsh/plugins/wfxr---forgit
+	url = https://github.com/wfxr/forgit
 [submodule ".zsh/plugins/unixorn---git-extra-commands"]
 	path = .zsh/plugins/unixorn---git-extra-commands
 	url = https://github.com/unixorn/git-extra-commands

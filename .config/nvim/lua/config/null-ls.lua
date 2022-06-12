@@ -14,8 +14,21 @@ local completion = null_ls.builtins.completion
 
 null_ls.setup({
 	sources = {
-		formatting.stylua,
-		formatting.eslint_d,
+		-- formatting
+		formatting.stylua, --lua
+		formatting.astyle, -- c and java
+		formatting.clang_format, -- c and c++
+		formatting.autopep8, -- python
+		formatting.codespell, --fix common misspellings in text files
+		formatting.prettier_d_slim, -- prettier for javascript and css etc..
+		formatting.rustfmt, -- for rust
+		formatting.scalafmt, -- for scala
+
+		-- diagnostics
+
+		-- actions
+		actions.eslint,
+
 		actions.gitsigns,
 	},
 	on_attach = function(client)
