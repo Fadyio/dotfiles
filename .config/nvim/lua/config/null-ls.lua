@@ -16,18 +16,26 @@ null_ls.setup({
 	sources = {
 		-- formatting
 		formatting.stylua, --lua
-		formatting.astyle, -- c and java
+		--formatting.astyle, -- c and java
 		formatting.clang_format, -- c and c++
-		formatting.autopep8, -- python
 		formatting.codespell, --fix common misspellings in text files
 		formatting.prettier_d_slim, -- prettier for javascript and css etc..
 		formatting.rustfmt, -- for rust
 		formatting.scalafmt, -- for scala
+		formatting.shfmt, -- for shell
+		formatting.markdownlint, --for markdown
+		formatting.jq, -- for json
+		formatting.cmake_format, --for cmake files
+		formatting.sqlfluff, -- for sql and postgres
+		formatting.yapf, --for python
+		-- for macos    formatting.swiftformat, -- for swift
 
 		-- diagnostics
+		diagnostics.ansiblelint,
+		diagnostics.codespell,
+		diagnostics.cppcheck,
 
 		-- actions
-		actions.eslint,
 
 		actions.gitsigns,
 	},
