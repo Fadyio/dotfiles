@@ -67,3 +67,6 @@
 [submodule ".tmux/plugins/tmux-resurrect"]
 	path = .tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+[submodule ".config/nvim/lua/.tmux/plugins/tmux-fzf-url"]
+	path = .config/nvim/lua/.tmux/plugins/tmux-fzf-url
+	url = https://github.com/wfxr/tmux-fzf-url
