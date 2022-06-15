@@ -21,8 +21,9 @@ pip install sqlfluff
 npm install -g eslint_d
 # for python
 pip install yapf
+pip install isort
 
 #### Catch insensitive, inconsiderate writing.
-sudo  npm install -g alex 
+sudo npm install -g fixjson
 # for ansible
 pip3 install "ansible-lint"

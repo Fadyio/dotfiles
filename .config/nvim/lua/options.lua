@@ -6,7 +6,6 @@
 --]]
 local cmd = vim.cmd
 -------------------------------GLOBAL OPTIONS------------------------------- {{{
---Remap space as leader key
 vim.g.modelines=false					-- Disable modelines as a security precaution			
 vim.opt.fileencoding='utf-8'				-- Set encoding and fileencoding to utf-8
 vim.opt.encoding='UTF-8'				-- Set encoding UTF-8

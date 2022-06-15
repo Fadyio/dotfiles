@@ -4,7 +4,14 @@
                                  My Neovim Plugins
 ---------------------------------------------------------------------
 --]]
--- load paq Plugins manager
+-- Bootstrapping paq Plugins manager
+
+local fn = vim.fn
+local install_path = fn.stdpath("data") .. "/site/pack/paqs/start/paq.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+	paq_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/savq/paq-nvim", install_path })
+end
+
 require("paq")({
 
 	-- Let Paq manage itself
@@ -58,8 +65,8 @@ require("paq")({
 
 	---------------------------------------------------------------------------- }}}
 	-------------------------------LSP FEATURES------------------------------ {{{
-	{ "VonHeikemen/lsp-zero.nvim" },
 
+	{ "VonHeikemen/lsp-zero.nvim" },
 	-- LSP Support
 	{ "neovim/nvim-lspconfig" },
 	{ "williamboman/nvim-lsp-installer" },
@@ -71,7 +78,7 @@ require("paq")({
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-nvim-lua" },
-
+	{ "hrsh7th/cmp-cmdline" },
 	-- null-ls.nvim
 	"jose-elias-alvarez/null-ls.nvim",
 
@@ -80,6 +87,8 @@ require("paq")({
 	{ "rafamadriz/friendly-snippets" },
 	-- copilot
 	"github/copilot.vim",
+	"hrsh7th/cmp-copilot",
+
 	---------------------------------------------------------------------------- }}}
 	-------------------------------EDITOR FEATURES------------------------------ {{{
 

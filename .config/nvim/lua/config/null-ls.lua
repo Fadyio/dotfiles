@@ -24,10 +24,10 @@ null_ls.setup({
 		formatting.scalafmt, -- for scala
 		formatting.shfmt, -- for shell
 		formatting.markdownlint, --for markdown
-		formatting.jq, -- for json
 		formatting.cmake_format, --for cmake files
 		formatting.sqlfluff, -- for sql and postgres
 		formatting.yapf, --for python
+		formatting.isort, -- for python
 		-- for macos    formatting.swiftformat, -- for swift
 
 		-- diagnostics

@@ -13,7 +13,7 @@ configs.setup({
 	},
 	highlight = {
 		enable = true, -- false will disable the whole extension
-		disable = { "" }, -- list of language that will be disabled
+		disable = { "php" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
 	rainbow = {
