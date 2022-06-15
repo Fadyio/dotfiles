@@ -114,6 +114,9 @@ require("paq")({
 	"folke/todo-comments.nvim",
 	--TODO 
 	"nvim-neorg/neorg";
+	--  Neovim motions on speed! 
+	"phaazon/hop.nvim";
+	
 	-- wakatime plugin
 	"wakatime/vim-wakatime",
 	-------------- telescope.nvim
