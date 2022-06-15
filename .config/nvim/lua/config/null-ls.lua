@@ -31,9 +31,22 @@ null_ls.setup({
 		-- for macos    formatting.swiftformat, -- for swift
 
 		-- diagnostics
-		diagnostics.ansiblelint,
-		diagnostics.codespell,
-		diagnostics.cppcheck,
+		diagnostics.ansiblelint, -- for ansible
+		diagnostics.codespell, -- for text files
+		diagnostics.cppcheck, -- for c and c++
+		diagnostics.curlylint, -- for html and nunjucks
+		diagnostics.eslint_d, -- for javascript
+		diagnostics.flake8, -- for python
+		diagnostics.gitlint, -- for git
+		diagnostics.luacheck, -- for lua
+		diagnostics.markdownlint, -- for markdown
+		diagnostics.proselint, -- for english prose
+		diagnostics.shellcheck, -- for shell
+		diagnostics.semgrep, -- Static analysis at ludicrous speedo
+		diagnostics.stylelint, -- for css
+		diagnostics.zsh, -- for zsh
+		diagnostics.write_good, -- for english prose
+		diagnostics.yamllint, -- for yaml
 
 		-- actions
 		actions.eslint_d,

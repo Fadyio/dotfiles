@@ -24,6 +24,10 @@ pip install yapf
 pip install isort
 python -m pip install flake8
 pip install gitlint   
+yay luacheck
+sudo npm install -g markdownlint 
+pip install semgrep
+pip install --user yamllint
 # for english
 pip install proselint
 yay shellcheck
