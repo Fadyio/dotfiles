@@ -10,13 +10,17 @@ require("lualine").setup({
 		globalstatus = false,
 	},
 	sections = {
-		--    lualine_a = { 'gps.get_location, cond = gps.is_available' },
+		lualine_a = { "mode" },
 		lualine_b = { "branch", "diff", "diagnostics" },
-		lualine_c = { "filename" },
+		--	lualine_c = { "filename" },
+		 { separator },
+        { lsp_client, icon = " ", color = { fg = colors.violet, gui = "bold" } },
+        { lsp_progress },
 		lualine_x = { "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
 		lualine_z = { "location" },
 	},
+	
 	inactive_sections = {
 		lualine_a = {},
 		lualine_b = {},
@@ -33,7 +37,8 @@ local gps = require("nvim-gps")
 
 require("lualine").setup({
 	sections = {
-		lualine_a = {
+		lualine_c = {
+			{ "filename" },
 			{ gps.get_location, cond = gps.is_available },
 		},
 	},

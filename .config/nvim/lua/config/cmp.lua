@@ -106,17 +106,20 @@ cmp.setup({
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
+				treesitter = "[Treesitter]",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
+		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "copilot", group_index = 2 },
+		{ name = "copilot" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "spell" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -130,3 +133,5 @@ cmp.setup({
 		native_menu = false,
 	},
 })
+
+
