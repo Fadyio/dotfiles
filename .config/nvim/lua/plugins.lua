@@ -106,12 +106,14 @@ require("paq")({
 	"lewis6991/gitsigns.nvim",
 	"TimUntersberger/neogit",
 	"sindrets/diffview.nvim",
-	--TODO  magit for neovim
+	-- magit for neovim
 	"TimUntersberger/neogit",
 	--TODO
 	"folke/trouble.nvim",
 	--TODO white_check_mark Highlight, list and search todo comments in your projects
 	"folke/todo-comments.nvim",
+	--TODO 
+	"nvim-neorg/neorg";
 	-- wakatime plugin
 	"wakatime/vim-wakatime",
 	-------------- telescope.nvim
