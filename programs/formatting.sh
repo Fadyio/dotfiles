@@ -22,8 +22,13 @@ npm install -g eslint_d
 # for python
 pip install yapf
 pip install isort
-
+python -m pip install flake8
+pip install gitlint   
+# for english
+pip install proselint
+yay shellcheck
 #### Catch insensitive, inconsiderate writing.
 sudo npm install -g fixjson
 # for ansible
 pip3 install "ansible-lint"
+pip install curlylint

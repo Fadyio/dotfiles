@@ -36,8 +36,13 @@ null_ls.setup({
 		diagnostics.cppcheck,
 
 		-- actions
-
+		actions.eslint_d,
+		actions.proselint,
+		actions.shellcheck,
 		actions.gitsigns,
+		-- completion
+		completion.spell,
+		completion.tags,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
