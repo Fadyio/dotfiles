@@ -10,7 +10,8 @@ yay -S scalafmt-native-bin
 # for zsh and bash
 yay shfmt
 # for markdown
-sudo npm install -g markdownlint-cli
+sudo npm install -g markdownlint-cli 
+sudo npm install -g write-good
 # for json
 sudo pacman -S jq
 # for cmake files

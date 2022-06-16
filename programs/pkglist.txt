@@ -219,6 +219,7 @@ shadow
 shellcheck
 shotwell
 sqlite
+ tealdeer  
 snapd
 sof-firmware
 spectre-meltdown-checker

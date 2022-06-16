@@ -4,136 +4,171 @@
                                  My Neovim Plugins
 ---------------------------------------------------------------------
 --]]
--- Bootstrapping paq Plugins manager
-
+-- Bootstrapping Packer Plugins manager
 local fn = vim.fn
-local install_path = fn.stdpath("data") .. "/site/pack/paqs/start/paq.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	paq_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/savq/paq-nvim", install_path })
+	packer_bootstrap = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
+end
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+	return
 end
 
-require("paq")({
+-- Have packer use a popup window
+packer.init({
+	display = {
+		open_fn = function()
+			return require("packer.util").float({ border = "rounded" })
+		end,
+	},
+})
 
-	-- Let Paq manage itself
-	"savq/paq-nvim",
+return require("packer").startup(function(use)
+	-- Let packer manage itself
+	use("wbthomason/packer.nvim")
 	-- Replace default filetype.vim which is slower
-	"nathom/filetype.nvim",
+	use("nathom/filetype.nvim")
 	-- An implementation of the Popup API from vim in Neovim
-	"nvim-lua/popup.nvim",
+	use("nvim-lua/popup.nvim")
 	-- UI Component Library for Neovim.
-	"MunifTanjim/nui.nvim",
+	use("MunifTanjim/nui.nvim")
 	-- Required dependency for many plugins. Super useful Lua functions
-	"nvim-lua/plenary.nvim",
+	use("nvim-lua/plenary.nvim")
 	-- Fix neovim CursorHold and CursorHoldI autocmd events performance bug
-	"antoinemadec/FixCursorHold.nvim",
+	use("antoinemadec/FixCursorHold.nvim")
 	-- Speeds up load times
-	"lewis6991/impatient.nvim",
+	use("lewis6991/impatient.nvim")
 	-- highly opinionated wrapper for storing, retrieving, caching, and persisting SQLite
-	"tami5/sqlite.lua",
-
+	use("tami5/sqlite.lua")
 	---------------------------------------------------------------------------- }}}
 	---------------------------------APPEARANCE--------------------------------- {{{
-
 	-- customizable start screen for neovim.
-	"goolord/alpha-nvim",
+	use("goolord/alpha-nvim")
 	-- display a popup with possible key bindings of the command you started typing
-	"folke/which-key.nvim",
+	use("folke/which-key.nvim")
 	-- adds indentation guides to all lines (including empty lines).
-	"lukas-reineke/indent-blankline.nvim",
+	use("lukas-reineke/indent-blankline.nvim")
 	-- bufferline
-	"akinsho/bufferline.nvim",
+	use("akinsho/bufferline.nvim")
 	-- A high-performance color highlighter for Neovim
-	"norcalli/nvim-colorizer.lua",
+	use("norcalli/nvim-colorizer.lua")
 	-- This plugin provides the same icons as well as colors for each icon.
-	"kyazdani42/nvim-web-devicons",
+	use("kyazdani42/nvim-web-devicons")
 	-- Highlight words and lines on the cursor for Neovim
-	"yamatsum/nvim-cursorline",
+	use("yamatsum/nvim-cursorline")
 	-- Neovim statusline written in Lua.
-	"nvim-lualine/lualine.nvim",
+	use("nvim-lualine/lualine.nvim")
 	-- simple status line component that shows context of the current cursor position in file.
-	"SmiteshP/nvim-gps",
+	use("SmiteshP/nvim-gps")
 	-- Start your search from a more comfortable place
-	"VonHeikemen/searchbox.nvim",
+	use("VonHeikemen/searchbox.nvim")
 	--A fancy, configurable, notification manager for NeoVim
-	"rcarriga/nvim-notify",
+	use("rcarriga/nvim-notify")
+	-- markdown previewer
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 	-- nvim-treesitter
-	{ "nvim-treesitter/nvim-treesitter", run = TSUpdate },
-	"JoosepAlviste/nvim-ts-context-commentstring",
-	"RRethy/nvim-treesitter-endwise",
-	"windwp/nvim-ts-autotag",
-	"p00f/nvim-ts-rainbow",
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+	})
+	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("RRethy/nvim-treesitter-endwise")
+	use("windwp/nvim-ts-autotag")
+	use("p00f/nvim-ts-rainbow")
+	-- 	---------------------------------------------------------------------------- }}}
+	-- 	-------------------------------LSP FEATURES------------------------------ {{{
+	use({
+		"VonHeikemen/lsp-zero.nvim",
+		requires = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/nvim-lsp-installer" },
 
-	---------------------------------------------------------------------------- }}}
-	-------------------------------LSP FEATURES------------------------------ {{{
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
+			{ "hrsh7th/cmp-cmdline" },
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
+			-- null-ls.nvim
+			{ "jose-elias-alvarez/null-ls.nvim" },
+			--copilot
+			{ "github/copilot.vim" },
+			{ "hrsh7th/cmp-copilot" },
+		},
+	})
 
-	{ "VonHeikemen/lsp-zero.nvim" },
-	-- LSP Support
-	{ "neovim/nvim-lspconfig" },
-	{ "williamboman/nvim-lsp-installer" },
-
-	-- Autocompletion
-	{ "hrsh7th/nvim-cmp" },
-	{ "hrsh7th/cmp-buffer" },
-	{ "hrsh7th/cmp-path" },
-	{ "saadparwaiz1/cmp_luasnip" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-nvim-lua" },
-	{ "hrsh7th/cmp-cmdline" },
-	-- null-ls.nvim
-	"jose-elias-alvarez/null-ls.nvim",
-
-	-- Snippets
-	{ "L3MON4D3/LuaSnip" },
-	{ "rafamadriz/friendly-snippets" },
-	-- copilot
-	"github/copilot.vim",
-	"hrsh7th/cmp-copilot",
-
-	---------------------------------------------------------------------------- }}}
-	-------------------------------EDITOR FEATURES------------------------------ {{{
-
+	-- 	---------------------------------------------------------------------------- }}}
+	-- 	-------------------------------EDITOR FEATURES------------------------------ {{{
 	-- Smooth scrolling for ANY movement command
-	"declancm/cinnamon.nvim",
+	use("declancm/cinnamon.nvim")
 	-- Smart and Powerful commenting plugin for neovim
-	"numToStr/Comment.nvim",
+	use("numToStr/Comment.nvim")
 	-- powerful autopair plugin for Neovim that supports multiple characters
-	"windwp/nvim-autopairs",
+	use("windwp/nvim-autopairs")
 	--
-	"kyazdani42/nvim-tree.lua",
+	use("kyazdani42/nvim-tree.lua")
 	--TODO Easily jumb between files
-	"ThePrimeagen/harpoon",
+	use("ThePrimeagen/harpoon")
 	-- GIT
-	"lewis6991/gitsigns.nvim",
-	"TimUntersberger/neogit",
-	"sindrets/diffview.nvim",
+	use("lewis6991/gitsigns.nvim")
+	use("sindrets/diffview.nvim")
 	-- magit for neovim
-	"TimUntersberger/neogit",
+	use("TimUntersberger/neogit")
 	--TODO
-	"folke/trouble.nvim",
+	use("folke/trouble.nvim")
 	--TODO white_check_mark Highlight, list and search todo comments in your projects
-	"folke/todo-comments.nvim",
-	--TODO 
-	"nvim-neorg/neorg";
-	--  Neovim motions on speed! 
-	"phaazon/hop.nvim";
-	
+	use("folke/todo-comments.nvim")
+	--TODO
+	use("nvim-neorg/neorg")
+	--  Neovim motions on speed!
+	use("phaazon/hop.nvim")
 	-- wakatime plugin
-	"wakatime/vim-wakatime",
+	use("wakatime/vim-wakatime")
 	-------------- telescope.nvim
-	"nvim-telescope/telescope.nvim",
-	"crispgm/telescope-heading.nvim",
-	{ "nvim-telescope/telescope-fzf-native.nvim", run = make },
-	"nvim-telescope/telescope-media-files.nvim",
-	"nvim-telescope/telescope-github.nvim",
+	use("nvim-telescope/telescope.nvim")
+	use("crispgm/telescope-heading.nvim")
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+	use("nvim-telescope/telescope-media-files.nvim")
+	use("nvim-telescope/telescope-github.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
+	use {"nvim-telescope/telescope-frecency.nvim"}
+	use {'nvim-telescope/telescope-ui-select.nvim' }
+
 	---------------------------------------------------------------------------- }}}
 	-------------------------------  colorScheme  ------------------------------ {{{
 
-	"folke/tokyonight.nvim",
-	"bluz71/vim-moonfly-colors",
-	"projekt0n/github-nvim-theme",
-	"mhartington/oceanic-next",
-	"bluz71/vim-nightfly-guicolors",
-	"titanzero/zephyrium",
-	"sainnhe/gruvbox-material",
-	"sainnhe/edge",
-})
+	use("folke/tokyonight.nvim")
+	use("bluz71/vim-moonfly-colors")
+	use("projekt0n/github-nvim-theme")
+	use("mhartington/oceanic-next")
+	use("bluz71/vim-nightfly-guicolors")
+	use("titanzero/zephyrium")
+	use("sainnhe/gruvbox-material")
+	use("sainnhe/edge")
+
+	if packer_bootstrap then
+		require("packer").sync()
+	end
+end)
