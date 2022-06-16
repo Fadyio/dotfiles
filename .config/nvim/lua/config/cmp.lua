@@ -40,7 +40,6 @@ local kind_icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
-	copilot = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -107,7 +106,6 @@ cmp.setup({
 				buffer = "[Buffer]",
 				path = "[Path]",
 				treesitter = "[Treesitter]",
-				copilot = "[copilot]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -121,7 +119,6 @@ cmp.setup({
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "spell" },
-		{ name = "copilot" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
