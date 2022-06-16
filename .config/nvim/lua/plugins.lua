@@ -121,6 +121,7 @@ return require("packer").startup(function(use)
 			{ "jose-elias-alvarez/null-ls.nvim" },
 			--copilot
 			{ "github/copilot.vim" },
+			{ "hrsh7th/cmp-copilot" },
 		},
 	})
 	-- code runner
