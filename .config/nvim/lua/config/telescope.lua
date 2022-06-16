@@ -66,7 +66,7 @@ require("telescope").setup({
 			--   },
 			--   -- for example to disable the custom builtin "codeactions" display
 			--      do the following
-			--   codeactions = false,
+			codeactions = true,
 			-- }
 		},
 		media_files = {
