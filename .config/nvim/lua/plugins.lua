@@ -25,6 +25,12 @@ end
 
 -- Have packer use a popup window
 packer.init({
+	git = {
+		cmd = "git", -- The base command for git operations
+		depth = 1, -- Git clone depth
+		clone_timeout = 1000, -- Timeout, in seconds, for git clones
+		default_url_format = "https://github.com/%s", -- Lua format string used for "aaa/bbb" style plugins
+	},
 	display = {
 		open_fn = function()
 			return require("packer.util").float({ border = "rounded" })
@@ -118,7 +124,8 @@ return require("packer").startup(function(use)
 			{ "hrsh7th/cmp-copilot" },
 		},
 	})
-
+	-- code runner
+	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	-- 	---------------------------------------------------------------------------- }}}
 	-- 	-------------------------------EDITOR FEATURES------------------------------ {{{
 	-- Smooth scrolling for ANY movement command
@@ -153,8 +160,8 @@ return require("packer").startup(function(use)
 	use("nvim-telescope/telescope-media-files.nvim")
 	use("nvim-telescope/telescope-github.nvim")
 	use("nvim-telescope/telescope-file-browser.nvim")
-	use {"nvim-telescope/telescope-frecency.nvim"}
-	use {'nvim-telescope/telescope-ui-select.nvim' }
+	use({ "nvim-telescope/telescope-frecency.nvim" })
+	use({ "nvim-telescope/telescope-ui-select.nvim" })
 
 	---------------------------------------------------------------------------- }}}
 	-------------------------------  colorScheme  ------------------------------ {{{

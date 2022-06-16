@@ -101,12 +101,13 @@ cmp.setup({
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
-				copilot = "[copilot]",
+
 				nvim_lua = "[NVIM_LUA]",
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
 				treesitter = "[Treesitter]",
+				copilot = "[copilot]",
 			})[entry.source.name]
 			return vim_item
 		end,
@@ -115,23 +116,23 @@ cmp.setup({
 		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
-		{ name = "copilot" },
+
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "spell" },
+		{ name = "copilot" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
 	window = {
-		documentation = cmp.config.window.bordered({ "╭", "─", "╮", "│", "╯", "─", "╰", "│" }),
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
 		ghost_text = true,
 		native_menu = false,
 	},
 })
-
-

@@ -58,11 +58,13 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 ########################## zsh-autocomplete ###########################
-# completions
+# No Stupid beeps
+unsetopt BEEP
 autoload -Uz compinit
+compinit
+zstyle :compinstall filename "$HOME/.zshrc"
+zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
-# zstyle ':completion::complete:lsof:*' menu yes select
-zmodload zsh/complist
 # compinit
 _comp_options+=(globdots)		# Include hidden files.
 
