@@ -80,24 +80,30 @@ local opts = {
 
 local mappings = {
 	["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-	["b"] = {"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>","Buffers",},
+	["b"] = {
+		"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Buffers",
+	},
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["w"] = { "<cmd>w!<CR>", "Save" },
 	["q"] = { "<cmd>q!<CR>", "Quit" },
-	["c"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
-	["r"] = { "<cmd>SearchBoxReplace<CR>", "replace word" },
-	["f"] = {"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>","Find files",},
+	["x"] = { "<cmd>bdelete!<CR>", "Close Buffer" },
+	["R"] = { "<cmd>SearchBoxReplace<CR>", "replace word" },
+	["f"] = {
+		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+		"Find files",
+	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+	["P"] = { "<cmd>Telescope file_browser<cr>", "file browser" },
 
-	  p = {
-    name = "Packer",
-    c = { "<cmd>PackerCompile<cr>", "Compile" },
-    i = { "<cmd>PackerInstall<cr>", "Install" },
-    s = { "<cmd>PackerSync<cr>", "Sync" },
-    S = { "<cmd>PackerStatus<cr>", "Status" },
-    u = { "<cmd>PackerUpdate<cr>", "Update" },
-  },
+	p = {
+		name = "Packer",
+		c = { "<cmd>PackerCompile<cr>", "Compile" },
+		i = { "<cmd>PackerInstall<cr>", "Install" },
+		s = { "<cmd>PackerSync<cr>", "Sync" },
+		S = { "<cmd>PackerStatus<cr>", "Status" },
+		u = { "<cmd>PackerUpdate<cr>", "Update" },
+	},
 
 	g = {
 		name = "Git",
@@ -133,6 +139,22 @@ local mappings = {
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 	},
+	r = {
+		name = "code runner",
+		d = { "<Cmd>SnipRun<CR>", "Line Run" },
+		s = { "<cmd>SnipReset<CR>", "Snip Reset" },
+		i = { "<cmd>SnipInfo<CR>", "Snip Info" },
+	},
+	m = {
+		name = "Motions",
+		w = {
+			"<cmd> lua require'hop'.hint_words({ hint_position = require'hop.hint'.HintPosition.END })<cr>",
+			"hop word",
+		},
+		p = { "<cmd>HopPattern<CR>", "Hop Pattern" },
+		l = { "<cmd>HopLine<CR>", "Hop Line" },
+	},
+
 	--TODO
 	--   local keymap_g = {
 	--   name = "Goto",
@@ -145,13 +167,13 @@ local mappings = {
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+		C = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		c = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
 }
 
