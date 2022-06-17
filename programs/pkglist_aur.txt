@@ -9,3 +9,4 @@ tumbler-extra-thumbnailers
 ulauncher
 vscodium-bin
 zeal
+insect

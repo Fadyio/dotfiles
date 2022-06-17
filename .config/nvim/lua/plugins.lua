@@ -141,6 +141,7 @@ return require("packer").startup(function(use)
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
 	use("sindrets/diffview.nvim")
+	use("kdheepak/lazygit.nvim")
 	-- magit for neovim
 	use("TimUntersberger/neogit")
 	--TODO
