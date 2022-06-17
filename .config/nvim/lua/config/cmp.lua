@@ -12,37 +12,34 @@ local check_backspace = function()
 	local col = vim.fn.col(".") - 1
 	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
---   פּ ﯟ   some other good icons
+
 local kind_icons = {
-	Text = "",
-	Method = "m",
+	Text = "",
+	Method = "",
 	Function = "",
-	Constructor = "",
-	Field = "",
-	Variable = "",
-	Class = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "ﴯ",
 	Interface = "",
 	Module = "",
-	Property = "",
+	Property = "ﰠ",
 	Unit = "",
 	Value = "",
 	Enum = "",
 	Keyword = "",
-	Snippet = "",
+	Snippet = "",
 	Color = "",
 	File = "",
 	Reference = "",
 	Folder = "",
 	EnumMember = "",
-	Constant = "",
+	Constant = "",
 	Struct = "",
 	Event = "",
 	Operator = "",
-	TypeParameter = "",
-	copilot = "",
+	TypeParameter = "",
 }
--- find more here: https://www.nerdfonts.com/cheat-sheet
-
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -92,25 +89,29 @@ cmp.setup({
 			"s",
 		}),
 	},
+	view = {
+		entries = { name = "custom", selection_order = "near_cursor" }, -- can be "custom", "wildmenu" or "native"
+	},
+
+	window = {
+		completion = {
+			winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+			col_offset = -3,
+			side_padding = 0,
+		},
+	},
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
 		format = function(entry, vim_item)
-			-- Kind icons
-			vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatenates the icons with the name of the item kind
-			vim_item.menu = ({
-				nvim_lsp = "[LSP]",
+			local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 50 })(entry, vim_item)
+			local strings = vim.split(kind.kind, "%s", { trimempty = true })
+			kind.kind = " " .. strings[1] .. " "
+			kind.menu = "    (" .. strings[2] .. ")"
 
-				nvim_lua = "[NVIM_LUA]",
-				luasnip = "[Snippet]",
-				buffer = "[Buffer]",
-				path = "[Path]",
-				treesitter = "[Treesitter]",
-				copilot = "[]",
-			})[entry.source.name]
-			return vim_item
+			return kind
 		end,
 	},
+
 	sources = {
 		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
@@ -118,18 +119,67 @@ cmp.setup({
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "spell" },
 		{ name = "copilot" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
+
 	experimental = {
 		ghost_text = true,
 	},
+	{
+		PmenuSel = { bg = "#C34", fg = "NONE" },
+		Pmenu = { fg = "#C5CDD9", bg = "#22252A" },
+
+		CmpItemAbbrDeprecated = { fg = "#7E8294", bg = "NONE", fmt = "strikethrough" },
+		CmpItemAbbrMatch = { fg = "#82AAFF", bg = "NONE", fmt = "bold" },
+		CmpItemAbbrMatchFuzzy = { fg = "#82AAFF", bg = "NONE", fmt = "bold" },
+		CmpItemMenu = { fg = "#C792EA", bg = "NONE", fmt = "italic" },
+
+		CmpItemKindField = { fg = "#EED8DA", bg = "#B5585F" },
+		CmpItemKindProperty = { fg = "#EED8DA", bg = "#B5585F" },
+		CmpItemKindEvent = { fg = "#EED8DA", bg = "#B5585F" },
+
+		CmpItemKindText = { fg = "#C3E88D", bg = "#9FBD73" },
+		CmpItemKindEnum = { fg = "#C3E88D", bg = "#9FBD73" },
+		CmpItemKindKeyword = { fg = "#C3E88D", bg = "#9FBD73" },
+
+		CmpItemKindConstant = { fg = "#FFE082", bg = "#D4BB6C" },
+		CmpItemKindConstructor = { fg = "#FFE082", bg = "#D4BB6C" },
+		CmpItemKindReference = { fg = "#FFE082", bg = "#D4BB6C" },
+
+		CmpItemKindFunction = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindStruct = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindClass = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindModule = { fg = "#EADFF0", bg = "#A377BF" },
+		CmpItemKindOperator = { fg = "#EADFF0", bg = "#A377BF" },
+
+		CmpItemKindVariable = { fg = "#C5CDD9", bg = "#7E8294" },
+		CmpItemKindFile = { fg = "#C5CDD9", bg = "#7E8294" },
+
+		CmpItemKindUnit = { fg = "#F5EBD9", bg = "#D4A959" },
+		CmpItemKindSnippet = { fg = "#F5EBD9", bg = "#D4A959" },
+		CmpItemKindFolder = { fg = "#F5EBD9", bg = "#D4A959" },
+
+		CmpItemKindMethod = { fg = "#DDE5F5", bg = "#6C8ED4" },
+		CmpItemKindValue = { fg = "#DDE5F5", bg = "#6C8ED4" },
+		CmpItemKindEnumMember = { fg = "#DDE5F5", bg = "#6C8ED4" },
+
+		CmpItemKindInterface = { fg = "#D8EEEB", bg = "#58B5A8" },
+		CmpItemKindColor = { fg = "#D8EEEB", bg = "#58B5A8" },
+		CmpItemKindTypeParameter = { fg = "#D8EEEB", bg = "#58B5A8" },
+	},
+	  enabled = function()
+      -- disable completion in comments
+      local context = require 'cmp.config.context'
+      -- keep command mode completion enabled when cursor is in a comment
+      if vim.api.nvim_get_mode().mode == 'c' then
+        return true
+      else
+        return not context.in_treesitter_capture("comment") 
+          and not context.in_syntax_group("Comment")
+      end
+    end
 })

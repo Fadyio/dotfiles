@@ -77,8 +77,6 @@ return require("packer").startup(function(use)
 	use("SmiteshP/nvim-gps")
 	-- Start your search from a more comfortable place
 	use("VonHeikemen/searchbox.nvim")
-	--A fancy, configurable, notification manager for NeoVim
-	use("rcarriga/nvim-notify")
 	-- markdown previewer
 	use({
 		"iamcco/markdown-preview.nvim",

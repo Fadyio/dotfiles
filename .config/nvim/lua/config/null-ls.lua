@@ -9,8 +9,6 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/code_actions
 local actions = null_ls.builtins.code_actions
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/completion
-local completion = null_ls.builtins.completion
 
 null_ls.setup({
 	sources = {
@@ -53,9 +51,6 @@ null_ls.setup({
 		actions.proselint,
 		actions.shellcheck,
 		actions.gitsigns,
-		-- completion
-		completion.spell,
-		completion.tags,
 	},
 	on_attach = function(client)
 		if client.resolved_capabilities.document_formatting then
