@@ -67,12 +67,28 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
 # compinit
 _comp_options+=(globdots)		# Include hidden files.
+############################### AUTO-COMPLETIONS ###############################
+# Added by running `compinstall`
+zstyle ':completion:*' expand suffix
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' list-suffixes true
 
 ##################### zsh-history-substring-search ################
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+# Cycle through history based on what I have already typed
+# https://superuser.com/a/585004
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search   # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
 # Enable keychain in zsh 
 eval `keychain --eval --agents ssh id_rsa`
 

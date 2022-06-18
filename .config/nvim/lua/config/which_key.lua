@@ -135,7 +135,6 @@ local mappings = {
 		k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
 	},
@@ -178,15 +177,6 @@ local mappings = {
 		t = { "<cmd>TodoTelescope<CR>", "Todo Telescope" }, --Search through all project todos with Telescope
 	},
 
-	--TODO
-	--   local keymap_g = {
-	--   name = "Goto",
-	--   d = { "<Cmd>lua vim.lsp.buf.definition()<CR>", "Definition" },
-	--   D = { "<Cmd>lua vim.lsp.buf.declaration()<CR>", "Declaration" },
-	--   s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-	--   I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
-	--   t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
-	-- }
 	s = {
 		name = "Search",
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
