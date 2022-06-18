@@ -154,6 +154,29 @@ local mappings = {
 		p = { "<cmd>HopPattern<CR>", "Hop Pattern" },
 		l = { "<cmd>HopLine<CR>", "Hop Line" },
 	},
+	h = {
+		name = "Harpooning",
+		a = { "<cmd>lua require 'harpoon.mark'.add_file()<CR>", "Add file" },
+		t = { "<cmd>lua require 'harpoon.ui'.toggle_quick_menu()<CR>", "toggle quick menu" },
+		n = { "<cmd>lua require 'harpoon.ui'.nav_next()<CR>", "Next file" },
+		p = { "<cmd>lua require 'harpoon.ui'.nav_prev()<CR>", "previous file" },
+	},
+
+	t = {
+		name = "Trouble",
+		x = { "<cmd>Trouble<CR>", "Trouble Toggle " },
+		w = { "<cmd>Trouble workspace_diagnostics<CR>", "workspace diagnostics" },
+		d = { "<cmd>Trouble document_diagnostics<CR>", "document diagnostics" },
+		l = { "<cmd>Trouble loclist<CR>", "Trouble loclist " },
+		q = { "<cmd>Trouble quickfix<CR>", "Trouble quickfix " },
+		r = { "<cmd>Trouble lsp_references<CR>", "lsp references" },
+	},
+	T = {
+		name = "TODO",
+		q = { "<cmd>TodoQuickFix<CR>", "Todo Quick Fix" }, --This uses the quickfix list to show all todos in your project.
+		l = { "<cmd>TodoLocList<CR>", "Todo LocList" }, --This uses the location list to show all todos in your project.
+		t = { "<cmd>TodoTelescope<CR>", "Todo Telescope" }, --Search through all project todos with Telescope
+	},
 
 	--TODO
 	--   local keymap_g = {
