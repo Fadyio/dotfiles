@@ -57,4 +57,3 @@ alias gcm='git commit --message'
 alias gca='git add . && git commit'
 alias gcam='git add . && git commit --message'
 alias gco='git checkout'
-

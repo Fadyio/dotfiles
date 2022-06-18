@@ -77,6 +77,10 @@ return require("packer").startup(function(use)
 	use("SmiteshP/nvim-gps")
 	-- Start your search from a more comfortable place
 	use("VonHeikemen/searchbox.nvim")
+	--A fancy, configurable, notification manager for NeoVim
+	use("rcarriga/nvim-notify")
+	--  vscode-like pictograms for neovim lsp completion items 
+	use("onsails/lspkind.nvim")
 	-- markdown previewer
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -112,14 +116,19 @@ return require("packer").startup(function(use)
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
 			{ "hrsh7th/cmp-cmdline" },
+			{ "SirVer/ultisnips" },
+			{ "Dosx001/cmp-commit" },
+			{ "tamago324/cmp-zsh" },
+			{ "Shougo/deol.nvim" },
+			{ "dmitmel/cmp-cmdline-history" },
 			-- Snippets
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
 			-- null-ls.nvim
 			{ "jose-elias-alvarez/null-ls.nvim" },
 			--copilot
-			{ "github/copilot.vim" },
-			{ "hrsh7th/cmp-copilot" },
+--			{ "github/copilot.vim" },
+--			{ "hrsh7th/cmp-copilot" },
 		},
 	})
 	-- code runner
