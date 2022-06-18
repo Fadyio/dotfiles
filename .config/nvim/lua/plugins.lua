@@ -37,7 +37,7 @@ packer.init({
 		end,
 	},
 })
-
+require("impatient")
 return require("packer").startup(function(use)
 	-- Let packer manage itself
 	use("wbthomason/packer.nvim")
@@ -79,7 +79,7 @@ return require("packer").startup(function(use)
 	use("VonHeikemen/searchbox.nvim")
 	--A fancy, configurable, notification manager for NeoVim
 	use("rcarriga/nvim-notify")
-	--  vscode-like pictograms for neovim lsp completion items 
+	--  vscode-like pictograms for neovim lsp completion items
 	use("onsails/lspkind.nvim")
 	-- markdown previewer
 	use({
@@ -116,7 +116,6 @@ return require("packer").startup(function(use)
 			{ "hrsh7th/cmp-nvim-lsp" },
 			{ "hrsh7th/cmp-nvim-lua" },
 			{ "hrsh7th/cmp-cmdline" },
-			{ "SirVer/ultisnips" },
 			{ "Dosx001/cmp-commit" },
 			{ "tamago324/cmp-zsh" },
 			{ "Shougo/deol.nvim" },
@@ -143,7 +142,7 @@ return require("packer").startup(function(use)
 	use("windwp/nvim-autopairs")
 	--
 	use("kyazdani42/nvim-tree.lua")
-	--TODO Easily jumb between files
+	-- Easily jumb between files
 	use("ThePrimeagen/harpoon")
 	-- GIT
 	use("lewis6991/gitsigns.nvim")
@@ -151,11 +150,11 @@ return require("packer").startup(function(use)
 	use("kdheepak/lazygit.nvim")
 	-- magit for neovim
 	use("TimUntersberger/neogit")
-	--TODO
+	-- A pretty diagnostics, references, telescope results, quickfix and location list
 	use("folke/trouble.nvim")
-	--TODO white_check_mark Highlight, list and search todo comments in your projects
+	-- white_check_mark Highlight, list and search todo comments in your projects
 	use("folke/todo-comments.nvim")
-	--TODO
+	--TODO: hellp this problesm
 	use("nvim-neorg/neorg")
 	--  Neovim motions on speed!
 	use("phaazon/hop.nvim")
