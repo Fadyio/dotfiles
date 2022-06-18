@@ -110,5 +110,40 @@
         "updated_at": "2022-06-04T20:25:54.881906",
         "last_commit": "7ba3f9fb273c4cbbecd26352c88a3156205417db",
         "last_commit_time": "2020-01-05T13:02:00"
+    },
+    "com.github.rmassidda.ulauncher-firefox-history": {
+        "id": "com.github.rmassidda.ulauncher-firefox-history",
+        "url": "https://github.com/rmassidda/ulauncher-firefox-history",
+        "updated_at": "2022-06-18T10:45:03.914188",
+        "last_commit": "3d0e706412512805efda2bf0957b999df5594f19",
+        "last_commit_time": "2022-02-02T09:04:03"
+    },
+    "com.github.dcervenkov.ulauncher-z-search": {
+        "id": "com.github.dcervenkov.ulauncher-z-search",
+        "url": "https://github.com/dcervenkov/ulauncher-z-search",
+        "updated_at": "2022-06-18T10:46:28.978883",
+        "last_commit": "9fe278bebb039c5150857f9b0cb34bcb28f35248",
+        "last_commit_time": "2020-12-15T14:35:19"
+    },
+    "com.github.adamtillou.ulauncher-aurman-plugin": {
+        "id": "com.github.adamtillou.ulauncher-aurman-plugin",
+        "url": "https://github.com/AdamTillou/ulauncher-aurman-plugin",
+        "updated_at": "2022-06-18T10:46:46.113166",
+        "last_commit": "af11b33cb6ed6ec055859482bdde0353013d1378",
+        "last_commit_time": "2021-07-16T21:51:05"
+    },
+    "com.github.ceroprogramming.ulauncher-pulsecontrol": {
+        "id": "com.github.ceroprogramming.ulauncher-pulsecontrol",
+        "url": "https://github.com/CeroProgramming/ulauncher-pulsecontrol",
+        "updated_at": "2022-06-18T10:47:03.763563",
+        "last_commit": "ccd12ea616c3aca9545bc0fd39d84901f092acb2",
+        "last_commit_time": "2021-10-19T12:19:26"
+    },
+    "com.github.brpaz.ulauncher-folder-search": {
+        "id": "com.github.brpaz.ulauncher-folder-search",
+        "url": "https://github.com/brpaz/ulauncher-folder-search",
+        "updated_at": "2022-06-18T10:51:24.232358",
+        "last_commit": "a1b08cf75910eaa4c70c041de0f56cf7446bf05a",
+        "last_commit_time": "2021-12-12T15:46:24"
     }
 }
