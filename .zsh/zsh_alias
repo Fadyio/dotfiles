@@ -2,45 +2,24 @@
 chpwd() exa --icons --group-directories-first --color-scale
 
 # Alias
-  alias history='fc -il 1' # for HIST_STAMPS in oh-my-zsh
-
-  alias rg='rg -S'
 # Shell navigation
-alias ..='cd ..'
-alias bk='cd -'
-alias home='cd ~'
-alias ...='cd ../..'
-alias desk='cd ~/Desktop'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-
-## Files stuff
-  alias r='ranger'
+  alias ls="exa --icons --color-scale --long --header --git --sort=extension"
   alias ..='cd ..'
+  alias bk='cd -'
+  alias home='cd ~'
   alias ...='cd ../..'
+  alias desk='cd ~/Desktop'
   alias ....='cd ../../..'
-  alias cd..='cd ..'
+  alias .....='cd ../../../..'
+  alias tree="exa --tree --icons --color-scale --level=2"
+##  utilities
   alias mdkir='mkdir'
   alias sudp='sudo'
-  alias v='nvim'
-  alias home='cd ~'
-  alias htp=wkhtmltopdf
-  alias ytvid='yt-dlp -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
-  alias ytlist='yt-dlp -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-  alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-  alias dict='dict -d gcide'
-  alias ls="exa --icons --color-scale --long --header --git --sort=extension"
-  alias tree="exa --tree --icons --color-scale --level=2"
-  alias torrent='aria2c -d ~/Downloads'
-  alias downsite='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
-  alias upgrade='sudo pacman -Syu'
-  alias zshreload="source ~/.zshrc"
-  alias vi='nvim'
-  alias vim='nvim'
   alias :q="exit"
   alias q='exit'
-  alias calc="insect"
   alias c='clear'
+  alias upgrade='sudo pacman -Syu'
+  alias zshreload="source ~/.zshrc"
   alias nvimconfig='nvim ~/.config/nvim/init.vim'
   alias zshconfig='nvim ~/.zshrc'
   alias i3config='nvim ~/.config/i3/config'
@@ -51,35 +30,37 @@ alias .....='cd ../../../..'
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
-# Shell
+## alias for programs that i use  
+  alias v='nvim'
+  alias vi='nvim'
+  alias vim='nvim'
+  alias r='ranger'
+  alias htp=wkhtmltopdf
+  alias dict='dict -d gcide'
+  alias calc="insect"
+  alias history='fc -il 1' # for HIST_STAMPS in oh-my-zsh
+  alias rg='rg -S'
+## download stuff
+  alias ytvid='yt-dlp -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
+  alias ytlist='yt-dlp -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias torrent='aria2c -d ~/Downloads'
+  alias downsite='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 
-
-## git stuff
-# Git
-alias lg='lazygit'
-alias ga='git add'
-alias gp='git pull'
-alias gaa='git add .'
-alias gst='git status'
-alias gc='git commit -m'
-alias gnb='git checkout -b'
-alias gpu='git push origin master'
-alias gdm='git checkout -b dev-master'
-alias nah='git reset --hard && git clean -df'
-alias gfix='git rm -r --cached . && git add .'
-
-alias g='git'
-alias gs='git status'
-alias gd="git diff --color-words"
-alias gdc='git diff --cached'
-alias ga='git add'
-alias gl='git log'
-alias gb='git branch'
-alias gbl='git branch --verbose --verbose'
-alias gc='git commit'
-alias gcm='git commit --message'
-alias gca='git add . && git commit'
-alias gcam='git add . && git commit --message'
-alias gco='git checkout'
-
-
+## Git stuff
+  alias g='git'
+  alias lg='lazygit'
+  alias ga='git add'
+  alias gaa='git add .'
+  alias gp='git pull'
+  alias gd="git diff --color-words"
+  alias gl='git log'
+  alias gs='git status'
+  alias gc='git commit -m'
+  alias gnb='git checkout -b'
+  alias gpu='git push origin master'
+  alias gfix='git rm -r --cached . && git add .'
+  alias gb='git branch'
+  alias gbl='git branch --verbose --verbose'
+  alias gcam='git add . && git commit --message'
+  alias gco='git checkout'
