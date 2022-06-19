@@ -1,3 +1,7 @@
+-- Written by @Fadynagh from http://fadyio.com
+-- Email:me@fadyio.com
+-- Github: @fady0
+--
 require("nvim-gps").setup()
 require("lualine").setup({
 	options = {

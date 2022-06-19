@@ -1,4 +1,8 @@
 #!/bin/sh
+# Written by @Fadynagh from http://fadyio.com
+# Email:me@fadyio.com
+# Github: @fady0
+
 # to Fix common misspellings in text files
 pip install codespell
 # install prettier javascript and html css etc..
@@ -10,7 +14,7 @@ yay -S scalafmt-native-bin
 # for zsh and bash
 yay shfmt
 # for markdown
-sudo npm install -g markdownlint-cli 
+sudo npm install -g markdownlint-cli
 sudo npm install -g write-good
 # for json
 sudo pacman -S jq
@@ -24,9 +28,9 @@ npm install -g eslint_d
 pip install yapf
 pip install isort
 python -m pip install flake8
-pip install gitlint   
+pip install gitlint
 yay luacheck
-sudo npm install -g markdownlint 
+sudo npm install -g markdownlint
 pip install semgrep
 pip install --user yamllint
 # for english

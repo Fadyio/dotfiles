@@ -1,4 +1,8 @@
 #!/bin/bash
+# Written by @Fadynagh from http://fadyio.com
+# Email:me@fadyio.com
+# Github: @fady0
+
 
 git config --global pull.rebase false
 git config --global user.name "fady0"

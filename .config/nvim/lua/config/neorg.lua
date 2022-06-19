@@ -1,3 +1,7 @@
+-- Written by @Fadynagh from http://fadyio.com
+-- Email:me@fadyio.com
+-- Github: @fady0
+--
 require("neorg").setup({
 	load = {
 		["core.defaults"] = {},

@@ -1,3 +1,7 @@
+-- Written by @Fadynagh from http://fadyio.com
+-- Email:me@fadyio.com
+-- Github: @fady0
+--
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
 	return

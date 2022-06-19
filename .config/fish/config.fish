@@ -1,3 +1,7 @@
+# Written by @Fadynagh from http://fadyio.com
+# Email:me@fadyio.com
+# Github: @fady0
+
 #u Load universal config when it's changed
 
 set -l fish_config_mtime

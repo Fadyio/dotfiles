@@ -1,5 +1,7 @@
 --[[
-        http://github.com/fady0
+ -- Written by @Fadynagh from http://fadyio.com
+ -- Email:me@fadyio.com
+ -- Github: @fady0
 ---------------------------------------------------------------------
                                  My Neovim Plugins
 ---------------------------------------------------------------------
@@ -126,8 +128,8 @@ return require("packer").startup(function(use)
 			-- null-ls.nvim
 			{ "jose-elias-alvarez/null-ls.nvim" },
 			--copilot
---			{ "github/copilot.vim" },
---			{ "hrsh7th/cmp-copilot" },
+			--			{ "github/copilot.vim" },
+			--			{ "hrsh7th/cmp-copilot" },
 		},
 	})
 	-- code runner

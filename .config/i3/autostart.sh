@@ -1,3 +1,8 @@
+#!/user/bin/sh
+# Written by @Fadynagh from http://fadyio.com
+# Email:me@fadyio.com
+# Github: @fady0
+
 ulauncher &
 setxkbmap -option ctrl:nocaps &
 xcape -e 'Control_L=Escape' &

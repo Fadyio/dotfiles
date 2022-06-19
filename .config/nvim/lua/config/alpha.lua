@@ -1,3 +1,7 @@
+-- Written by @Fadynagh from http://fadyio.com
+-- Email:me@fadyio.com
+-- Github: @fady0
+
 local status_ok, alpha = pcall(require, "alpha")
 if not status_ok then
 	return
@@ -5,14 +9,14 @@ end
 
 local dashboard = require("alpha.themes.dashboard")
 dashboard.section.header.val = {
-  "                                                                             			",
-     "  ███████╗     █████╗     ██████╗     ██╗   ██╗    ███╗   ██╗    ██╗   ██╗    ██╗    ███╗   ███╗  ",
-     "  ██╔════╝    ██╔══██╗    ██╔══██╗    ╚██╗ ██╔╝    ████╗  ██║    ██║   ██║    ██║    ████╗ ████║  ",
-     "  █████╗      ███████║    ██║  ██║     ╚████╔╝     ██╔██╗ ██║    ██║   ██║    ██║    ██╔████╔██║  ",
-     "  ██╔══╝      ██╔══██║    ██║  ██║      ╚██╔╝      ██║╚██╗██║    ╚██╗ ██╔╝    ██║    ██║╚██╔╝██║  ",
-     "  ██║         ██║  ██║    ██████╔╝       ██║       ██║ ╚████║     ╚████╔╝     ██║    ██║ ╚═╝ ██║  ",
-     "  ╚═╝         ╚═╝  ╚═╝    ╚═════╝        ╚═╝       ╚═╝  ╚═══╝      ╚═══╝      ╚═╝    ╚═╝     ╚═╝  ",
-     "                                                                             ",
+	"                                                                             			",
+	"  ███████╗     █████╗     ██████╗     ██╗   ██╗    ███╗   ██╗    ██╗   ██╗    ██╗    ███╗   ███╗  ",
+	"  ██╔════╝    ██╔══██╗    ██╔══██╗    ╚██╗ ██╔╝    ████╗  ██║    ██║   ██║    ██║    ████╗ ████║  ",
+	"  █████╗      ███████║    ██║  ██║     ╚████╔╝     ██╔██╗ ██║    ██║   ██║    ██║    ██╔████╔██║  ",
+	"  ██╔══╝      ██╔══██║    ██║  ██║      ╚██╔╝      ██║╚██╗██║    ╚██╗ ██╔╝    ██║    ██║╚██╔╝██║  ",
+	"  ██║         ██║  ██║    ██████╔╝       ██║       ██║ ╚████║     ╚████╔╝     ██║    ██║ ╚═╝ ██║  ",
+	"  ╚═╝         ╚═╝  ╚═╝    ╚═════╝        ╚═╝       ╚═╝  ╚═══╝      ╚═══╝      ╚═╝    ╚═╝     ╚═╝  ",
+	"                                                                             ",
 }
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
@@ -29,7 +33,7 @@ dashboard.section.header.opts.hl = "Include"
 dashboard.section.buttons.opts.hl = "Keyword"
 
 local function footer()
--- NOTE: requires the fortune-mod package to work
+	-- NOTE: requires the fortune-mod package to work
 	-- local fortune = handle:read("*a")
 	-- handle:close()
 	-- return fortune

@@ -1,5 +1,5 @@
 #    		  This is my Zsh config 
-#    		  Email:fadinagh0@gmail.com
+#    		  Email:me@fadyio.com
 #		      Github:@fady0    
 #
 #################### Added by Zinit's installer

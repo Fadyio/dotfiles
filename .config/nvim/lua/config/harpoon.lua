@@ -1,3 +1,7 @@
+-- Written by @Fadynagh from http://fadyio.com
+-- Email:me@fadyio.com
+-- Github: @fady0
+--
 require("harpoon").setup({
 	global_settings = {
 		-- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
@@ -17,6 +21,5 @@ require("harpoon").setup({
 
 		-- set marks specific to each git branch inside git repository
 		mark_branch = false,
-	
 	},
 })

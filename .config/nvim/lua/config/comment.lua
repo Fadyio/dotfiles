@@ -1,3 +1,6 @@
+-- Written by @Fadynagh from http://fadyio.com
+-- Email:me@fadyio.com
+-- Github: @fady0
 require("Comment").setup({
 	---Add a space b/w comment and the line
 	---@type boolean|fun():boolean
