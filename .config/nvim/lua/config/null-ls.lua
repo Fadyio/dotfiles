@@ -52,8 +52,6 @@ null_ls.setup({
 
 		-- actions
 		actions.eslint_d,
-		actions.proselint,
-		actions.shellcheck,
 		actions.gitsigns,
 	},
 	on_attach = function(client)
