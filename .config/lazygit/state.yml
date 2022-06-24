@@ -1,10 +1,8 @@
-# Written by @Fadynagh from http://fadyio.com
-# Email:me@fadyio.com
-# Github: @fady0
-
 lastupdatecheck: 0
 recentrepos:
 - /home/f0dy/.dotfiles
+- /home/f0dy/.dotfiles-mac
+- /home/f0dy/Github/my-site
 - /home/f0dy/git-setup
 startuppopupversion: 5
 customcommandshistory:

@@ -41,3 +41,4 @@ luac.out
 
 programs
 plugin/packer_compiled.lua
+.config/ranger/plugins
