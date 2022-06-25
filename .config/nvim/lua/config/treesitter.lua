@@ -11,7 +11,7 @@ configs.setup({
 	ensure_installed = "all",
 	"norg",
 	sync_install = false,
-	ignore_install = { "jsonc", "fusion", "ocamllex" },
+	ignore_install = { "jsonc", "fusion", "ocamllex","phpdoc" },
 
 	autopairs = {
 		enable = true,

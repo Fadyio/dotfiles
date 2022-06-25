@@ -14,6 +14,15 @@ vim.opt.encoding = "UTF-8" -- Set encoding UTF-8
 vim.opt.autowrite = true -- enable auto write
 vim.opt.clipboard = "unnamedplus" -- sync with system clipboard
 vim.opt.confirm = true -- confirm to save changes before exiting modified buffer
+vim.opt.backup = false                          -- creates a backup file
+vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
+vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
+vim.opt.updatetime = 300                        -- faster completion (4000ms default)
+
+
+
+
 vim.opt.mouse = "a" -- enable mouse mode
 vim.opt.undolevels = 10000 -- Maximum number of changes that can be undone
 vim.opt.undofile = true -- automatically saves undo history
@@ -22,17 +31,21 @@ vim.opt.writebackup = false -- if a file is being edited by another program (or 
 vim.g.did_load_filetypes = 0 -- Do not use built in filetype.vim as we use filetype.nvim instead
 vim.g.neoterm_autoinsert = 0 -- Do not start terminal in insert mode
 vim.opt.foldenable = true -- Enable folding
+vim.opt.swapfile = false                        -- creates a swapfile
 --------------------------------------------------------------------------- }}}
 -- UI config
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 vim.opt.number = true -- show line numbers
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.pumblend = 10 -- Popup blend
-vim.opt.pumheight = 10 -- Maximum number of entries in a popup
+vim.opt.pumheight = 10  -- pop up menu height
+vim.opt.showtabline = 0                         -- always show tabs
+vim.opt.splitbelow = true                       -- force all horizontal splits to go below current window
+vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.showmode = false -- dont show mode since we have a statusline
 vim.opt.termguicolors = true -- True color support
 vim.opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
---vim.opt.wrap = false 					-- Disable line wrap
+vim.opt.wrap = false 					-- Disable line wrap
 vim.opt.wildmode = "longest:full,full" -- Command-line completion mode
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
@@ -61,6 +74,9 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.shiftwidth = 2 -- Size of an indent
 vim.opt.tabstop = 2 -- Number of spaces tabs count for
 vim.opt.numberwidth = 2 -- set number column width to 2 {default 4}
+vim.opt.shortmess:append "c"
+vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.iskeyword:append("-")
 ---------------------------------------------------------------------------- }}}
 --------------------------DISABLE BUILT IN PLUGINS-------------------------- {{{
 local disabled_plugins = {
@@ -85,14 +101,4 @@ local disabled_plugins = {
 }
 for _, plugin in pairs(disabled_plugins) do
 	vim.g["loaded_" .. plugin] = 1
-end
----------------------------------------------------------------------------- }}}
-
---- colorscheme
-local colorscheme = "zephyrium*"
-
-local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not status_ok then
-	vim.notify("colorscheme " .. colorscheme .. " not found!")
-	return
 end

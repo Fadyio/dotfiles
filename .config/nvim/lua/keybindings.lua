@@ -2,12 +2,10 @@
 -- Email:me@fadyio.com
 -- Github: @fady0
 --
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
+-- Silent keymap option
+local opts = { silent = true }
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -48,7 +46,13 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
-
+-- NvimTree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- Comment
+keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
+keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')
+-- Git
+keymap("n", "<leader>gg", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)

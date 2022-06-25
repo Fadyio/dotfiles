@@ -29,5 +29,6 @@ require("options")
 require("plugins")
 --- All My Keybindings
 require("keybindings")
-
+--- load autocommands
+require("autocommands")
 requirePath("config")
