@@ -109,10 +109,15 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
     url = "https://github.com/hrsh7th/cmp-cmdline"
   },
-  ["cmp-copilot"] = {
+  ["cmp-cmdline-history"] = {
     loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-copilot",
-    url = "https://github.com/hrsh7th/cmp-copilot"
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-cmdline-history",
+    url = "https://github.com/dmitmel/cmp-cmdline-history"
+  },
+  ["cmp-commit"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-commit",
+    url = "https://github.com/Dosx001/cmp-commit"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -129,15 +134,20 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["cmp-zsh"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp-zsh",
+    url = "https://github.com/tamago324/cmp-zsh"
+  },
   cmp_luasnip = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["copilot.vim"] = {
+  ["deol.nvim"] = {
     loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/copilot.vim",
-    url = "https://github.com/github/copilot.vim"
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/deol.nvim",
+    url = "https://github.com/Shougo/deol.nvim"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -193,6 +203,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/lazygit.nvim",
+    url = "https://github.com/kdheepak/lazygit.nvim"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -326,6 +341,11 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["project.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
+  },
   ["searchbox.nvim"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/searchbox.nvim",
@@ -335,6 +355,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
+  },
+  ["specs.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/specs.nvim",
+    url = "https://github.com/edluffy/specs.nvim"
   },
   ["sqlite.lua"] = {
     loaded = true,

@@ -71,7 +71,7 @@ return require("packer").startup(function(use)
 	-- This plugin provides the same icons as well as colors for each icon.
 	use("kyazdani42/nvim-web-devicons")
 	-- Highlight words and lines on the cursor for Neovim
-	use("RRethy/vim-illuminate")
+	use("yamatsum/nvim-cursorline")
 	-- Neovim statusline written in Lua.
 	use("nvim-lualine/lualine.nvim")
 	-- simple status line component that shows context of the current cursor position in file.
@@ -80,8 +80,6 @@ return require("packer").startup(function(use)
 	use("VonHeikemen/searchbox.nvim")
 	--A fancy, configurable, notification manager for NeoVim
 	use("rcarriga/nvim-notify")
-	--  vscode-like pictograms for neovim lsp completion items
-	use("onsails/lspkind.nvim")
 	-- markdown previewer
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -102,7 +100,7 @@ return require("packer").startup(function(use)
 	use("p00f/nvim-ts-rainbow")
 	-- 	---------------------------------------------------------------------------- }}}
 	-- 	-------------------------------LSP FEATURES------------------------------ {{{
-use({
+	use({
 		"VonHeikemen/lsp-zero.nvim",
 		requires = {
 			-- LSP Support
@@ -128,7 +126,7 @@ use({
 			{ "jose-elias-alvarez/null-ls.nvim" },
 		},
 	})
-	
+
 	-- code runner
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 	-- 	---------------------------------------------------------------------------- }}}
@@ -140,7 +138,7 @@ use({
 	-- powerful autopair plugin for Neovim that supports multiple characters
 	use("windwp/nvim-autopairs")
 	--  The superior project management solution for neovim.
-	use ("ahmedkhalf/project.nvim")
+	use("ahmedkhalf/project.nvim")
 	-- nvim-tree
 	use("kyazdani42/nvim-tree.lua")
 	-- Easily jumb between files

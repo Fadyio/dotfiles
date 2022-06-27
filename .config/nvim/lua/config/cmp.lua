@@ -106,12 +106,12 @@ cmp.setup({
 				luasnip = "Snip",
 				buffer = "Buff",
 				path = "Path",
-				})[entry.source.name]
+			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
-	      { name = "treesitter" },
+		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
@@ -121,7 +121,7 @@ cmp.setup({
 		{ name = "commit" },
 		{ name = "cmdline" },
 		{ name = "cmdline_history" },
-		{ name = "zsh" }
+		{ name = "zsh" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
