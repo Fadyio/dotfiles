@@ -102,26 +102,29 @@ cmp.setup({
 			vim_item.kind = kind_icons[vim_item.kind]
 			vim_item.menu = ({
 				nvim_lsp = "Lsp",
-				nvim_lua = "Lua",
+				nvim_lua = "api",
 				luasnip = "Snip",
-				buffer = "Buff",
+				buffer = "Buf",
 				path = "Path",
+				zsh = "zsh",
+				commit = "commit",
+				treesitter = "tree",
+				cmdline_history = "cmdH",
+				cmd = "cmd",
 			})[entry.source.name]
 			return vim_item
 		end,
 	},
 	sources = {
-		{ name = "treesitter" },
 		{ name = "nvim_lsp" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "ultisnips" },
 		{ name = "commit" },
+		{ name = "treesitter" },
 		{ name = "cmdline" },
 		{ name = "cmdline_history" },
-		{ name = "zsh" },
 	},
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -132,6 +135,7 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 	experimental = {
+		native_menu = false,
 		ghost_text = true,
 	},
 	enabled = function()
@@ -153,25 +157,6 @@ cmp.setup.cmdline("/", {
 		{ name = "buffer" },
 	},
 })
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("sh", {
-	sources = cmp.config.sources({
-		{ name = "zsh" }, -- You can specify the `cmp_git` source if you were installed it.
-	}, {
-		{ name = "buffer" },
-	}),
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("gitcommit", {
-	sources = cmp.config.sources({
-		{ name = "cmp_git" },
-		{ name = "commit" }, -- You can specify the `cmp_git` source if you were installed it.
-	}, {
-		{ name = "buffer" },
-	}),
-})
 -- Use cmdline & path source for ':'
 cmp.setup.cmdline(":", {
 	mapping = cmp.mapping.preset.cmdline(),
@@ -182,6 +167,13 @@ cmp.setup.cmdline(":", {
 	}),
 })
 
+-- setup zsh compluting
+_ = vim.cmd [[
+  augroup CmpZsh
+    au!
+    autocmd Filetype zsh lua require'cmp'.setup.buffer { sources = { { name = "zsh" }, } }
+  augroup END
+]]
 vim.cmd([[
 " gray
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080

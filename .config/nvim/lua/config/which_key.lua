@@ -97,6 +97,10 @@ local mappings = {
 		"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
 		"Find files",
 	},
+	["z"] = {
+		"<cmd>lua require('telescope.builtin').find_files({hidden = true})<cr>",
+		"Find hidden files",
+	},
 	["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 	["P"] = { "<cmd>Telescope file_browser<cr>", "file browser" },
 

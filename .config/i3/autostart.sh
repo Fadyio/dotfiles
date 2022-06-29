@@ -1,6 +1,6 @@
-ulauncher &
-setxkbmap -option ctrl:nocaps &
 xcape -e 'Control_L=Escape' &
+setxkbmap -option ctrl:nocaps &
+ulauncher &
 megasync &
 dropbox &
 copyq &
