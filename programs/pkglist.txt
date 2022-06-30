@@ -1,8 +1,3 @@
-# Written by @Fadynagh from http://fadyio.com
-# Email:me@fadyio.com
-# Github: @fady0
-
-
 accountsservice
 acpi
 acpid
@@ -23,7 +18,6 @@ bash
 bison
 blueman
 bluez-utils
-bmenu
 btrfs-progs
 bzip2
 calibre
@@ -80,20 +74,17 @@ gettext
 git
 github-cli
 glibc
-glibc-locales
 gnome-epub-thumbnailer
 go
 gparted
 grep
 grub
-grub-theme-manjaro-dev
 gst-libav
 gst-plugins-bad
 gst-plugins-base
 gst-plugins-good
 gst-plugins-ugly
 gstreamer
-gtksourceview-pkgbuild
 gufw
 gvfs
 gvfs-afc
@@ -115,50 +106,25 @@ java-environment-common
 jdk-openjdk
 jfsutils
 kdeconnect
-keepassxcblueman
+keepassxc
 keychain
-kvantum-manjaro
 lazygit
 less
-lib32-flex
-lib32-libva-vdpau-driver
-lib32-mesa-demos
-lib32-mesa-vdpau
-lib32-vulkan-intel
-lib32-vulkan-radeon
-libdvdcss
-libgpod
-libluv
 libreoffice-still
 libtool
-libva-mesa-driver
-libva-vdpau-driver
 licenses
 lightdm-settings
 lightdm-slick-greeter
-linux515
 logrotate
 lvm2
 lxappearance
 lxinput
 m4
-maia-console
 make
 man-db
 man-pages
-mangohud-x11
-manjaro-alsa
-manjaro-application-utility
-manjaro-firmware
-manjaro-hotfixes
-manjaro-printer
-manjaro-release
-manjaro-settings-manager-notifier
-manjaro-system
-markdown_previewer
 matcha-gtk-theme
 mdadm
-megasync
 memtest86+
 mesa-demos
 mesa-vdpau
@@ -169,7 +135,6 @@ mlocate
 mobile-broadband-provider-info
 moc
 modemmanager
-morc_menu
 mousepad
 mpv
 nano
@@ -193,7 +158,6 @@ openssh
 os-prober
 p7zip
 pacman
-pamac-gtk
 parallel
 patch
 patchutils
@@ -224,7 +188,6 @@ shadow
 shellcheck
 shotwell
 sqlite
- tealdeer  
 snapd
 sof-firmware
 spectre-meltdown-checker
@@ -234,9 +197,6 @@ subversion
 sudo
 sysfsutils
 syslog-ng
-systemd
-systemd-fsck-silent
-systemd-sysvcompat
 tar
 telegram-desktop
 terminus-font
@@ -261,7 +221,6 @@ upower
 usbutils
 util-linux
 vi
-vibrancy-icons-teal
 vim
 volumeicon
 vulkan-intel
@@ -269,9 +228,7 @@ vulkan-radeon
 w3m
 wget
 which
-wine
 wkhtmltopdf
-wmutils
 wpa_supplicant
 xarchiver
 xautolock
@@ -299,4 +256,3 @@ xorg-xprop
 xz
 yay
 zathura
-zensu

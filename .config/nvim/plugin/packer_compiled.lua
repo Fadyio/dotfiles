@@ -356,11 +356,6 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sniprun",
     url = "https://github.com/michaelb/sniprun"
   },
-  ["specs.nvim"] = {
-    loaded = true,
-    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/specs.nvim",
-    url = "https://github.com/edluffy/specs.nvim"
-  },
   ["sqlite.lua"] = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sqlite.lua",
