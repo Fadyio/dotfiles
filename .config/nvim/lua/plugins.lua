@@ -129,6 +129,11 @@ return require("packer").startup(function(use)
 
 	-- code runner
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
+  -- sourcegraph for nvim
+  use {
+    'tjdevries/sg.nvim',
+    commit = '76354e9f0b6de39134ec9efcd022f079ae0ce02b'
+  }
 	-- 	---------------------------------------------------------------------------- }}}
 	-- 	-------------------------------EDITOR FEATURES------------------------------ {{{
 	-- Smooth scrolling for ANY movement command

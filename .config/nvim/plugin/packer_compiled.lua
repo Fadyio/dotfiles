@@ -351,6 +351,11 @@ _G.packer_plugins = {
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/searchbox.nvim",
     url = "https://github.com/VonHeikemen/searchbox.nvim"
   },
+  ["sg.nvim"] = {
+    loaded = true,
+    path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sg.nvim",
+    url = "https://github.com/tjdevries/sg.nvim"
+  },
   sniprun = {
     loaded = true,
     path = "/home/f0dy/.local/share/nvim/site/pack/packer/start/sniprun",
