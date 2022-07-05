@@ -22,7 +22,6 @@ function requirePath(path)
 end
 
 ------------------------------------------------------
-
 --- All My Settings
 require("options")
 --- All My plugins
