@@ -1,0 +1,46 @@
+[includeIf "gitdir:~/git/work/"]
+  path = ~/.config/git/gitconfig.work
+[includeIf "gitdir:~/.dotfiles"]
+  path = ~/.config/git/gitconfig.personal
+
+[user]
+  name =  Fady Nagh
+  email = fady@fadyio.com
+[pull]
+  rebase = false
+[commit]
+  gpgsign = true
+[core]
+  editor = nvim
+  mergeoptions = --no-edit
+  pager = delta
+[interactive]
+  diffFilter = delta --color-only
+[init]
+  defaultBranch = master
+[delta]
+  line-numbers = true
+[difftool]
+  prompt = false
+[color]
+  ui = true
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "diff"]
+  meta = 11
+  frag = magenta bold
+  func = 146 bold
+  commit = yellow bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+
+; Force GitHub to use SSH
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
+
+
+; vi: ft=gitconfig
