@@ -1,15 +1,8 @@
-[includeIf "gitdir:~/git/work/"]
-  path = ~/.config/git/gitconfig.work
-[includeIf "gitdir:~/.dotfiles"]
-  path = ~/.config/git/gitconfig.personal
-
 [user]
   name =  Fady Nagh
   email = fady@fadyio.com
 [pull]
   rebase = false
-[commit]
-  gpgsign = true
 [core]
   editor = nvim
   mergeoptions = --no-edit
