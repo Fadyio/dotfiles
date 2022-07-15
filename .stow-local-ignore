@@ -7,5 +7,5 @@ README.md
 .git
 .deepsource.toml
 programs
-MaterialFoX
 .luarc.json
+scripts
