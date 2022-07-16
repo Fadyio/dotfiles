@@ -70,7 +70,3 @@
 [submodule ".tmux/plugins/tmux-fzf-url"]
 	path = .tmux/plugins/tmux-fzf-url
 	url = https://github.com/wfxr/tmux-fzf-url
-	
-[submodule "scripts/i3-easyfocus"]
-	path = scripts/i3-easyfocus
-	url = https://github.com/cornerman/i3-easyfocus
