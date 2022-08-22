@@ -19,7 +19,7 @@ export VISUAL='nvim'
 export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
-export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='nvim -c "%! col -b" -c -'
 ############################ customize prompt #########################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -47,7 +47,9 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt noglob
-
+# don't append "not found command" to history
+# https://www.zsh.org/mla/users//2014/msg00715.html
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 ########################## source alias and Plugins ####################
 source ~/.dotfiles/.zsh/zsh_plugin
 source ~/.dotfiles/.zsh/zsh_alias
