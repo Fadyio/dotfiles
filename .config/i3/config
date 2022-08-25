@@ -94,6 +94,7 @@ floating_modifier $mod
 
 ##-- Autostart ---------------------------
 exec_always --no-startup-id 	~/.config/i3/autostart.sh
+exec gammastep
 exec_always --no-startup-id  dunst
 ################################################################################################
 ##                                         i3wm settings                                      ##
