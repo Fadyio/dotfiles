@@ -3,13 +3,13 @@ chpwd() exa --icons --group-directories-first --color-scale
 
 # Alias
 # Shell navigation
+  alias dl="cd ~/Downloads"
+  alias -g ...='../..'
+  alias -g ....='../../..'
+  alias -g .....='../../../..'
+  alias -g ......='../../../../..'
   alias ..='cd ..'
-  alias bk='cd -'
   alias home='cd ~'
-  alias ...='cd ../..'
-  alias desk='cd ~/Desktop'
-  alias ....='cd ../../..'
-  alias .....='cd ../../../..'
 ##  utilities
   alias mdkir='mkdir'
   alias sudp='sudo'
@@ -53,9 +53,10 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias torrent='aria2c -d ~/Downloads'
   alias downsite='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 # confirm before overwriting something
-  alias cp="cp -i"
-  alias mv='mv -i'
+  alias cp="cp -riv"
+  alias mv='mv -iv'
   alias rm='rm -i'
+  alias mkdir='mkdir -vp'
 ## Git stuff
   alias g='git'
   alias lg='lazygit'

@@ -68,6 +68,7 @@ compinit
 zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 # compinit
 _comp_options+=(globdots)		# Include hidden files.
 ############################### AUTO-COMPLETIONS ###############################
@@ -98,3 +99,7 @@ eval `keychain --eval --agents ssh id_rsa`
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export ANDROID_HOME=/opt/android-sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
