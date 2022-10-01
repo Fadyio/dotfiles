@@ -1,7 +1,7 @@
 " Written by @Fadynagh from http://fadyio.com
 " Email:me@fadyio.com
 " Github:@fady0
-" NOTE: I am no longer using vim.
+" NOTE: I'm only using vim for bloging.
 "" ----------------------------------------------------------------------------------------
 ""                                						      settings
 "" ----------------------------------------------------------------------------------------

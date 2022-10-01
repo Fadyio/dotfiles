@@ -30,8 +30,6 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
 ## alias for programs that i use  
   alias v='nvim'
-  alias vi='nvim'
-  alias vim='nvim'
   alias r='ranger'
   alias htp=wkhtmltopdf
   alias dict='dict -d gcide'
