@@ -1,0 +1,9 @@
+alacritty-themes
+cava
+google-chrome
+tumbler-devel
+tumbler-extra-thumbnailers
+ulauncher
+vscodium-bin
+zeal
+insect
