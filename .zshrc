@@ -20,6 +20,9 @@ export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c -'
+# fzf and ripgrep
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git'"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 ############################ customize prompt #########################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

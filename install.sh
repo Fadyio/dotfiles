@@ -1,40 +1,164 @@
-#!/bin/bash/
+#!/bin/bash
 #######################################
 # Bash script to install apps on a new system (Arch Linux)
-# Written by @Fadynagh from http://fadyio.com
-# Email:me@fadyio.com
+# Written by @Fadyio from http://Fadyio.com
+# Email:me@Fadyio.com
+# Copy the default config file if not present already
 #######################################
-##TODO: write the script to install all your programs
+
+################
+# presentation #
+################
+
+echo -e "
+${yellow}
+          _ ._  _ , _ ._
+        (_ ' ( \`  )_  .__)
+      ( (  (    )   \`)  ) _)
+     (__ (_   (_ . _) _) ,__)
+           ~~\ ' . /~~
+         ,::: ;   ; :::,
+        ':::::::::::::::'
+ ____________/_ __ \____________
+|                               |
+| Welcome to Fady Nagh dotfiles |
+|_______________________________|
+"
+
+echo -e "${yellow}!!! ${red}WARNING${yellow} !!!"
+echo -e "${light_red}This script will delete all your configuration files!"
+echo -e "${light_red}Use it at your own risks."
+
+if [ $# -ne 1 ] || [ "$1" != "-y" ];
+    then
+        echo -e "${yellow}Press a key to continue...\n"
+        read key;
+fi
+
 ## Update packages and Upgrade system
-sudo apt-get update -y
 
-## Git ##
-echo '###Installing Git..'
-sudo apt-get install git -y
+function updatePacman() {
 
-# Git Configuration
-echo '###Configure Git..'
+	echo "==================================="
+	echo "update Pacman packages and Installing Yay AUR Helper "
+	echo "==================================="
+	## update the system  with pacman
+	sudo pacman -Syu
+	## install the base-devel packages
+	sudo pacman -S --needed base-devel
+	## install git
+	sudo pacman -S git
+	## install yay aur Helper
+	sudo git clone https://aur.archlinux.org/yay.git
+	sudo chown -R f0dy:f0dy yay
+	cd yay
+	makepkg -si
+	yay -Syu
+	cd ~
+}
 
-echo "Enter the Global Username for Git:"
-read GITUSER
-git config --global user.name "${GITUSER}"
+function installPacmanPackages() {
 
-echo "Enter the Global Email for Git:"
-read GITEMAIL
-git config --global user.email "${GITEMAIL}"
+	echo "=================================="
+	echo "Installing Arch packages:"
+	echo "=================================="
 
-echo 'Git has been configured!'
-git config --list
+	cd ~/.dotfiles/programs
 
-## s3cmd ##
-echo '###Installing s3cmd..'
-#Import S3tools signing key:
-wget -O- -q http://s3tools.org/repo/deb-all/stable/s3tools.key | sudo apt-key add -
-# Add the repo to sources.list:
-sudo wget -O/etc/apt/sources.list.d/s3tools.list http://s3tools.org/repo/deb-all/stable/s3tools.list
-# Refresh package cache and install the newest s3cmd:
-sudo apt-get update && sudo apt-get install s3cmd
+	sudo pacman -S --needed - <pkglist-repo.txt
 
-#s3cmd Configuration
-echo '###Configure s3cmd..'
-sudo s3cmd --configure
+	for x in $(<pkglist-aur.txt); do yay -S $x; done
+
+}
+
+function installNpmPackages() {
+
+	echo "==================================="
+	echo "Installing global npm packages"
+	echo "==================================="
+
+	cd ~/
+	npm install -g alacritty-themes
+	npm install -g prettier_d_slim
+	npm install -g markdownlint-cli
+	npm install -g write-good
+	npm install -g eslint_d
+	npm install -g markdownlint
+	npm install -g fixjson
+
+}
+
+function installPythonPackages() {
+
+	echo "==================================="
+	echo "Installing Python packages"
+	echo "==================================="
+
+	cd ~/
+
+	pip3 install codespell
+	pip3 install cmakelang
+	pip3 install sqlfluff
+	pip3 install yapf
+	pip3 install flake8
+	pip3 install gitlint
+	pip3 install semgrep
+	pip3 install proselint
+	pip3 install "ansible-lint"
+	pip3 install curlylint
+	pip3 install --user yamllint
+	pip3 install isort
+}
+
+function cloneDotfiles() {
+
+	echo "==================================="
+	echo "Cloning dotfiles and stow them"
+	echo "==================================="
+
+	## clone my dotfiles repository
+	cd ~/
+	mkdir -p .dotfiles
+	git clone --recurse-submodules -j8 https://github.com/fadyio/Linux-dotfiles.git ~/.dotfiles
+	cd .dotfiles
+	stow .
+}
+
+function setupNvim() {
+	echo "==================================="
+	echo "Setting up vim and neovim"
+	echo "==================================="
+
+	cd ~/
+	mkdir -p ~/github
+	git clone https://github.com/fadyio/nvim.git ~/github
+
+	# Link init.lua for neovim
+	ln -sf ~/github/nvim ~/.config/
+
+	# Install vim-plug
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+	echo "==================================="
+	echo "Once this process is complete open vim and run :PlugInstall"
+	echo "Once this process is complete open Neovim and packer will install the everything for you"
+	echo "==================================="
+
+}
+
+function install() {
+
+	echo "==================================="
+	echo "Beginning Installation..."
+	echo "==================================="
+	#
+	updatePacman
+	installPacmanPackages
+	installNpmPackages
+ 	installPythonPackages
+ 	cloneDotfiles
+ 	setupNvim
+}
+
+install

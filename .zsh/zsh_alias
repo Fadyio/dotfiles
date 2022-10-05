@@ -2,14 +2,7 @@
 chpwd() exa --icons --group-directories-first --color-scale
 
 # Alias
-# Shell navigation
-  alias dl="cd ~/Downloads"
-  alias -g ...='../..'
-  alias -g ....='../../..'
-  alias -g .....='../../../..'
-  alias -g ......='../../../../..'
-  alias ..='cd ..'
-  alias home='cd ~'
+
 ##  utilities
   alias mdkir='mkdir'
   alias sudp='sudo'

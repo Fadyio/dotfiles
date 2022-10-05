@@ -45,3 +45,9 @@ zinit light zsh-users/zsh-history-substring-search
 
 # z for zsh
 zinit load agkozak/zsh-z
+
+# Automatically expands all glob expressions, subcommands, and aliases 
+zinit light simnalamburt/zsh-expand-all
+
+# A zshell plugin for the "up" command, which can cd up an arbitrary number of directories 
+zinit light peterhurford/up.zsh
