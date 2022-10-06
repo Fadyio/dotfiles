@@ -1,6 +1,7 @@
 accountsservice
 acpi
 git-delta
+tig
 acpid
 akregator
 alacritty

@@ -89,8 +89,14 @@ bindsym $mod+Shift+space focus mode_toggle
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# floating pop up automatically
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
+workspace_auto_back_and_forth yes
+
 
 ##-- Autostart ---------------------------
 exec_always --no-startup-id 	~/.config/i3/autostart.sh
@@ -162,6 +168,7 @@ for_window [class="Spotify"] move to workspace $ws6
 
 ##------------------------ Window Rules ------------------------
 # Open specific applications in floating mode
+for_window [class="Arandr"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [class="Lxappearance|Nitrogen"] floating enable
@@ -251,6 +258,11 @@ bindsym Left resize shrink width 10 px or 10 ppt
 bindsym Down resize grow height 10 px or 10 ppt
 bindsym Up resize shrink height 10 px or 10 ppt
 
+bindsym h resize shrink width 10 px or 10 ppt
+bindsym j resize grow height 10 px or 10 ppt
+bindsym k resize shrink height 10 px or 10 ppt
+bindsym l resize grow width 10 px or 10 ppt
+
 # back to normal: Enter or Escape or $mod+r
 bindsym Return mode "default"
 bindsym Escape mode "default"
@@ -273,3 +285,14 @@ bar {
         urgent_workspace #2f343a #900000 #ffffff
     }
 }
+
+mode "$mode_display" {
+    bindsym h exec --no-startup-id xrandr --output DP1 --off --output HDMI1 --mode 1280x720 --pos 1600x90 --rotate normal --output VGA1 --mode 1600x900 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+    bindsym v exec --no-startup-id xrandr --output DP1 --off --output HDMI1 --off --output VGA1 --mode 1600x900 --pos 0x0 --rotate normal --output VIRTUAL1 --off
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+d mode "$mode_display"
