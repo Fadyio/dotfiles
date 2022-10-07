@@ -21,10 +21,10 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
+  alias d='dirs -v'
+  for index ({1..10}) alias "$index"="cd +${index}"; unset index
 ## alias for programs that i use  
   alias v='nvim'
-  alias vi='nvim'
-  alias vim='nvim'
   alias r='ranger'
   alias htp=wkhtmltopdf
   alias dict='dict -d gcide'
