@@ -28,6 +28,8 @@ bindsym $mod+r mode "Resize"
 
 # start program launcher
 bindsym $mod+d 	exec --no-startup-id ulauncher-toggle
+exec always --no-startup-id parep -f '“alacritty --c
+
 
 # launch flameshot gui for screenshot
 bindsym Print exec flameshot gui
@@ -198,6 +200,10 @@ mode "Move" {
 }
 bindsym $mod+Shift+m mode "Move"
 
+# smart borders
+hide_edge_borders smart
+
+
 ##-- Gaps --------------------------------
 
 # Title bar text alignment
@@ -210,11 +216,11 @@ title_align center
 for_window [class=".*"] border pixel 0
 
 # Gaps (Outer gaps are added to the inner gaps)
-gaps inner 0 
-gaps outer 0
+gaps inner 2
+gaps outer 2
 
 # Only enable gaps on a workspace when there is at least one container
-#smart_gaps on
+smart_gaps on
 
 # Activate smart borders (always)
 #smart_borders on
