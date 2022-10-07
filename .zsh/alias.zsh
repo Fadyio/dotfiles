@@ -31,6 +31,7 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias calc="insect"
   alias history='fc -il 1' # for HIST_STAMPS in oh-my-zsh
   alias rg='rg -S'
+  alias sblock='sudo bash ~/.dotfiles/scripts/smedia.sh'
  # Changing "ls" to "exa"
   alias ls="exa --icons --color-scale --long --header --git --sort=extension"
   alias la='exa -a --color=always --group-directories-first'  # all files and dirs
