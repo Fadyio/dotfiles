@@ -21,6 +21,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c - +Man! '
+export PATH="$PATH:$NPM_PACKAGES/bin"
 
 # fzf
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
@@ -109,3 +110,6 @@ zle -N down-line-or-beginning-search
 
 # Enable keychain in zsh 
 eval `keychain --eval --agents ssh id_rsa`
+
+# Install npm packages globally without sudo on macOS and Linux
+NPM_PACKAGES="${HOME}/.npm-packages"
