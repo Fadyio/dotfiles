@@ -2,6 +2,17 @@
 #    		  Email:me@fadyio.com
 #		      Github:@Fadyio
 #
+
+############################ customize prompt #########################
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #################### Added by Zinit's installer ##################################
 source "$HOME/.dotfiles/.zsh/plugins/zinit/zinit.zsh"
 autoload -Uz _zinit
@@ -48,16 +59,6 @@ export FZF_DEFAULT_OPTS="--height 60% \
 --marker ⇒"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
 
-############################ customize prompt #########################
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 ################################### Options #######################################
 setopt auto_cd 						                    # cd by typing directory name if it's not a command
