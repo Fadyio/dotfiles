@@ -42,3 +42,4 @@ luac.out
 programs
 plugin/packer_compiled.lua
 .config/ranger/plugins
+.config/mpv/watch_later
