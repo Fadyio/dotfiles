@@ -14,7 +14,6 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias nvimconfig='nvim ~/.config/nvim/init.vim'
   alias zshconfig='nvim ~/.zshrc'
   alias i3config='nvim ~/.config/i3/config'
-  alias hosts='sudo nvim /etc/hosts'
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
   alias x='extract'

@@ -29,10 +29,8 @@ social_media=(
 	reddit.com
 	www.reddit.com
 	api.reddit.com
-	www.youtube.com
 	www.mail.google.com
 	mail.google.com
-	youtube.com
 	twitter.com
 	www.twitter.com
 	downloadly.ir
