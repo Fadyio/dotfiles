@@ -256,6 +256,7 @@ xorg-xhost
 xorg-xinit
 xorg-xkill
 xorg-xprop
+xclip
 xz
 yay
 zathura

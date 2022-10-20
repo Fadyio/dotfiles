@@ -1,6 +1,5 @@
 alacritty-themes
 cava
-pomodoro-logger
 google-chrome
 tumbler-devel
 tumbler-extra-thumbnailers
