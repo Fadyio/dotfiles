@@ -105,7 +105,7 @@ function installPythonPackages() {
 	pip3 install proselint
 	pip3 install "ansible-lint"
 	pip3 install curlylint
-	pip3 install --user yamllint
+	pip3 install yamllint
 	pip3 install isort
 }
 

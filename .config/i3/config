@@ -124,7 +124,7 @@ client.unfocused	            $darkblue	  $darkblue	 $grey		$purple		$darkgrey
 client.focused_inactive	      $darkblue	  $darkblue	 $grey		$purple		$black
 client.urgent		              $urgentred	$urgentred $white		$purple		$yellowbrown
 
-font pango:Source Code Pro 10
+font pango: JetBrainsMono Nerd Font 
 ##-- Workspaces ---------------------
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -278,7 +278,7 @@ bindsym $mod+r mode "default"
 
 
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango: JetBrainsMono Nerd Font 11
     position top
     status_command /usr/bin/i3status-rs /home/f0dy/.config/i3status-rust/config.toml
     colors {

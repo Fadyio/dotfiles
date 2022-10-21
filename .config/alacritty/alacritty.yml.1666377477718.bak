@@ -29,34 +29,35 @@ font:
   #glyph_offset:
   #  x: 0
   #  y: 0
-theme: Taerminal
+theme: github_dark
 colors:
   # Default colors
   primary:
-    background: '#26282a'
-    foreground: '#f0f0f0'
-  cursor:
-    background: '#f0f0f0'
-    foreground: '#26282a'
+    background: '0x24292e'
+    foreground: '0xd1d5da'
 
   # Normal colors
   normal:
-    black: '#26282a'
-    red: '#ff8878'
-    green: '#b4fb73'
-    yellow: '#fffcb7'
-    blue: '#8bbce5'
-    magenta: '#ffb2fe'
-    cyan: '#a2e1f8'
-    white: '#f1f1f1'
+    black: '0x24292e'
+    red: '0xf14c4c'
+    green: '0x23d18b'
+    yellow: '0xe2e210'
+    blue: '0x3b8eea'
+    magenta: '0xbc3fbc'
+    cyan: '0x29b7da'
+    white: '0xd1d5da'
 
   # Bright colors
   bright:
-    black: '#6f6f6f'
-    red: '#fe978b'
-    green: '#d6fcba'
-    yellow: '#fffed5'
-    blue: '#c2e3ff'
-    magenta: '#ffc6ff'
-    cyan: '#c0e9f8'
-    white: '#ffffff'
+    black: '0x666666'
+    red: '0xf14c4c'
+    green: '0x23d18b'
+    yellow: '0xf5f543'
+    blue: '0x3b8eea'
+    magenta: '0xd670d6'
+    cyan: '0x29b7da'
+    white: '0xd1d5da'
+
+  indexed_colors:
+    - { index: 16, color: '0xd18616' }
+    - { index: 17, color: '0xf14c4c' }

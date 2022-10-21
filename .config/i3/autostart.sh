@@ -5,7 +5,6 @@ megasync &
 dropbox &
 copyq &
 flameshot &
-pomodoro-logger &
 unclutter &
 picom &
 sh ~/.dotfiles/scripts/feh-wall.sh &

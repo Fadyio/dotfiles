@@ -3,8 +3,8 @@
 # Github: @fady0
 
 
-theme = "dracula"
-icons = "awesome5"
+theme = "gruvbox-dark"
+icons = "material-nf"
 
 [[block]]
 block = "disk_space"
@@ -43,13 +43,6 @@ critical_swap = 95
 block = "cpu"
 interval = 1
 format = "{utilization}"
-
-[[block]]
-block = "music"
-max_width= 14
-smart_trim=true
-player = "spotify"
-buttons = ["prev", "play", "next"]
 
 [[block]]
 block = "net"

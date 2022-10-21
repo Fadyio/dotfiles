@@ -98,10 +98,10 @@ fi
 ##################### zsh-history-substring-search ###############################
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # Cycle through history based on what I have already typed
 # https://superuser.com/a/585004
 autoload -U up-line-or-beginning-search
@@ -110,7 +110,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # Enable keychain in zsh 
-eval `keychain --eval --agents ssh id_rsa`
+eval `keychain --eval --agents ssh id_ed25519`
 
 # Install npm packages globally without sudo on macOS and Linux
 NPM_PACKAGES="${HOME}/.npm-packages"
