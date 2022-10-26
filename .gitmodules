@@ -40,9 +40,6 @@
 	url = https://github.com/zsh-users/zsh-history-substring-search
 
 # submodule ulauncher
-[submodule ".config/ulauncher/user-themes/WhiteSur-Dark-ulauncher"]
-	path = .config/ulauncher/user-themes/WhiteSur-Dark-ulauncher
-	url = https://github.com/Raayib/WhiteSur-Dark-ulauncher
 [submodule ".config/ulauncher/user-themes/zorin-blue-dark"]
 	path = .config/ulauncher/user-themes/zorin-blue-dark
 	url = https://github.com/NayamAmarshe/ulauncher-zorinBlueDark
