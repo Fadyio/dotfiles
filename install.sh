@@ -103,6 +103,7 @@ function installPythonPackages() {
 	pip3 install gitlint
 	pip3 install semgrep
 	pip3 install proselint
+  pip3 install ueberzug
 	pip3 install "ansible-lint"
 	pip3 install curlylint
 	pip3 install yamllint

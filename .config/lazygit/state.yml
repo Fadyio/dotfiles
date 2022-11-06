@@ -1,9 +1,7 @@
 lastupdatecheck: 0
 recentrepos:
+- /home/f0dy/github/nvim
 - /home/f0dy/.dotfiles
-- /home/f0dy/.dotfiles-mac
-- /home/f0dy/Github/my-site
-- /home/f0dy/git-setup
 startuppopupversion: 5
 customcommandshistory:
 - fe

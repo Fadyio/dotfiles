@@ -15,6 +15,7 @@ zmodload zsh/complist
 # Enabling the Zsh Completion System
 autoload -U compinit; compinit
 _comp_options+=(globdots)		# Include hidden files.
+# Add aws Auto-completion
 
 # +---------+
 # | Options |
