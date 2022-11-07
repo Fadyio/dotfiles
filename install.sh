@@ -66,7 +66,7 @@ function installPacmanPackages() {
 
 	sudo pacman -S --needed - <pkglist-repo.txt
 
-	for x in $(<pkglist-aur.txt); do yay -S $x; done
+	for x in "$(<pkglist-aur.txt)"; do yay -S "$x"; done
 
 }
 
@@ -78,12 +78,25 @@ function installNpmPackages() {
 
 	cd ~/
 	npm install -g alacritty-themes
-	npm install -g prettier_d_slim
-	npm install -g markdownlint-cli
-	npm install -g write-good
 	npm install -g eslint_d
-	npm install -g markdownlint
 	npm install -g fixjson
+	npm install -g sql-formatter
+
+}
+
+function installGOPackages() {
+
+	echo "==================================="
+	echo "Installing Go packages"
+	echo "==================================="
+
+	cd ~/
+	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1
+	go install github.com/google/yamlfmt/cmd/yamlfmt@latest
+	go install github.com/mgechev/revive@latest
+	go install golang.org/x/tools/cmd/goimports@latest
+	go install honnef.co/go/tools/cmd/staticcheck@latest
+	luarocks install luacheck
 
 }
 
@@ -95,19 +108,18 @@ function installPythonPackages() {
 
 	cd ~/
 
-	pip3 install codespell
-	pip3 install cmakelang
-	pip3 install sqlfluff
-	pip3 install yapf
+	pip3 install semgrep
+	pip3 install autopep8
+	pip3 install ueberzug
+	pip3 install proselint
+	pip3 install "ansible-lint"
+	pip3 install "cfn-lint"
+	pip3 install isort
+	pip3 install cpplint
 	pip3 install flake8
 	pip3 install gitlint
-	pip3 install semgrep
-	pip3 install proselint
-  pip3 install ueberzug
-	pip3 install "ansible-lint"
-	pip3 install curlylint
 	pip3 install yamllint
-	pip3 install isort
+	pip3 install black
 }
 
 function cloneDotfiles() {
@@ -156,6 +168,7 @@ function install() {
 	updatePacman
 	installPacmanPackages
 	installNpmPackages
+	installGOPackages
 	installPythonPackages
 	cloneDotfiles
 	setupNvim
