@@ -1,8 +1,7 @@
-#    		  This is my Zsh config 
+#    		  This is my Zsh config
 #    		  Email:me@fadyio.com
 #		      Github:@Fadyio
 #
-
 ############################ customize prompt #########################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -12,18 +11,14 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 #################### Added by Zinit's installer ##################################
 source "$HOME/.dotfiles/.zsh/plugins/zinit/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-
 ZINIT[PLUGINS_DIR]=~/.dotfiles/.zsh/plugins
 #ZINIT[COMPLETIONS_DIR]=~/.dotfiles/.zsh/plugins
 ZINIT[SNIPPETS_DIR]=~/.dotfiles/.zsh/plugins
-
 ######################### End of Zinit's installer chunk ##########################
-
 ################################# Export ##########################################
 export PATH=~/.cargo/bin:$PATH
 export EDITOR="nvim"
@@ -58,8 +53,6 @@ export FZF_DEFAULT_OPTS="--height 60% \
 --pointer ▶ \
 --marker ⇒"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
-
-
 ################################### Options #######################################
 setopt auto_cd 						                    # cd by typing directory name if it's not a command
 setopt always_to_end 					                # move cursor to end if word had one match
@@ -67,10 +60,10 @@ unsetopt BEEP
 setopt noglob
 unsetopt correct_all 					                # stop autocorrect commands
 export KEYTIMEOUT=1
-bindkey "\e[3~" delete-char 				            # make the delete key act nourmal 
+bindkey "\e[3~" delete-char 				            # make the delete key act nourmal
 bindkey '^e' edit-command-line				            # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
-#::NOTE see that 
+#::NOTE see that
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
@@ -86,9 +79,9 @@ setopt inc_append_history 				                # save history entries as soon as 
 # https://www.zsh.org/mla/users//2014/msg00715.html
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 ########################## source alias and Plugins ##############################
+source ~/.dotfiles/.zsh/completion.zsh
 source ~/.dotfiles/.zsh/plugins.zsh
 source ~/.dotfiles/.zsh/alias.zsh
-source ~/.dotfiles/.zsh/completion.zsh
 source ~/.dotfiles/.zsh/scripts.zsh
 #################### start tmux automatically ####################################
 tmux attach &> /dev/null
@@ -109,7 +102,7 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# Enable keychain in zsh 
+# Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
 
 # Install npm packages globally without sudo on macOS and Linux

@@ -1,4 +1,7 @@
 ################# Plugins ####################
+# Replace zsh's default completion selection menu with fzf
+zinit light Aloxaf/fzf-tab
+
 # zsh syntax highlighting
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
@@ -21,7 +24,7 @@ zinit snippet https://raw.githubusercontent.com/hlissner/zsh-autopair/master/aut
 # git-extra-commands
 zinit light unixorn/git-extra-commands
 
-# you should use one of your existing aliases 
+# you should use one of your existing aliases
 zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-you-should-use/master/you-should-use.plugin.zsh
 
 # ZSH Auto-Notify
@@ -30,8 +33,6 @@ zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-auto-notify/
 # plugin defines a function extracts the archive file
 zinit snippet https://raw.githubusercontent.com/le0me55i/zsh-extract/master/extract.plugin.zsh
 
-# Replace zsh's default completion selection menu with fzf
-zinit light Aloxaf/fzf-tab
 
 # zsh-fzf-history-search
 zinit ice lucid wait'0'
@@ -46,8 +47,8 @@ zinit light zsh-users/zsh-history-substring-search
 # z for zsh
 zinit load agkozak/zsh-z
 
-# Automatically expands all glob expressions, subcommands, and aliases 
+# Automatically expands all glob expressions, subcommands, and aliases
 zinit light simnalamburt/zsh-expand-all
 
-# A zshell plugin for the "up" command, which can cd up an arbitrary number of directories 
+# A zshell plugin for the "up" command, which can cd up an arbitrary number of directories
 zinit light peterhurford/up.zsh

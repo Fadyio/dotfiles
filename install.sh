@@ -63,11 +63,7 @@ function installPacmanPackages() {
 	echo "=================================="
 
 	cd ~/.dotfiles/programs
-
-	sudo pacman -S --needed - <pkglist-repo.txt
-
-	for x in "$(<pkglist-aur.txt)"; do yay -S "$x"; done
-
+	yay -S --needed - <pkglist.txt
 }
 
 function installNpmPackages() {

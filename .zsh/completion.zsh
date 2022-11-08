@@ -1,4 +1,4 @@
-  # ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _ 
+  # ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _
 #  / ___/ _ \|  \/  |  _ \| |   | ____|_   _|_ _/ _ \| \ | |
 # | |  | | | | |\/| | |_) | |   |  _|   | |  | | | | |  \| |
 # | |__| |_| | |  | |  __/| |___| |___  | |  | | |_| | |\  |
@@ -13,9 +13,9 @@
 zmodload zsh/complist
 
 # Enabling the Zsh Completion System
-autoload -U compinit; compinit
+autoload -Uz compinit && compinit
+autoload bashcompinit && bashcompinit
 _comp_options+=(globdots)		# Include hidden files.
-# Add aws Auto-completion
 
 # +---------+
 # | Options |
@@ -31,7 +31,7 @@ setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 # +---------+
 
 # Define completers
-zstyle ':completion:*' completer _extensions _complete _approximate
+# zstyle ':completion:*' completer _extensions _complete _approximate
 
 # Use cache for commands using cache
 zstyle ':completion:*' use-cache on

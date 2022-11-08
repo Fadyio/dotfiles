@@ -4,6 +4,8 @@ chpwd() exa --icons --group-directories-first --color-scale
 # Alias
 
 ##  utilities
+# Add aws Auto-completion
+  alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
   alias mdkir='mkdir'
   alias sudp='sudo'
   alias :q="exit"
@@ -21,7 +23,7 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
   alias tldr='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
-## alias for programs that i use  
+## alias for programs that i use
   alias v='nvim'
   alias r='ranger'
   alias htp=wkhtmltopdf
