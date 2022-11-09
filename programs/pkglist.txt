@@ -233,6 +233,5 @@ xorg-xinit
 xorg-xkill
 xorg-xrandr
 xplr
-yay
 zeal
 zsh

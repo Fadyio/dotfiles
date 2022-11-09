@@ -39,7 +39,7 @@ fi
 function updatePacman() {
 
 	echo "==================================="
-	echo "update Pacman packages and Installing Yay AUR Helper "
+	echo "update Pacman packages and Installing Paru AUR Helper "
 	echo "==================================="
 	## update the system  with pacman
 	sudo pacman -Syu
@@ -47,12 +47,11 @@ function updatePacman() {
 	sudo pacman -S --needed base-devel
 	## install git
 	sudo pacman -S git
-	## install yay aur Helper
-	sudo git clone https://aur.archlinux.org/yay.git
-	sudo chown -R f0dy:f0dy yay
-	cd yay
+	## install paru aur Helper
+	git clone https://aur.archlinux.org/paru.git
+	cd paru
 	makepkg -si
-	yay -Syu
+	paru -Syu
 	cd ~
 }
 
@@ -63,7 +62,7 @@ function installPacmanPackages() {
 	echo "=================================="
 
 	cd ~/.dotfiles/programs
-	yay -S --needed - <pkglist.txt
+	paru -S --needed - <pkglist.txt
 }
 
 function installNpmPackages() {
