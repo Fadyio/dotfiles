@@ -1,6 +1,0 @@
-yaml-files:
-  - '*.yaml'
-  - '*.yml'
-  - '.yamllint'
-rules:
-  empty-lines: disable
