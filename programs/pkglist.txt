@@ -68,6 +68,8 @@ f2fs-tools
 fakeroot
 feh
 ffmpeg-audio-thumbnailer
+fd
+dasht
 ffmpegthumbnailer
 firefox
 fish

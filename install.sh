@@ -104,6 +104,7 @@ function installPythonPackages() {
 	cd ~/
 
 	pip3 install semgrep
+	curl https://hishtory.dev/install.py | python3
 	pip3 install autopep8
 	pip3 install ueberzug
 	pip3 install proselint

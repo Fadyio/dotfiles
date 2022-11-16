@@ -1,11 +1,4 @@
 {
-    "com.github.dhelmr.ulauncher-tldr": {
-        "id": "com.github.dhelmr.ulauncher-tldr",
-        "url": "https://github.com/dhelmr/ulauncher-tldr",
-        "updated_at": "2022-06-30T17:40:48.241349",
-        "last_commit": "2ad5d29963db649775f68a7815af18509f4c287f",
-        "last_commit_time": "2021-09-07T14:26:21"
-    },
     "com.github.rootwork.ulauncher-symbol": {
         "id": "com.github.rootwork.ulauncher-symbol",
         "url": "https://github.com/rootwork/ulauncher-symbol",
@@ -16,9 +9,9 @@
     "com.github.hillaryychan.ulauncher-fzf": {
         "id": "com.github.hillaryychan.ulauncher-fzf",
         "url": "https://github.com/hillaryychan/ulauncher-fzf",
-        "updated_at": "2022-06-30T17:40:58.554472",
-        "last_commit": "a2d2d4e26dc8c5ecee808a9dd35ee8efddb71be9",
-        "last_commit_time": "2022-05-29T09:04:12"
+        "updated_at": "2022-11-13T09:18:54.719069",
+        "last_commit": "fc0d3ba350795980d51d6afc855c122522335e11",
+        "last_commit_time": "2022-08-31T11:24:40"
     },
     "com.github.mikebarkmin.ulauncher-obsidian": {
         "id": "com.github.mikebarkmin.ulauncher-obsidian",
@@ -26,13 +19,6 @@
         "updated_at": "2022-06-30T17:41:02.669073",
         "last_commit": "1da31425580691328745826376434b3cff69ffcf",
         "last_commit_time": "2022-06-03T10:38:34"
-    },
-    "com.github.behrensger.dict_cc_ulauncher": {
-        "id": "com.github.behrensger.dict_cc_ulauncher",
-        "url": "https://github.com/behrensger/dict_cc_ulauncher",
-        "updated_at": "2022-06-30T17:41:05.227778",
-        "last_commit": "f6c60536fad95d1e32bc92a9c73911f3664e6fe1",
-        "last_commit_time": "2020-12-15T20:04:18"
     },
     "com.github.kwaadpepper.zealdoc": {
         "id": "com.github.kwaadpepper.zealdoc",
@@ -48,13 +34,6 @@
         "last_commit": "a48a0b11cef4c2fb5375b11834ce0378be2d15d3",
         "last_commit_time": "2021-12-12T15:44:13"
     },
-    "com.github.brpaz.ulauncher-devhints": {
-        "id": "com.github.brpaz.ulauncher-devhints",
-        "url": "https://github.com/brpaz/ulauncher-devhints",
-        "updated_at": "2022-06-30T17:41:18.770195",
-        "last_commit": "90d274adcc4f560ed63e510ab1dfa9e1979723c8",
-        "last_commit_time": "2019-12-03T20:18:02"
-    },
     "com.github.kuenzelit.ulauncher-firefox-bookmarks": {
         "id": "com.github.kuenzelit.ulauncher-firefox-bookmarks",
         "url": "https://github.com/KuenzelIT/ulauncher-firefox-bookmarks",
@@ -69,26 +48,12 @@
         "last_commit": "ee3ea43e905cf184449c328f0dadaa4395f3ec0c",
         "last_commit_time": "2022-01-14T13:46:35"
     },
-    "com.github.katacarbix.ulauncher-dict-en": {
-        "id": "com.github.katacarbix.ulauncher-dict-en",
-        "url": "https://github.com/katacarbix/ulauncher-dict-en",
-        "updated_at": "2022-06-30T17:41:31.959931",
-        "last_commit": "c43645a803d3ebaf0a3d54bb2aeefe6660542e52",
-        "last_commit_time": "2020-07-07T16:31:50"
-    },
-    "com.github.jihongju.ulauncher-1dictionary": {
-        "id": "com.github.jihongju.ulauncher-1dictionary",
-        "url": "https://github.com/JihongJu/ulauncher-1dictionary",
-        "updated_at": "2022-06-30T17:41:36.307494",
-        "last_commit": "96b8a0b1b5d762564ce55b8812cb1be6f273b5fd",
-        "last_commit_time": "2020-06-21T16:06:14"
-    },
     "com.github.friday.ulauncher-clipboard": {
         "id": "com.github.friday.ulauncher-clipboard",
         "url": "https://github.com/friday/ulauncher-clipboard",
-        "updated_at": "2022-06-30T17:41:38.379813",
-        "last_commit": "9c8c0de1fd86504754300da8278fbc3db9b1a2b5",
-        "last_commit_time": "2022-01-18T05:32:06"
+        "updated_at": "2022-11-13T17:53:25.959800",
+        "last_commit": "73420cf4816f925321db15379c9c981c8f28c6fe",
+        "last_commit_time": "2022-08-03T20:22:13"
     },
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
@@ -110,19 +75,5 @@
         "updated_at": "2022-06-30T17:41:46.682255",
         "last_commit": "3d0e706412512805efda2bf0957b999df5594f19",
         "last_commit_time": "2022-02-02T09:04:03"
-    },
-    "com.github.dcervenkov.ulauncher-z-search": {
-        "id": "com.github.dcervenkov.ulauncher-z-search",
-        "url": "https://github.com/dcervenkov/ulauncher-z-search",
-        "updated_at": "2022-06-30T17:41:49.745724",
-        "last_commit": "9fe278bebb039c5150857f9b0cb34bcb28f35248",
-        "last_commit_time": "2020-12-15T14:35:19"
-    },
-    "com.github.brpaz.ulauncher-folder-search": {
-        "id": "com.github.brpaz.ulauncher-folder-search",
-        "url": "https://github.com/brpaz/ulauncher-folder-search",
-        "updated_at": "2022-06-30T17:41:58.638545",
-        "last_commit": "a1b08cf75910eaa4c70c041de0f56cf7446bf05a",
-        "last_commit_time": "2021-12-12T15:46:24"
     }
 }

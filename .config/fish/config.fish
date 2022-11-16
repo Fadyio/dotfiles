@@ -121,3 +121,7 @@ abbr weather "curl -s wttr.in/Ghent | grep -v Follow"
 abbr show-cursor "tput cnorm"
 abbr hide-cursor "tput civis"
 abbr aria2c-daemon "aria2c -D"
+
+# Hishtory Config:
+export PATH="$PATH:/home/f0dy/.hishtory"
+source /home/f0dy/.hishtory/config.fish
