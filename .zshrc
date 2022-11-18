@@ -84,6 +84,7 @@ source ~/.dotfiles/.zsh/plugins.zsh
 source ~/.dotfiles/.zsh/alias.zsh
 source ~/.dotfiles/.zsh/scripts.zsh
 source ~/.dotfiles/.zsh/fzf-completion.zsh
+source ~/.dotfiles/.zsh/fzf-bindings.zsh
 #################### start tmux automatically ####################################
 tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
