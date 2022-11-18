@@ -61,7 +61,6 @@ ecryptfs-utils
 efibootmgr
 entr
 epub-thumbnailer-git
-evince
 exa
 exfat-utils
 f2fs-tools
