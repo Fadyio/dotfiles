@@ -25,6 +25,7 @@ bison
 blueman
 bluez-utils
 btop
+bat
 calibre
 catppuccin-gtk-theme-frappe
 catppuccin-gtk-theme-latte
