@@ -186,6 +186,7 @@ shellharden
 shotwell
 siji-ttf
 stow
+sioyek
 stylua
 sudo
 tealdeer
@@ -237,3 +238,4 @@ xorg-xrandr
 xplr
 zeal
 zsh
+zathura

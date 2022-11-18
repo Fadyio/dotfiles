@@ -33,6 +33,7 @@ setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
 # Define completers
 # zstyle ':completion:*' completer _extensions _complete _approximate
 
+
 # Use cache for commands using cache
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$HOME/.zcompcache"
