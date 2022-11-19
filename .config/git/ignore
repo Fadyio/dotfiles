@@ -11,3 +11,10 @@ Thumbs.db
 .*.sw?
 node_modules
 npm-debug.log
+.directory
+.Trash-*
+.nfs*
+.idea/
+out/
+cmake-build-*/
+.idea_modules/

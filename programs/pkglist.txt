@@ -175,6 +175,7 @@ qbittorrent
 ranger
 raw-thumbnailer
 raw-thumbnailer-entry
+rg
 reflector
 ripgrep-all
 rofi

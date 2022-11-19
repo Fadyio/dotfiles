@@ -117,6 +117,7 @@ function installPythonPackages() {
 	pip3 install gitlint
 	pip3 install yamllint
 	pip3 install black
+	gh extension install gennaro-tedesco/gh-f
 }
 
 function cloneDotfiles() {

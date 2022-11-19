@@ -11,7 +11,7 @@ set $mod Mod4
 bindsym $mod+Shift+a exec anki
 
 # start a terminal
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -34,6 +34,12 @@ exec always --no-startup-id parep -f '“alacritty --c
 # launch flameshot gui for screenshot
 bindsym Print exec flameshot gui
 bindsym $mod+o exec flameshot gui -r -s | tesseract - - | xclip -selection clipboard
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 # change focus VIM_LIKE
 bindsym $mod+h focus left
@@ -124,7 +130,7 @@ client.unfocused	            $darkblue	  $darkblue	 $grey		$purple		$darkgrey
 client.focused_inactive	      $darkblue	  $darkblue	 $grey		$purple		$black
 client.urgent		              $urgentred	$urgentred $white		$purple		$yellowbrown
 
-font pango: JetBrainsMono Nerd Font 
+font pango: JetBrainsMono Nerd Font
 ##-- Workspaces ---------------------
 
 # Define names for default workspaces for which we configure key bindings later on.
@@ -142,6 +148,7 @@ set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
 set $ws8 "8: "
+set $ws9 "9: "
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -153,7 +160,6 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -164,8 +170,9 @@ bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
-# open start some applications on specific workspace 
+# open start some applications on specific workspace
 for_window [class="Spotify"] move to workspace $ws6
 
 ##------------------------ Window Rules ------------------------

@@ -28,31 +28,6 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c - +Man! '
 export PATH="$PATH:$NPM_PACKAGES/bin"
-
-# fzf
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-FZF_COLORS="bg+:-1,\
-fg:gray,\
-fg+:white,\
-border:black,\
-spinner:0,\
-hl:yellow,\
-header:blue,\
-info:green,\
-pointer:red,\
-marker:red,\
-prompt:gray,\
-hl+:red"
-
-export FZF_DEFAULT_OPTS="--height 60% \
---border sharp \
---color='$FZF_COLORS' \
---prompt '∷ ' \
---pointer ▶ \
---marker ⇒"
-export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -n 10'"
 ################################### Options #######################################
 setopt auto_cd 						                    # cd by typing directory name if it's not a command
 setopt always_to_end 					                # move cursor to end if word had one match
@@ -67,7 +42,6 @@ autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with 
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
-
 ################################## History #######################################
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -83,8 +57,7 @@ source ~/.dotfiles/.zsh/completion.zsh
 source ~/.dotfiles/.zsh/plugins.zsh
 source ~/.dotfiles/.zsh/alias.zsh
 source ~/.dotfiles/.zsh/scripts.zsh
-source ~/.dotfiles/.zsh/fzf-completion.zsh
-source ~/.dotfiles/.zsh/fzf-bindings.zsh
+source ~/.dotfiles/.zsh/fzf.zsh
 #################### start tmux automatically ####################################
 tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then

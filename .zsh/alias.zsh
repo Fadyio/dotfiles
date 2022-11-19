@@ -9,11 +9,9 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias mdkir='mkdir'
   alias sudp='sudo'
   alias :q="exit"
-  alias q='exit'
   alias c='clear'
-  alias upgrade='sudo pacman -Syu'
+  alias upgrade='paru -Syu'
   alias zshreload="source ~/.zshrc"
-  alias nvimconfig='nvim ~/.config/nvim/init.vim'
   alias zshconfig='nvim ~/.zshrc'
   alias i3config='nvim ~/.config/i3/config'
   alias pbcopy='xsel --clipboard --input'
@@ -23,14 +21,8 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
   alias tldr='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
-## alias for programs that i use
   alias v='nvim'
-  alias r='ranger'
   alias htp=wkhtmltopdf
-  alias dict='dict -d gcide'
-  alias calc="insect"
-  alias history='fc -il 1' # for HIST_STAMPS in oh-my-zsh
-  alias rg='rg -S'
   alias sblock='sudo bash ~/.dotfiles/scripts/smedia.sh'
  # Changing "ls" to "exa"
   alias ls="exa --icons --color-scale --long --header --git --sort=extension"
@@ -68,3 +60,4 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias gbl='git branch --verbose --verbose'
   alias gcam='git add . && git commit --message'
   alias gco='git checkout'
+  alias gi="git-ignore"

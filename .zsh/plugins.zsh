@@ -14,6 +14,9 @@ zinit wait lucid for \
 # Zsh Vi Mode
 zinit light jeffreytse/zsh-vi-mode
 
+# Generate .gitignore files with templates from gitignore.io offline
+zinit light laggardkernel/git-ignore
+
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
 zinit light romkatv/powerlevel10k

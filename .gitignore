@@ -43,3 +43,6 @@ programs
 plugin/packer_compiled.lua
 .config/ranger/plugins
 .config/mpv/watch_later
+### DotfilesSh ###
+local-patch
+patched-src
