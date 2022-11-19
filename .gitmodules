@@ -20,9 +20,6 @@
 [submodule ".zsh/plugins/Aloxaf---fzf-tab"]
 	path = .zsh/plugins/Aloxaf---fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab
-[submodule ".scripts/i3-easyfocus"]
-	path = .scripts/i3-easyfocus
-	url = https://github.com/cornerman/i3-easyfocus
 [submodule ".zsh/plugins/wfxr---forgit"]
 	path = .zsh/plugins/wfxr---forgit
 	url = https://github.com/wfxr/forgit

@@ -82,7 +82,3 @@ eval `keychain --eval --agents ssh id_ed25519`
 
 # Install npm packages globally without sudo on macOS and Linux
 NPM_PACKAGES="${HOME}/.npm-packages"
-
-# Hishtory Config:
-export PATH="$PATH:/home/f0dy/.hishtory"
-source /home/f0dy/.hishtory/config.zsh

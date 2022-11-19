@@ -156,7 +156,6 @@ ntfs-3g
 openssh
 os-prober
 p7zip
-pacmanity
 pamac-aur
 parted
 patch
@@ -164,10 +163,7 @@ pavucontrol
 pgformatter
 picom
 polkit-gnome
-polybar
 ppp
-prettier_d_slim
-pulseaudio
 pulseaudio-alsa
 python-pip
 python-pynvim

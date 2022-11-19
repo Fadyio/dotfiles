@@ -104,7 +104,6 @@ function installPythonPackages() {
 	cd ~/
 
 	pip3 install semgrep
-	curl https://hishtory.dev/install.py | python3
 	pip3 install sioyek
 	pip3 install autopep8
 	pip3 install ueberzug
@@ -168,8 +167,8 @@ function install() {
 	installNpmPackages
 	installGOPackages
 	installPythonPackages
-	cloneDotfiles
 	setupNvim
+	cloneDotfiles
 }
 
 install
