@@ -31,8 +31,8 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias l.='exa -a | egrep "^\."'
   alias tree="exa --tree --icons --color-scale --level=2"
 ## download stuff
-  alias ytvid='yt-dlp -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
-  alias ytlist='yt-dlp -P ~/Downloads -ciw --format mp4  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias ytvid='yt-dlp --sponsorblock-mark -all -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
+  alias ytlist='yt-dlp --sponsorblock-mark -all -P ~/Downloads -ciw --format mp4  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias ytmp3="youtube-dl --extract-audio --audio-format mp3 "
   alias ytflac="youtube-dl --extract-audio --audio-format flac "
