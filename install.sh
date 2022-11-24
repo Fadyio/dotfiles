@@ -87,7 +87,6 @@ function installGOPackages() {
 
 	cd ~/
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1
-	go install github.com/maaslalani/nap@main
 	go install github.com/google/yamlfmt/cmd/yamlfmt@latest
 	go install github.com/mgechev/revive@latest
 	go install golang.org/x/tools/cmd/goimports@latest
