@@ -10,9 +10,6 @@ set $mod Mod4
 # start anki
 bindsym $mod+Shift+a exec anki
 
-# open youtube with mpv
-bindsym $mod+Shift+y exec ~/.dotfiles/scripts/mpvyt-dl.sh
-
 # start a terminal
 bindsym $mod+Return exec alacritty
 
