@@ -1,46 +1,54 @@
+<div align="center">
 
-<p align="center"> If there is a shell, there is a way</p>
-  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/dotfile.png">
+# 🌸**My Linux Dot Files**🌸
 
-![Arch](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=arch-linux&logoColor=fff&style=for-the-badge)
-![Manjaro](https://img.shields.io/badge/Manjaro-35BF5C?style=for-the-badge&logo=Manjaro&logoColor=white)
-![Neovim](https://img.shields.io/badge/NeoVim-%2357A143.svg?&style=for-the-badge&logo=neovim&logoColor=white)
-![Vim](https://img.shields.io/badge/VIM-%2311AB00.svg?style=for-the-badge&logo=vim&logoColor=white)
-![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
+<img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/assets/dotfile.png">
+<div align="center">
 
-## This is [my Arch](https://archlinux.org/) Linux-dotfiles
+![](https://img.shields.io/github/last-commit/Fadyio/Linux-dotfiles?&style=for-the-badge&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41)
+![](https://img.shields.io/github/stars/Fadyio/Linux-dotfiles?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41)
+[![](https://img.shields.io/github/repo-size/Fadyio/Linux-dotfiles?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)](https://github.com/Fadyio/Linux-dotfiles)
 
-I use  [GNU Stow](https://www.gnu.org/software/stow/) to Managing My Dotfiles.
 
-It includes my `zsh`, `[v/nv]im`, `tmux`, `git`, `i3` , ... config files.
+<br/>
+
+## Screenshots
+![screen_1](/assets/ImagesShowcase.png)
+
+</div>
+
+
+
+# Details
+- **OS**: [Arch Linux](https://archlinux.org)
+- **Bar**: [i3status-rust](https://github.com/greshake/i3status-rust)
+- **Notifications**: [dunst](https://github.com/dunst-project/dunst)
+- **Wallpaper Loader**: [Feh](https://feh.finalrewind.org)
+- **Terminal**: [Alacritty](https://alacritty.org/)
+- **Search menu**: [Ulauncher](https://ulauncher.io/)
+- **Fetch script**: [neofetch](https://github.com/dylanaraps/neofetch)
+- **Browser**: [Firefox](https://www.mozilla.org/en-US/firefox/new/?redirect_source=firefox-com)
+- **Font**: [Nerd Font](https://www.nerdfonts.com/)
+- **Theme and Wallpaper** [catppuccin](https://github.com/catppuccin/catppuccin)
+
+
+I use  [GNU Stow](https://www.gnu.org/software/stow/) to Manage My Dotfiles.
+
+It includes my `zsh`, `tmux`, `git`, `i3` , ... config files.
 
 ## How to use
 
 **Use `gnu-stow` to link the files.**
 
-For example if you need my `nvim` config clone the repo then inside the repo use:
+For example if you need my `zsh` config clone the repo then inside the repo use:
 
-`stow nvim`
+`stow .zsh .zshrc`
 
 This will symlink the necessary files.
 
 ```
 git clone --recursive https://github.com/fady0/Linux-dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
-stow nvim
+stow .
 ```
-
-## Screenshots
-
-  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen1.png">
-  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen2.png">
-  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen3.png">
-  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen4.png">
-  <img src="https://raw.githubusercontent.com/fady0/Linux-dotfiles/master/.screenshot/screen5.png">
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.md` for more information.
-
 <p align="right">(<a href="#top">back to top</a>)</p>
