@@ -13,6 +13,7 @@
   defaultBranch = master
 [delta]
   line-numbers = true
+  navigate = true
 [difftool]
   prompt = false
 [color]

@@ -17,6 +17,8 @@ autoload -Uz compinit && compinit
 autoload bashcompinit && bashcompinit
 _comp_options+=(globdots)		# Include hidden files.
 
+# Enable shell autocompletion for kubectl
+source <(kubectl completion zsh)
 # +---------+
 # | Options |
 # +---------+

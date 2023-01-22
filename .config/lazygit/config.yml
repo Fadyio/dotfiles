@@ -10,26 +10,26 @@ gui:
   expandFocusedSidePanel: false
   mainPanelSplitMode: 'flexible' # one of 'horizontal' | 'flexible' | 'vertical'
   language: 'auto' # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
-  timeFormat: '02 Jan 06 15:04 MST' # https://pkg.go.dev/time#Time.Format
   theme:
-    lightTheme: false # For terminals with a light background
-    activeBorderColor:
-      - green
-      - bold
-    inactiveBorderColor:
-      - white
-    optionsTextColor:
-      - blue
-    selectedLineBgColor:
-      - blue # set to `default` to have no background colour
-    selectedRangeBgColor:
-      - blue
-    cherryPickedCommitBgColor:
-      - cyan
-    cherryPickedCommitFgColor:
-      - blue
-    unstagedChangesColor:
-      - red
+  lightTheme: false
+  activeBorderColor:
+    - "#a6e3a1" # Green
+    - bold
+  inactiveBorderColor:
+    - "#cdd6f4" # Text
+  optionsTextColor:
+    - "#89b4fa" # Blue
+  selectedLineBgColor:
+    - "#313244" # Surface0
+  selectedRangeBgColor:
+    - "#313244" # Surface0
+  cherryPickedCommitBgColor:
+    - "#94e2d5" # Teal
+  cherryPickedCommitFgColor:
+    - "#89b4fa" # Blue
+  unstagedChangesColor:
+    - red # Red
+  timeFormat: '02 Jan 06 15:04 MST' # https://pkg.go.dev/time#Time.Format
   commitLength:
     show: true
   mouseEvents: true
