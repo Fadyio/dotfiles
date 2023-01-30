@@ -46,18 +46,3 @@ chpwd() exa --icons --group-directories-first --color-scale
 ## Git stuff
   alias g='git'
   alias lg='lazygit'
-  alias ga='git add'
-  alias gaa='git add .'
-  alias gp='git pull'
-  alias gd="git diff --color-words"
-  alias gl='git log'
-  alias gs='git status'
-  alias gc='git commit -m'
-  alias gnb='git checkout -b'
-  alias gpu='git push origin master'
-  alias gfix='git rm -r --cached . && git add .'
-  alias gb='git branch'
-  alias gbl='git branch --verbose --verbose'
-  alias gcam='git add . && git commit --message'
-  alias gco='git checkout'
-  alias gi="git-ignore"

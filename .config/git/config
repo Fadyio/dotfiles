@@ -34,6 +34,21 @@
   old = red bold
   new = green bold
   whitespace = red reverse
+[alias]
+    # one-line log
+  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  cm = commit -m
+  cam = commit -a -m
+  a = add
+  d = diff
+  s = status -s
+  co = checkout
+  cob = checkout -b
+
+  # list all the alias
+  la = "!git config -l | grep alias | cut -c 7-"
+
+
 
 ; Force GitHub to use SSH
 [url "ssh://git@github.com/"]
