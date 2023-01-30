@@ -1,12 +1,15 @@
 [user]
-  name =  Fady Nagh
-  email = fady@fadyio.com
-[pull]
-  rebase = false
+  name =  Fady
+  email = Fady@Fadyio.com
+  signingkey = Fady@Fadyio.com
 [core]
   editor = nvim
   mergeoptions = --no-edit
   pager = delta
+[commit]
+  gpgsign = true
+[tag]
+  gpgsign = true
 [interactive]
   diffFilter = delta --color-only
 [init]
