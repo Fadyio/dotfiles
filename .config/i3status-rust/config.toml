@@ -1,7 +1,8 @@
-# Written by @Fadynagh from http://fadyio.com
-# Email:me@fadyio.com
-# Github: @fady0
-
+#                 ╭─────────────────────────────────────────────╮
+#                 │ Written by @Fadynagh from http://fadyio.com │
+#                 │             Email:me@fadyio.com             │
+#                 │               Github: @Fadyio               │
+#                 ╰─────────────────────────────────────────────╯
 
 theme = "gruvbox-dark"
 icons = "material-nf"
@@ -9,7 +10,6 @@ icons = "material-nf"
 [[block]]
 block = "disk_space"
 path = "/"
-alias = "/"
 info_type = "available"
 unit = "GB"
 interval = 20
