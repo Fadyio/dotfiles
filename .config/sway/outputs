@@ -1,0 +1,18 @@
+output "VGA-1" {
+    mode  1600x900@59.978Hz
+    pos 0 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}
+output "HDMI-A-1" {
+    mode  1360x768@59.799Hz
+    pos 1600 0
+    transform normal
+    scale 1.0
+    scale_filter nearest
+    adaptive_sync off
+    dpms on
+}

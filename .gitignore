@@ -7,6 +7,9 @@ luac.out
 *.tar.gz
 *.bak
 
+**/nvim**
+.DS_Store
+
 # Object files
 *.o
 *.os
