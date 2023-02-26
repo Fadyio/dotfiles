@@ -109,7 +109,8 @@ workspace_auto_back_and_forth yes
 ##-- Autostart ---------------------------
 exec_always --no-startup-id 	~/.config/i3/autostart.sh
 exec gammastep
-exec_always --no-startup-id  dunst
+exec_always --no-startup-id dunst
+
 ################################################################################################
 ##                                         i3wm settings                                      ##
 ################################################################################################
@@ -285,17 +286,15 @@ bindsym $mod+r mode "default"
 
 
 bar {
-    font pango: JetBrainsMono Nerd Font 11
     position top
     status_command /usr/bin/i3status-rs /home/f0dy/.config/i3status-rust/config.toml
     colors {
-        separator #666666
-        background #222222
-        statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        background #000000
+        focused_workspace #282828 #282828 #FFFFFF #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #333333 #AAAAAA #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+        statusline #AAAAAA
     }
 }
 
