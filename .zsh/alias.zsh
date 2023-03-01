@@ -34,8 +34,8 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias ytvid='yt-dlp --sponsorblock-mark -all -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
   alias ytlist='yt-dlp --sponsorblock-mark -all -P ~/Downloads -ciw --format mp4  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-  alias ytmp3="youtube-dl --extract-audio --audio-format mp3 "
-  alias ytflac="youtube-dl --extract-audio --audio-format flac "
+  alias ytmp3="yt-dlp --extract-audio --audio-format mp3 "
+  alias ytflac="yt-dlp --extract-audio --audio-format flac "
   alias torrent='aria2c -d ~/Downloads'
   alias downsite='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 # confirm before overwriting something

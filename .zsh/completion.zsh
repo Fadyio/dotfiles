@@ -49,7 +49,7 @@ zstyle ':completion:alias-expension:*' completer _expand_alias
 zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' expand suffix
 zstyle ':completion:*' file-sort modification
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s

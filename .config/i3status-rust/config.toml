@@ -65,7 +65,7 @@ idle_fg = "#fab387"
 [[block]]
 block = "time"
 interval = 60
-format = " $icon $timestamp.datetime(f:'%I:%M %p') "
+format = " $icon $timestamp.datetime(f:'%m/%d %I:%M %p') "
 [block.theme_overrides]
 idle_bg = "#11111b"
 idle_fg = "#a6e3a1"

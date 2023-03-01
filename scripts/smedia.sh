@@ -13,10 +13,7 @@
 
 # Add here the social media you're addicted to:
 social_media=(
-	tweetdeck.twitter.com
 	twitter.com
-	www.twitter.com
-	api.twitter.com
 	facebook.com
 	www.facebook.com
 	linkedin.com
@@ -24,36 +21,8 @@ social_media=(
 	reddit.com
 	www.reddit.com
 	api.reddit.com
-	www.mail.google.com
-	mail.google.com
 	twitter.com
 	www.twitter.com
-	downloadly.ir
-	www.downloadly.ir
-	pimpmymoney.net
-	www.pimpmymoney.net
-	pimpmymind.net
-	www.pimpmymind.net
-	sanet.ws
-	www.sanet.ws
-	hacksnation.com
-	www.hacksnation.com
-	nulled.org
-	www.nulled.org
-	freetutsdownload.com
-	www.freetutsdownload.com
-	freecoursesites.com
-	www.freecoursesites.com
-	freecoursesonline.me
-	www.freecoursesonline.me
-	tut4it.com
-	www.tut4it.com
-	babiato.co
-	www.babiato.co
-	www.0daydown.com
-	0daydown.com
-	courseclub.me
-	www.courseclub.me
 )
 
 if [[ ! -f /etc/hosts ]]; then
