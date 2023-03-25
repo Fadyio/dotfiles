@@ -1,34 +1,27 @@
 # Written by @Fadynagh from http://fadyio.com
 # Email:Fady@fadyio.com
 # Github: @Fadyio
-
 gui:
-  # stuff relating to the UI
-  scrollHeight: 2 # how many lines you scroll by
-  scrollPastBottom: true # enable scrolling past the bottom
-  sidePanelWidth: 0.3333 # number from 0 to 1
-  expandFocusedSidePanel: false
-  mainPanelSplitMode: 'flexible' # one of 'horizontal' | 'flexible' | 'vertical'
-  language: 'auto' # one of 'auto' | 'en' | 'zh' | 'pl' | 'nl' | 'ja' | 'ko'
+  # use the mocha catpuccin theme
   theme:
-  lightTheme: false
-  activeBorderColor:
-    - "#a6e3a1" # Green
-    - bold
-  inactiveBorderColor:
-    - "#cdd6f4" # Text
-  optionsTextColor:
-    - "#89b4fa" # Blue
-  selectedLineBgColor:
-    - "#313244" # Surface0
-  selectedRangeBgColor:
-    - "#313244" # Surface0
-  cherryPickedCommitBgColor:
-    - "#94e2d5" # Teal
-  cherryPickedCommitFgColor:
-    - "#89b4fa" # Blue
-  unstagedChangesColor:
-    - red # Red
+    lightTheme: false
+    activeBorderColor:
+      - "#a6e3a1" # Green
+      - bold
+    inactiveBorderColor:
+      - "#cdd6f4" # Text
+    optionsTextColor:
+      - "#89b4fa" # Blue
+    selectedLineBgColor:
+      - "#313244" # Surface0
+    selectedRangeBgColor:
+      - "#313244" # Surface0
+    cherryPickedCommitBgColor:
+      - "#94e2d5" # Teal
+    cherryPickedCommitFgColor:
+      - "#89b4fa" # Blue
+    unstagedChangesColor:
+      - red # Red
   timeFormat: '02 Jan 06 15:04 MST' # https://pkg.go.dev/time#Time.Format
   commitLength:
     show: true
@@ -67,8 +60,10 @@ git:
   skipHookPrefix: WIP
   autoFetch: true
   autoRefresh: true
-  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}} --'
-  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate --date=relative  --pretty=medium'
+  branchLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative
+    --pretty=medium {{branchName}} --'
+  allBranchesLogCmd: 'git log --graph --all --color=always --abbrev-commit --decorate
+    --date=relative  --pretty=medium'
   overrideGpg: false # prevents lazygit from spawning a separate process when using GPG
   disableForcePushing: false
   parseEmoji: false
@@ -111,7 +106,7 @@ keybinding:
     nextBlock: '<right>' # goto the next block / panel
     prevBlock-alt: 'h' # goto the previous block / panel
     nextBlock-alt: 'l' # goto the next block / panel
-    jumpToBlock: [ '1', '2', '3', '4', '5' ]
+    jumpToBlock: ['1', '2', '3', '4', '5']
     nextMatch: 'n'
     prevMatch: 'N'
     optionMenu: 'x' # show help menu

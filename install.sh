@@ -142,6 +142,10 @@ function setupNvim() {
 	mkdir -p ~/github
 	git clone https://github.com/fadyio/nvim.git ~/github
 
+	cd ~/
+	curl -L https://sourcegraph.com/.api/src-cli/src_linux_amd64 -o /usr/local/bin/src
+	chmod +x /usr/local/bin/src
+
 	# Link init.lua for neovim
 	ln -sf ~/github/nvim ~/.config/
 
