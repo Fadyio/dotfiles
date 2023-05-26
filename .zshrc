@@ -43,16 +43,6 @@ autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with 
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
-################################## History #######################################
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt hist_ignore_all_dups 				            # remove older duplicate entries from history
-setopt hist_reduce_blanks 				                # remove superfluous blanks from history items
-setopt inc_append_history 				                # save history entries as soon as they are entered
-# don't append "not found command" to history
-# https://www.zsh.org/mla/users//2014/msg00715.html
-zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 ########################## source alias and Plugins ##############################
 source ~/.dotfiles/.zsh/completion.zsh
 source ~/.dotfiles/.zsh/plugins.zsh
@@ -64,22 +54,13 @@ tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
-##################### zsh-history-substring-search ###############################
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-# Cycle through history based on what I have already typed
-# https://superuser.com/a/585004
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-
 # Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
 
 # Install npm packages globally without sudo on macOS and Linux
 NPM_PACKAGES="${HOME}/.npm-packages"
+
+################################## History #######################################
+# Atuin replaces your existing shell history with a SQLite database
+eval "$(atuin init zsh)"
+bindkey '^r' _atuin_search_widget

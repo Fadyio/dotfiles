@@ -76,16 +76,16 @@ FZF_CTRL_T_OPTS="
 "
 export FZF_CTRL_T_OPTS
 
-# FZF: Ctrl - R
-FZF_CTRL_R_OPTS="
---preview 'echo {}'
---preview-window 'down:2:wrap'
---bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
---header 'Press CTRL-Y to copy command into clipboard'
---exact
---expect=ctrl-x
-"
-export FZF_CTRL_R_OPTS
+# # FZF: Ctrl - R
+# FZF_CTRL_R_OPTS="
+# --preview 'echo {}'
+# --preview-window 'down:2:wrap'
+# --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
+# --header 'Press CTRL-Y to copy command into clipboard'
+# --exact
+# --expect=ctrl-x
+# "
+# export FZF_CTRL_R_OPTS
 
 # FZF: Alt - C
 FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \
