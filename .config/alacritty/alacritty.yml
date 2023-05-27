@@ -2,7 +2,7 @@ font:
   # Normal (roman) font face
   normal:
     family: "JetBrainsMono Nerd Font"
-    #style: Regular
+    style: Regular
     # Bold font face
   bold:
     family: "JetBrainsMono Nerd Font"
@@ -52,5 +52,5 @@ colors:
     cyan: '0x29b7da'
     white: '0xd1d5da'
   indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf14c4c' }
+    - {index: 16, color: '0xd18616'}
+    - {index: 17, color: '0xf14c4c'}
