@@ -1,6 +1,6 @@
-#    		  This is my Zsh config
-#    		  Email:me@fadyio.com
-#		      Github:@Fadyio
+#         This is my Zsh config
+#         Email:me@fadyio.com
+#         Github:@Fadyio
 #
 ############################ customize prompt #########################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -30,14 +30,14 @@ export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c - +Man! '
 export PATH="$PATH:$NPM_PACKAGES/bin"
 ################################### Options #######################################
-setopt auto_cd 						                    # cd by typing directory name if it's not a command
-setopt always_to_end 					                # move cursor to end if word had one match
+setopt auto_cd                                # cd by typing directory name if it's not a command
+setopt always_to_end                          # move cursor to end if word had one match
 unsetopt BEEP
 setopt noglob
-unsetopt correct_all 					                # stop autocorrect commands
+unsetopt correct_all                          # stop autocorrect commands
 export KEYTIMEOUT=1
-bindkey "\e[3~" delete-char 				            # make the delete key act nourmal
-bindkey '^e' edit-command-line				            # Edit line in vim with ctrl-e:
+bindkey "\e[3~" delete-char                   # make the delete key act nourmal
+bindkey '^e' edit-command-line                # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
 #::NOTE see that
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.

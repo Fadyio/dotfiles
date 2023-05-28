@@ -2,24 +2,20 @@ font:
   # Normal (roman) font face
   normal:
     family: "JetBrainsMono Nerd Font"
-    #style: Regular
-
-  # Bold font face
+    style: Regular
+    # Bold font face
   bold:
     family: "JetBrainsMono Nerd Font"
     #style: Bold
-
-  # Italic font face
+    # Italic font face
   italic:
     family: "JetBrainsMono Nerd Font"
     #style: Italic
-
-  # Bold italic font face
+    # Bold italic font face
   bold_italic:
     family: "JetBrainsMono Nerd Font"
     #style: Bold Italic
-
-  # Point size
+    # Point size
   size: 13
   # Offset
   #offset:
@@ -35,7 +31,6 @@ colors:
   primary:
     background: '0x24292e'
     foreground: '0xd1d5da'
-
   # Normal colors
   normal:
     black: '0x24292e'
@@ -46,7 +41,6 @@ colors:
     magenta: '0xbc3fbc'
     cyan: '0x29b7da'
     white: '0xd1d5da'
-
   # Bright colors
   bright:
     black: '0x666666'
@@ -57,7 +51,6 @@ colors:
     magenta: '0xd670d6'
     cyan: '0x29b7da'
     white: '0xd1d5da'
-
   indexed_colors:
-    - { index: 16, color: '0xd18616' }
-    - { index: 17, color: '0xf14c4c' }
+    - {index: 16, color: '0xd18616'}
+    - {index: 17, color: '0xf14c4c'}

@@ -33,9 +33,6 @@ zinit snippet https://raw.githubusercontent.com/MichaelAquilina/zsh-auto-notify/
 # plugin defines a function extracts the archive file
 zinit snippet https://raw.githubusercontent.com/le0me55i/zsh-extract/master/extract.plugin.zsh
 
-# Utility tool for using git interactively
-zinit load wfxr/forgit
-
 # z for zsh
 zinit load agkozak/zsh-z
 

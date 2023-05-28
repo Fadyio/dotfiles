@@ -6,6 +6,7 @@
   editor = nvim
   mergeoptions = --no-edit
   pager = delta
+	excludesfile = /Users/fadynagh/.gitignore_global
 [commit]
   gpgsign = true
 [tag]
