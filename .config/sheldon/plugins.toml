@@ -1,0 +1,41 @@
+[plugins.powerlevel10k]
+github = 'romkatv/powerlevel10k'
+
+[plugins.syntax-highlighting]
+github = 'zdharma-continuum/fast-syntax-highlighting'
+
+[plugins.git-extra]
+github = 'unixorn/git-extra-commands'
+
+[plugins.completions]
+github = 'zsh-users/zsh-completions'
+
+[plugins.autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+
+[plugins.vim-mod]
+github = 'jeffreytse/zsh-vi-mode'
+
+[plugins.you-should-use]
+github = 'MichaelAquilina/zsh-you-should-use'
+
+[plugins.autopair]
+github = 'hlissner/zsh-autopair'
+
+[plugins.fzf-tab]
+github = 'Aloxaf/fzf-tab'
+
+[plugins.brew-completions]
+github = 'z-shell/brew-completions'
+
+[plugins.zsh-ssh]
+github = 'sunlei/zsh-ssh'
+
+[plugins.auto-notify]
+github = 'MichaelAquilina/zsh-auto-notify'
+
+[plugins.extract]
+github = 'le0me55i/zsh-extract'
+
+[plugins.expand]
+github = 'MenkeTechnologies/zsh-expand'

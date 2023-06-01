@@ -100,3 +100,4 @@ ttf-font-awesome
 playerctl
 localsend-bin
 atuin
+sheldon

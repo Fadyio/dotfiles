@@ -13,7 +13,7 @@ else
 fi
 #######################################################################
 
-FZF_FILE_HIGHLIGHTER='cat'
+FZF_FILE_HIGHLIGHTER='bat'
 (( $+commands[rougify]   )) && FZF_FILE_HIGHLIGHTER='rougify'
 (( $+commands[coderay]   )) && FZF_FILE_HIGHLIGHTER='coderay'
 (( $+commands[highlight] )) && FZF_FILE_HIGHLIGHTER='highlight -lO ansi'
@@ -76,17 +76,6 @@ FZF_CTRL_T_OPTS="
 "
 export FZF_CTRL_T_OPTS
 
-# # FZF: Ctrl - R
-# FZF_CTRL_R_OPTS="
-# --preview 'echo {}'
-# --preview-window 'down:2:wrap'
-# --bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'
-# --header 'Press CTRL-Y to copy command into clipboard'
-# --exact
-# --expect=ctrl-x
-# "
-# export FZF_CTRL_R_OPTS
-
 # FZF: Alt - C
 FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \
     \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) \
@@ -139,16 +128,11 @@ function RG() {
 
 unalias z
 z() {
-  if [[ -z "$*" ]]; then
-    cd "$( zshz 2>&1  | fzf-tmux +s --tac | sed 's/^[0-9,.]* *//')"
-  else
-    _last_z_args="$@"
-    _z "$@"
-  fi
+    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
 }
 
 zz() {
-  cd "$( zshz 2>&1  | sed 's/^[0-9,.]* *//' | fzf-tmux -q "$_last_z_args")"
+  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
 }
 
 

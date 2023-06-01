@@ -31,7 +31,7 @@ fyay() {
 
 fpop() {
     # Only work with alias d defined as:
-    
+
     # alias d='dirs -v'
     # for index ({1..9}) alias "$index"="cd +${index}"; unset index
 

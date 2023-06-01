@@ -11,14 +11,6 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-#################### Added by Zinit's installer ##################################
-source "$HOME/.dotfiles/.zsh/plugins/zinit/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-ZINIT[PLUGINS_DIR]=~/.dotfiles/.zsh/plugins
-#ZINIT[COMPLETIONS_DIR]=~/.dotfiles/.zsh/plugins
-ZINIT[SNIPPETS_DIR]=~/.dotfiles/.zsh/plugins
-######################### End of Zinit's installer chunk ##########################
 ################################# Export ##########################################
 export PATH=~/.cargo/bin:$PATH
 export EDITOR="nvim"
@@ -45,7 +37,6 @@ setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
 setopt PUSHD_SILENT         # Do not print the directory stack after pushd or popd.
 ########################## source alias and Plugins ##############################
 source ~/.dotfiles/.zsh/completion.zsh
-source ~/.dotfiles/.zsh/plugins.zsh
 source ~/.dotfiles/.zsh/alias.zsh
 source ~/.dotfiles/.zsh/scripts.zsh
 source ~/.dotfiles/.zsh/fzf.zsh
@@ -64,3 +55,6 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
 bindkey '^r' _atuin_search_widget
+
+#############  sheldon plugin manager
+eval "$(sheldon source)"
