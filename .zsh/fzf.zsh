@@ -126,16 +126,6 @@ function RG() {
     ) && $EDITOR +$(cut -d: -f2 <<<$SELECTED) $(cut -d: -f1 <<<$SELECTED)
 }
 
-unalias z
-z() {
-    cd "$(_z -l 2>&1 | fzf +s --tac | sed 's/^[0-9,.]* *//')"
-}
-
-zz() {
-  cd "$(_z -l 2>&1 | sed 's/^[0-9,.]* *//' | fzf -q "$_last_z_args")"
-}
-
-
 # Install packages using yay (change to pacman/AUR helper of your choice)
 function install() {
     paru -Slq | fzf -q "$1" -m --preview 'paru -Si {1}'| xargs -ro paru -S

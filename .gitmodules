@@ -17,15 +17,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule ".tmux/plugins/tmux-tilish"]
-	path = .tmux/plugins/tmux-tilish
-	url = https://github.com/jabirali/tmux-tilish
 [submodule ".tmux/plugins/tmux-resurrect"]
 	path = .tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
-[submodule ".tmux/plugins/tmux-fzf-url"]
-	path = .tmux/plugins/tmux-fzf-url
-	url = https://github.com/wfxr/tmux-fzf-url
-[submodule ".tmux/plugins/tmux-fzf"]
-	path = .tmux/plugins/tmux-fzf
-	url = https://github.com/sainnhe/tmux-fzf

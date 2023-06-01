@@ -41,8 +41,6 @@
   # list all the alias
   la = "!git config -l | grep alias | cut -c 7-"
 
-
-
 ; Force GitHub to use SSH
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
