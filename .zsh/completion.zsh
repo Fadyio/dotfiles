@@ -12,13 +12,23 @@
 # Should be called before compinit
 zmodload zsh/complist
 
+# Enable shell autocompletion for kubectl
+source <(kubectl completion zsh)
+
+# enable homebrew autocompletion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Enabling the Zsh Completion System
 autoload -Uz compinit && compinit
 autoload bashcompinit && bashcompinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# Enable shell autocompletion for kubectl
-source <(kubectl completion zsh)
 # +---------+
 # | Options |
 # +---------+

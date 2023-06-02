@@ -1,3 +1,4 @@
+live_config_reload: true
 font:
   # Normal (roman) font face
   normal:
@@ -54,3 +55,5 @@ colors:
   indexed_colors:
     - {index: 16, color: '0xd18616'}
     - {index: 17, color: '0xf14c4c'}
+window:
+  decorations: buttonless

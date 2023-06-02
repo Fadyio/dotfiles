@@ -44,6 +44,8 @@ luac.out
 *.hex
 
 .config/ranger/plugins
+.tmux/resurrect
+.config/gh
 .config/mpv/watch_later
 .config/alacritty/alacritty.yml
 ### DotfilesSh ###

@@ -25,9 +25,6 @@ github = 'hlissner/zsh-autopair'
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
 
-[plugins.brew-completions]
-github = 'z-shell/brew-completions'
-
 [plugins.zsh-ssh]
 github = 'sunlei/zsh-ssh'
 
