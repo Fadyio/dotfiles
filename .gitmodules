@@ -5,18 +5,6 @@
 
 
 # submodule tmux
-[submodule ".tmux/plugins/tmux-sensible"]
-	path = .tmux/plugins/tmux-sensible
-	url = https://github.com/tmux-plugins/tmux-sensible
-[submodule ".tmux/plugins/nord-tmux"]
-	path = .tmux/plugins/nord-tmux
-	url = https://github.com/arcticicestudio/nord-tmux
-[submodule ".tmux/plugins/tmux-menus"]
-	path = .tmux/plugins/tmux-menus
-	url = https://github.com/jaclu/tmux-menus
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule ".tmux/plugins/tmux-resurrect"]
-	path = .tmux/plugins/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect

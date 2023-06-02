@@ -45,6 +45,7 @@ luac.out
 
 .config/ranger/plugins
 .config/mpv/watch_later
+.config/alacritty/alacritty.yml
 ### DotfilesSh ###
 local-patch
 patched-src

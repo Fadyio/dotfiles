@@ -50,7 +50,6 @@ eval `keychain --eval --agents ssh id_ed25519`
 
 # Install npm packages globally without sudo on macOS and Linux
 NPM_PACKAGES="${HOME}/.npm-packages"
-
 ################################## History #######################################
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
