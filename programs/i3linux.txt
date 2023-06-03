@@ -101,3 +101,6 @@ playerctl
 localsend-bin
 atuin
 sheldon
+aws-vault
+gnome-keyring
+git-secret

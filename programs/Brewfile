@@ -33,7 +33,6 @@ neovim
 node
 p7zip
 perl
-python@3.10
 python@3.11
 ranger
 ripgrep
@@ -71,10 +70,12 @@ keepassxc
 keyboard-maestro
 localsend
 maestral
-marta
 obsidian
 rectangle
 rosaimagewriter
 selfcontrol
 stats
 wkhtmltopdf
+pipx
+aws-vault
+git-secret

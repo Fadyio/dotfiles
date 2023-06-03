@@ -102,20 +102,20 @@ function installPythonPackages() {
 	echo "==================================="
 
 	cd ~/
-
-	pip3 install semgrep
-	pip3 install sioyek
-	pip3 install autopep8
-	pip3 install ueberzug
-	pip3 install proselint
-	pip3 install "ansible-lint"
-	pip3 install "cfn-lint"
-	pip3 install isort
-	pip3 install cpplint
-	pip3 install flake8
-	pip3 install gitlint
-	pip3 install yamllint
-	pip3 install black
+  python3 -m pip install --user pipx
+	pipx install semgrep
+	pipx install sioyek
+	pipx install autopep8
+	pipx install ueberzug
+	pipx install proselint
+	pipx install "ansible-lint"
+	pipx install "cfn-lint"
+	pipx install isort
+	pipx install cpplint
+	pipx install flake8
+	pipx install gitlint
+	pipx install yamllint
+	pipx install black
 	gh extension install gennaro-tedesco/gh-f
 }
 
