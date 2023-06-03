@@ -79,3 +79,5 @@ wkhtmltopdf
 pipx
 aws-vault
 git-secret
+yabai
+skhd
