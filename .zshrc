@@ -27,6 +27,7 @@ setopt always_to_end                          # move cursor to end if word had o
 unsetopt BEEP
 setopt noglob
 unsetopt correct_all                          # stop autocorrect commands
+setopt correct
 export KEYTIMEOUT=1
 bindkey "\e[3~" delete-char                   # make the delete key act nourmal
 bindkey '^e' edit-command-line                # Edit line in vim with ctrl-e:
