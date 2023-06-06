@@ -104,3 +104,4 @@ sheldon
 aws-vault
 gnome-keyring
 git-secret
+shellharden
