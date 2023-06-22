@@ -105,3 +105,7 @@ aws-vault
 gnome-keyring
 git-secret
 shellharden
+fd
+git-delta
+wezterm
+stylua

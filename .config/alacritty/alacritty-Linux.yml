@@ -1,30 +1,32 @@
+live_config_reload: true
+window:
+  opacity: 0.8
 font:
   # Normal (roman) font face
   normal:
     family: "JetBrainsMono Nerd Font"
     style: Regular
-    # Bold font face
   bold:
     family: "JetBrainsMono Nerd Font"
-    #style: Bold
-    # Italic font face
+    style: Bold
   italic:
     family: "JetBrainsMono Nerd Font"
-    #style: Italic
-    # Bold italic font face
+    style: Medium Italic # Bold italic font face
   bold_italic:
     family: "JetBrainsMono Nerd Font"
-    #style: Bold Italic
+    style: Bold Italic
     # Point size
   size: 13
   # Offset
-  #offset:
-  #  x: 0
-  #  y: 0
+  offset:
+    x: 0
+    y: 0
   # Glyph offset
-  #glyph_offset:
-  #  x: 0
-  #  y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+# window:
+#   opacity: 1.9
 theme: Dracula
 colors:
   primary:

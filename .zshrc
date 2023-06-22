@@ -49,12 +49,17 @@ fi
 # Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
 
+#############  sheldon plugin manager
+eval "$(sheldon source)"
+
 # Install npm packages globally without sudo on macOS and Linux
 NPM_PACKAGES="${HOME}/.npm-packages"
 ################################## History #######################################
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
 bindkey '^r' _atuin_search_widget
-
-#############  sheldon plugin manager
-eval "$(sheldon source)"
+bindkey '^ ' autosuggest-accept
+_zsh_autosuggest_strategy_atuin_top() {
+    suggestion=$(atuin search --cmd-only --limit 1 --search-mode prefix $1)
+}
+ZSH_AUTOSUGGEST_STRATEGY=atuin_top
