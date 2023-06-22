@@ -1,3 +1,0 @@
-pane	0	1	1	:*	0	f0dy	:/home/f0dy/.dotfiles	1	zsh	:
-window	0	1	:zsh	1	:*	c9fd,160x38,0,0,0	:
-state	0	
