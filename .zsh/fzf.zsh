@@ -1,8 +1,10 @@
 #!/usr/bin/zsh
-################################################################################
-#    Author: Fady                                                              #
-#     Email: Fady@Fadyio.com                                                   #
-################################################################################
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                 Author: Fady Nagh                        │
+#  │                                                          │
+#  │                 Email: Fady@Fadyio.com                   │
+#  │                                                          │
+#  ╰──────────────────────────────────────────────────────────╯
 [[ $- != *i* ]] && return
 
 if [[ -f ~/.fzf.zsh ]]; then
@@ -126,7 +128,7 @@ function RG() {
     ) && $EDITOR +$(cut -d: -f2 <<<$SELECTED) $(cut -d: -f1 <<<$SELECTED)
 }
 
-# Install packages using yay (change to pacman/AUR helper of your choice)
+# Install packages using paru (change to pacman/AUR helper of your choice)
 function install() {
     paru -Slq | fzf -q "$1" -m --preview 'paru -Si {1}'| xargs -ro paru -S
 }
@@ -169,8 +171,27 @@ fman() {
 }
 zle -N fman
 
-# fcd - including hidden directories
-fcd() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
+# focus- including hidden directories
+Fo() {
+   local selected
+
+  # Use fd or find to search for files and directories
+  if command -v fd >/dev/null; then
+    selected=$(fd --type f --type d . | fzf --preview 'echo {}' --bind 'ctrl-j:down,ctrl-k:up')
+  else
+    selected=$(find . -type f -o -type d | fzf --preview 'echo {}' --bind 'ctrl-j:down,ctrl-k:up')
+  fi
+
+  # If no selection is made, return
+  if [[ -z "$selected" ]]; then
+    return 0
+  fi
+
+  # Check if the selection is a directory
+  if [[ -d "$selected" ]]; then
+    cd "$selected"  # Change to the selected directory
+  else
+    nvim "$selected"  # Open the file with nvim
+  fi
 }
+bindkey -s '^f' 'Fo^M'

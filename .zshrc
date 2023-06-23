@@ -22,6 +22,9 @@ export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c - +Man! '
 export PATH="$PATH:$NPM_PACKAGES/bin"
 ################################### Options #######################################
+bindkey "\e[3~" delete-char                   # make the delete key act nourmal
+bindkey '^e' edit-command-line                # Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
 setopt auto_cd                                # cd by typing directory name if it's not a command
 setopt always_to_end                          # move cursor to end if word had one match
 unsetopt BEEP
@@ -29,9 +32,6 @@ setopt noglob
 unsetopt correct_all                          # stop autocorrect commands
 setopt correct
 export KEYTIMEOUT=1
-bindkey "\e[3~" delete-char                   # make the delete key act nourmal
-bindkey '^e' edit-command-line                # Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line    # Edit line in vim with ctrl-e:
 #::NOTE see that
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
@@ -46,6 +46,7 @@ tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
+
 # Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
 

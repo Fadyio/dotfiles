@@ -107,5 +107,4 @@ git-secret
 shellharden
 fd
 git-delta
-wezterm
 stylua

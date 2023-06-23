@@ -18,15 +18,15 @@ font:
     # Point size
   size: 13
   # Offset
-  offset:
-    x: 0
-    y: 0
-  # Glyph offset
-  glyph_offset:
-    x: 0
-    y: 0
-# window:
-#   opacity: 1.9
+  # offset:
+  #   x: 0
+  #   y: 0
+  # # Glyph offset
+  # glyph_offset:
+  #   x: 0
+  #   y: 0
+  # window:
+  #   opacity: 1.9
 theme: Dracula
 colors:
   primary:
