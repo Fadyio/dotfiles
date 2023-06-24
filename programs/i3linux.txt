@@ -1,5 +1,4 @@
 alacritty
-alacritty-themes
 anki-bin
 ansible
 appimagelauncher
