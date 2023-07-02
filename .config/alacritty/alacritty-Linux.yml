@@ -1,9 +1,8 @@
 live_config_reload: true
 import:
-  - ~/.dotfiles/.config/alacritty/themes/iterm.yaml
+  - ~/.dotfiles/.config/alacritty/themes/catppuccin.yaml
 window:
   # sets background opacity to 0.1 (10%)
-  decorations: transparent # buttonless
   opacity: 0.9
 font:
   # Normal (roman) font face

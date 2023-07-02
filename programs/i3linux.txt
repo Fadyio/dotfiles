@@ -107,3 +107,7 @@ shellharden
 fd
 git-delta
 stylua
+pulseaudio
+pavucontrol
+net-tools
+sniffnet

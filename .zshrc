@@ -1,7 +1,8 @@
-#         This is my Zsh config
-#         Email:me@fadyio.com
-#         Github:@Fadyio
-#
+#  ╭──────────────────────────────────────────────────────────╮
+#  │                   This is my Zsh config                  │
+#  │                   Email: me@fadyio.com                   │
+#  │                   Github: @Fadyio                        │
+#  ╰──────────────────────────────────────────────────────────╯
 ############################ customize prompt #########################
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh

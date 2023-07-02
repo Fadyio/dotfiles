@@ -132,6 +132,7 @@ function RG() {
 function install() {
     paru -Slq | fzf -q "$1" -m --preview 'paru -Si {1}'| xargs -ro paru -S
 }
+
 # Remove installed packages (change to pacman/AUR helper of your choice)
 function remove() {
     paru -Qq | fzf -q "$1" -m --preview 'paru -Qi {1}' | xargs -ro paru -Rns
@@ -171,27 +172,15 @@ fman() {
 }
 zle -N fman
 
-# focus- including hidden directories
-Fo() {
-   local selected
-
-  # Use fd or find to search for files and directories
-  if command -v fd >/dev/null; then
-    selected=$(fd --type f --type d . | fzf --preview 'echo {}' --bind 'ctrl-j:down,ctrl-k:up')
-  else
-    selected=$(find . -type f -o -type d | fzf --preview 'echo {}' --bind 'ctrl-j:down,ctrl-k:up')
-  fi
-
-  # If no selection is made, return
-  if [[ -z "$selected" ]]; then
-    return 0
-  fi
-
-  # Check if the selection is a directory
-  if [[ -d "$selected" ]]; then
-    cd "$selected"  # Change to the selected directory
-  else
-    nvim "$selected"  # Open the file with nvim
-  fi
+# change directories using fzf
+fcd(){
+  cd "$(fd -t d . | fzf)"
 }
-bindkey -s '^f' 'Fo^M'
+bindkey -s "^F" 'fcd^M'
+
+#  select a file to edit in Nvim
+fedit(){
+  nvim $(find . -type f | fzf) -c "$1"
+}
+bindkey -s "^o" 'fedit^M'
+bindkey -s "^g" 'lazygit^M'
