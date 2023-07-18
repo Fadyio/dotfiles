@@ -6,6 +6,7 @@ chpwd() exa --icons --group-directories-first --color-scale
 ##  utilities
 # Add aws Auto-completion
   alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
+  alias awsv='aws-vault exec fadyio -- aws '
   alias mdkir='mkdir'
   alias sudp='sudo'
   alias :q="exit"

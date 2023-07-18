@@ -111,3 +111,11 @@ pulseaudio
 pavucontrol
 net-tools
 sniffnet
+podman
+nicotine+
+nmap
+tailscale
+pyenv
+httpie
+yq
+htmlq

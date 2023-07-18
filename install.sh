@@ -102,10 +102,11 @@ function installPythonPackages() {
 	echo "==================================="
 
 	cd ~/
-  python3 -m pip install --user pipx
+	python3 -m pip install --user pipx
 	pipx install semgrep
 	pipx install sioyek
 	pipx install autopep8
+	pipx install pipenv
 	pipx install ueberzug
 	pipx install proselint
 	pipx install "ansible-lint"
