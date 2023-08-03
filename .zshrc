@@ -65,8 +65,3 @@ _zsh_autosuggest_strategy_atuin_top() {
     suggestion=$(atuin search --cmd-only --limit 1 --search-mode prefix $1)
 }
 ZSH_AUTOSUGGEST_STRATEGY=atuin_top
-
-# pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"

@@ -18,15 +18,5 @@
         "is_default_search": true,
         "run_without_argument": false,
         "added": 1649487092.1220005
-    },
-    "dc5114f6-c86f-4123-b5c4-bd99d07d497f": {
-        "id": "dc5114f6-c86f-4123-b5c4-bd99d07d497f",
-        "name": "Wikipedia",
-        "keyword": "wikixcvbgfd",
-        "cmd": "https://en.wikipedia.org/wiki/%s",
-        "icon": "/usr/share/ulauncher/media/wikipedia-icon.png",
-        "is_default_search": true,
-        "run_without_argument": false,
-        "added": 1649487092.122049
     }
 }
