@@ -119,6 +119,8 @@ httpie
 yq
 htmlq
 hugo-extended-cli
-activitywatch-bin
 ytfzf
 ueberzugpp
+appimagelauncher
+espanso
+traceroute

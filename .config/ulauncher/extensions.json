@@ -1,32 +1,4 @@
 {
-    "com.github.rootwork.ulauncher-symbol": {
-        "id": "com.github.rootwork.ulauncher-symbol",
-        "url": "https://github.com/rootwork/ulauncher-symbol",
-        "updated_at": "2023-02-24T05:25:33.414312",
-        "last_commit": "c5d7ab5c94c1b418cb1f8a9161be169a29c65658",
-        "last_commit_time": "2022-02-24T01:17:09"
-    },
-    "com.github.hillaryychan.ulauncher-fzf": {
-        "id": "com.github.hillaryychan.ulauncher-fzf",
-        "url": "https://github.com/hillaryychan/ulauncher-fzf",
-        "updated_at": "2023-02-24T05:25:35.928238",
-        "last_commit": "57678a77939a1389e2815b546fc68916692ba512",
-        "last_commit_time": "2023-01-12T12:38:04"
-    },
-    "com.github.mikebarkmin.ulauncher-obsidian": {
-        "id": "com.github.mikebarkmin.ulauncher-obsidian",
-        "url": "https://github.com/mikebarkmin/ulauncher-obsidian",
-        "updated_at": "2023-02-24T05:25:38.179306",
-        "last_commit": "d1c282fb1ba57438e61e036def134917ec921f90",
-        "last_commit_time": "2023-01-22T06:30:15"
-    },
-    "com.github.kwaadpepper.zealdoc": {
-        "id": "com.github.kwaadpepper.zealdoc",
-        "url": "https://github.com/Kwaadpepper/zealdoc",
-        "updated_at": "2023-02-24T05:25:40.355354",
-        "last_commit": "e56fc14464783e3c1ad7f4f219e1efaab6143328",
-        "last_commit_time": "2021-09-04T07:35:18"
-    },
     "com.github.brpaz.ulauncher-awesomelists": {
         "id": "com.github.brpaz.ulauncher-awesomelists",
         "url": "https://github.com/brpaz/ulauncher-awesomelists",
@@ -58,16 +30,9 @@
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2023-02-24T05:25:56.094922",
-        "last_commit": "667613bf7bb6b4affa4f2121b58589477cd89829",
-        "last_commit_time": "2021-11-08T18:16:55"
-    },
-    "com.github.ulauncher.ulauncher-kill": {
-        "id": "com.github.ulauncher.ulauncher-kill",
-        "url": "https://github.com/Ulauncher/ulauncher-kill",
-        "updated_at": "2023-02-24T05:25:58.418610",
-        "last_commit": "00ffe8266dbb6c2aea7d86a6363e51cec4b1981f",
-        "last_commit_time": "2022-11-26T16:15:05"
+        "updated_at": "2023-08-13T15:29:22.129490",
+        "last_commit": "a035679b0cba53e4f79be5d915cadeedbdc642da",
+        "last_commit_time": "2023-06-22T00:38:19"
     },
     "com.github.rmassidda.ulauncher-firefox-history": {
         "id": "com.github.rmassidda.ulauncher-firefox-history",
