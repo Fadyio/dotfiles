@@ -1,5 +1,5 @@
 #Custom cd when you cd into dir it will ls as well.
-chpwd() exa --icons --group-directories-first --color-scale
+chpwd() eza --icons --group-directories-first --color-scale
 
 # Alias
 
@@ -26,11 +26,11 @@ chpwd() exa --icons --group-directories-first --color-scale
   alias htp=wkhtmltopdf
   alias sblock='sudo bash ~/.dotfiles/scripts/smedia.sh'
  # Changing "ls" to "exa"
-  alias ls="exa --icons --color-scale --long --header --git --sort=extension"
-  alias la='exa -a --color=always --group-directories-first'  # all files and dirs
-  alias ll='exa -l --color=always --group-directories-first'  # long format
-  alias l.='exa -a | egrep "^\."'
-  alias tree="exa --tree --icons --color-scale --level=2"
+  alias ls="eza --icons --color-scale --long --header --git --sort=extension"
+  alias la='eza -a --color=always --group-directories-first'  # all files and dirs
+  alias ll='eza -l --color=always --group-directories-first'  # long format
+  alias l.='eza -a | egrep "^\."'
+  alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff
   alias ytvid='yt-dlp  -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
   alias ytlist='yt-dlp -P ~/Downloads -ciw --format mp4  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'

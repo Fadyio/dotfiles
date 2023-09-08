@@ -20,7 +20,7 @@ curl
 docker
 dropbox
 epub-thumbnailer-git
-exa
+eza
 feh
 ffmpeg
 ffmpeg-audio-thumbnailer
@@ -113,14 +113,12 @@ sniffnet
 podman
 nicotine+
 nmap
-tailscale
 pyenv
 httpie
 yq
 htmlq
 hugo-extended-cli
 ytfzf
-ueberzugpp
 appimagelauncher
 espanso
 traceroute

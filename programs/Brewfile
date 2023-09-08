@@ -11,7 +11,7 @@ cppcheck
 keka
 curl
 delta
-exa
+eza
 ffmpeg
 flac
 fzf
@@ -83,7 +83,6 @@ yabai
 skhd
 fd
 git-delta
-tailscale
 termshark
 pyenv
 httpie

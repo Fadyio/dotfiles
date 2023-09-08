@@ -2,7 +2,7 @@ sh ~/.screenlayout/hdmi.sh &
 ulauncher &
 megasync &
 dropbox &
-aw-qt &
+nekoray &
 copyq &
 flameshot &
 unclutter &
