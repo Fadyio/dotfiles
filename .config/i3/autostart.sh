@@ -1,6 +1,5 @@
 sh ~/.screenlayout/hdmi.sh &
 ulauncher &
-megasync &
 dropbox &
 nekoray &
 copyq &

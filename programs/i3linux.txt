@@ -79,7 +79,6 @@ mousepad
 spotify
 mousepad
 unclutter
-megasync
 luarocks
 python
 ark
@@ -122,3 +121,5 @@ ytfzf
 appimagelauncher
 espanso
 traceroute
+aardvark-dns
+fx
