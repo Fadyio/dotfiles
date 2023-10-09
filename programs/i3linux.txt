@@ -62,7 +62,6 @@ tmux
 tumbler-devel
 tumbler-extra-thumbnailers
 ulauncher
-vagrant
 vim
 virtualbox
 virtualbox-host-modules-arch
@@ -90,7 +89,6 @@ hadolint-bin
 pandoc-bin
 vhs
 glow
-lux-dl
 termshark
 pulseaudio
 ttf-font-awesome
@@ -109,7 +107,6 @@ pulseaudio
 pavucontrol
 net-tools
 sniffnet
-podman
 nicotine+
 nmap
 pyenv
@@ -123,3 +120,6 @@ espanso
 traceroute
 aardvark-dns
 fx
+fcp-bin
+yazi-bin
+microsoft-edge-stable-bin
