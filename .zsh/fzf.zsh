@@ -171,16 +171,3 @@ fman() {
       --bind "alt-t:+change-preview(tldr --color=always {1})+change-prompt(ﳁ TLDR > )"
 }
 zle -N fman
-
-# change directories using fzf
-fcd(){
-  cd "$(fd -t d . | fzf)"
-}
-bindkey -s "^F" 'fcd^M'
-
-#  select a file to edit in Nvim
-fedit(){
-  nvim $(find . -type f | fzf) -c "$1"
-}
-bindkey -s "^o" 'fedit^M'
-bindkey -s "^g" 'lazygit^M'

@@ -56,7 +56,7 @@ zle -C alias-expension complete-word _generic
 bindkey '^Xa' alias-expension
 zstyle ':completion:alias-expension:*' completer _expand_alias
 
-zstyle :compinstall filename "$HOME/.zshrc"
+zstyle :compinstall filename "$HOME/.zsh/completion.zsh"
 zstyle ':completion:*' rehash true
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -96,3 +96,19 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 zstyle ':completion:*' keep-prefix true
 
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+
+# set descriptions format to enable group support
+zstyle ':completion:*:descriptions' format '[%d]'
+
+# set list-colors to enable filename colorizing
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# preview directory's content with exa when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+
+# switch group using `,` and `.`
+zstyle ':fzf-tab:*' switch-group ',' '.'
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup

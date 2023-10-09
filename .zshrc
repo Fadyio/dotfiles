@@ -22,6 +22,8 @@ export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c - +Man! '
 export PATH="$PATH:$NPM_PACKAGES/bin"
+export ZPWR_EXPAND_BLACKLIST=(ls zi z)
+
 ################################### Options #######################################
 bindkey "\e[3~" delete-char                   # make the delete key act nourmal
 bindkey '^e' edit-command-line                # Edit line in vim with ctrl-e:
@@ -50,6 +52,9 @@ fi
 
 # Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
+
+############# A smarter cd command is z for zsh
+eval "$(zoxide init zsh)"
 
 #############  sheldon plugin manager
 eval "$(sheldon source)"

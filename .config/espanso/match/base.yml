@@ -1,0 +1,59 @@
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there! hhoohjouj"
+  - trigger: ":br"
+    replace: "Best Regards,\nJon Snow"
+  # A selection of shortcodes for the Hugo static site generator. platform.
+  - trigger: ":hy"
+    replace: "{{< youtube id=\"$|$YOUTUBE_ID\" title=\"VIDEO_TITLE\" autoplay=\"TRUE_|_FALSE\" >}}"
+  - trigger: ":hg"
+    replace: "{{< gist GIT_USER_NAME GIST_ID >}}"
+  - trigger: ":hil"
+    replace: |-
+      {{< highlight $|$SYNTAX_LANG >}}
+
+      {{< /highlight >}}
+  - trigger: ":hy"
+    replace: "{{< youtube id=\"$|$YOUTUBE_ID\" title=\"VIDEO_TITLE\" autoplay=\"TRUE_|_FALSE\" >}}"
+  - trigger: ":him"
+    replace: "{{< image src=\"/uploads/$|$IMAGE_FILE_NAME\" alt=\"ALT_TEXT\" position=\"center\" style=\"border-radius: 30px;\" >}}"
+  # Print the current date
+  - trigger: ":date"
+    # But matches can also be dynamic:
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+  # A simple package to make writing Markdown easier
+  - triggers: [":block:", ":mb:"]
+    replace: |-
+      ```$|$
+      ```
+    force_clipboard: true
+  - triggers: [":code:", ":mc:"]
+    replace: |-
+      `$|$`
+    force_clipboard: true
+  - trigger: ":italic:"
+    replace: "*$|$*"
+  - trigger: ":strike:"
+    replace: "~~$|$~~"
+  - trigger: ":url:"
+    replace: "[$|$]()"
+  - triggers: [":image:", ":img:"]
+    replace: "![]($|$)"
+  - triggers: [":horizontal:", ":mh:"]
+    replace: "___"
+  - triggers: [":task:", ":mt:"]
+    replace: "- [ ] "

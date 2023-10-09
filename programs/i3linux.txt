@@ -123,3 +123,4 @@ fx
 fcp-bin
 yazi-bin
 microsoft-edge-stable-bin
+zoxide
