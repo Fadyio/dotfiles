@@ -76,6 +76,7 @@ function installNpmPackages() {
 	npm install -g eslint_d
 	npm install -g fixjson
 	npm install -g sql-formatter
+  curl -sLS https://get.arkade.dev | sudo sh
 
 }
 
