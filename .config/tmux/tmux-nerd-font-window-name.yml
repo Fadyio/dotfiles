@@ -24,7 +24,7 @@ icons:
   lfcd: ""
   nala: ""
   node: ""
-  nvim: ""
+  nvim: 
   pacman: ""
   parted: ""
   paru: ""
@@ -39,4 +39,4 @@ icons:
   top: ""
   yay: ""
   yum: ""
-  zsh: ""
+  zsh: 
