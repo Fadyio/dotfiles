@@ -1,7 +1,7 @@
 matches:
   # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there! hhoohjouj"
+  - trigger: ":darkpdf"
+    replace: "document.querySelector('embed').style.filter = 'invert()'"
   - trigger: ":br"
     replace: "Best Regards,\nJon Snow"
   # A selection of shortcodes for the Hugo static site generator. platform.
