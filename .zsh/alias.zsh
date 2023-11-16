@@ -1,5 +1,5 @@
 #Custom cd when you cd into dir it will ls as well.
-chpwd() eza --icons --group-directories-first --color-scale
+chpwd() eza --icons --group-directories-first --color-scale all
 
 # Alias
 
@@ -7,6 +7,8 @@ chpwd() eza --icons --group-directories-first --color-scale
 # Add aws Auto-completion
   alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
   alias awsv='aws-vault exec fadyio -- aws '
+  alias copilot='gh copilot suggest'
+  alias explain='gh copilot explain'
   alias mdkir='mkdir'
   alias sudp='sudo'
   alias :q="exit"
@@ -26,17 +28,17 @@ chpwd() eza --icons --group-directories-first --color-scale
   alias htp=wkhtmltopdf
   alias sblock='sudo bash ~/.dotfiles/scripts/smedia.sh'
  # Changing "ls" to "exa"
-  alias ls="eza --icons --color-scale --long --header --git --sort=extension"
+  alias ls="eza --icons --color-scale all --long --header --git --sort=extension"
   alias la='eza -a --color=always --group-directories-first'  # all files and dirs
   alias ll='eza -l --color=always --group-directories-first'  # long format
   alias l.='eza -a | egrep "^\."'
   alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff
-  alias ytvid='yt-dlp  -P ~/Downloads -ciw --format mp4 -o "%(title)s.%(ext)s"'
-  alias ytlist='yt-dlp -P ~/Downloads -ciw --format mp4  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias ytvid='yt-dlp  -P ~/Downloads -ciw --format mp4 --sponsorblock-remove sponsor -o "%(title)s.%(ext)s"'
+  alias ytlist='yt-dlp -P ~/Downloads -ciw --format mp4  --sponsorblock-remove sponsor -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-  alias ytmp3="yt-dlp --extract-audio --audio-format mp3 "
-  alias ytflac="yt-dlp --extract-audio --audio-format flac "
+  alias ytmp3="yt-dlp --sponsorblock-remove  sponsor --extract-audio  --audio-format mp3 "
+  alias ytflac="yt-dlp --sponsorblock-remove sponsor --extract-audio --audio-format flac "
   alias torrent='aria2c -d ~/Downloads'
   alias downsite='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 # confirm before overwriting something

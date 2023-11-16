@@ -125,3 +125,6 @@ yazi-bin
 microsoft-edge-stable-bin
 zoxide
 fpp-git
+sad
+lynis
+lux
