@@ -2,9 +2,8 @@ matches:
   # Simple text replacement
   - trigger: ":darkpdf"
     replace: "document.querySelector('embed').style.filter = 'invert()'"
-  - trigger: ":br"
-    replace: "Best Regards,\nJon Snow"
-  # A selection of shortcodes for the Hugo static site generator. platform.
+  - trigger: ":hdelete"
+    replace: "atuin search --delete --search-mode prefix "
   - trigger: ":hy"
     replace: "{{< youtube id=\"$|$YOUTUBE_ID\" title=\"VIDEO_TITLE\" autoplay=\"TRUE_|_FALSE\" >}}"
   - trigger: ":hg"
