@@ -1325,8 +1325,8 @@
       # '*prod*'  PROD    # These values are examples that are unlikely
       # '*test*'  TEST    # to match your needs. Customize them as needed.
       '*'       DEFAULT)
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=#016FB9
-  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=#1E2749
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_FOREGROUND=#ffffff
+  typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_BACKGROUND=#016FB9
   typeset -g POWERLEVEL9K_KUBECONTEXT_DEFAULT_VISUAL_IDENTIFIER_EXPANSION='󱃾'
 
   # Use POWERLEVEL9K_KUBECONTEXT_CONTENT_EXPANSION to specify the content displayed by kubecontext

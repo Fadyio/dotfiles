@@ -16,6 +16,7 @@ fi
 export PATH=~/.cargo/bin:$PATH
 export EDITOR="nvim"
 export VISUAL='nvim'
+export GREP_COLORS="ms=04;31:mc=01;31:sl=:cx=:fn=35:ln=32:bn=32:se=36"
 export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH

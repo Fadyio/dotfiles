@@ -171,3 +171,13 @@ fman() {
       --bind "alt-t:+change-preview(tldr --color=always {1})+change-prompt(ﳁ TLDR > )"
 }
 zle -N fman
+
+function upgrade {
+  if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    paru -Syu
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew update && brew upgrade
+  else
+    echo "Unknown operating system."
+  fi
+}

@@ -13,7 +13,6 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias sudp='sudo'
   alias :q="exit"
   alias c='clear'
-  alias upgrade='paru -Syu'
   alias zshreload="source ~/.zshrc"
   alias zshconfig='nvim ~/.zshrc'
   alias i3config='nvim ~/.config/i3/config'
@@ -27,6 +26,8 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias v='nvim'
   alias htp=wkhtmltopdf
   alias sblock='sudo bash ~/.dotfiles/scripts/smedia.sh'
+  alias cat='bat --color=always'
+  alias grep='grep --color=auto'
  # Changing "ls" to "exa"
   alias ls="eza --icons --color-scale all --long --header --git --sort=extension"
   alias la='eza -a --color=always --group-directories-first'  # all files and dirs
