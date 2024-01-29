@@ -128,3 +128,4 @@ fpp-git
 sad
 lynis
 lux
+k9s
