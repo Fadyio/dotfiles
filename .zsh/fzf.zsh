@@ -181,3 +181,13 @@ function upgrade {
     echo "Unknown operating system."
   fi
 }
+
+# Create a new directory and enter it
+function mcd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+# curl and JSON prettify the response body
+function cjq () {
+    curl -s "$@" | jq;
+}

@@ -114,3 +114,8 @@ zstyle ':fzf-tab:*' switch-group ',' '.'
 
 # add completion for mpv
 zstyle ':completion:*:*:mpv:*' file-patterns '*.(#i)(flv|mp4|webm|mkv|wmv|mov|avi|mp3|ogg|wma|flac|wav|aiff|m4a|m4b|m4v|gif|ifo)(-.) *(-/):directories' '*:all-files'
+
+# Enable git bash completion for `g`
+if type __git_complete &> /dev/null; then
+  __git_complete g __git_main
+fi;

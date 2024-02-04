@@ -52,3 +52,41 @@ chpwd() eza --icons --group-directories-first --color-scale all
 ## Git stuff
   alias g='git'
   alias lg='lazygit'
+  alias ga='git add '
+  alias gb='git branch '
+  alias gc='git commit'
+  alias gds='git diff --staged'
+  alias gl='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+# Switch to common branch, pull and prune
+  alias g-main="git checkout main && git pull && git fetch -p"
+  alias g-dev="git checkout dev && git pull && git fetch -p"
+# git+github: check out PR by number
+  alias ghpr='gh pr checkout'
+# git: create a PR
+  alias pr-create='gh pr create -f'
+  alias pr-create-draft='gh pr create -f -d'
+  alias vs="code ."
+  alias pubkey="cat ~/.ssh/id_rsa.pub"
+  alias pubkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
+  # Get week number
+  alias week='date +%V'
+# Show IP
+  alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+# Kubernetes
+  alias k="kubectl"
+  alias kg="kubectl get"
+  alias kd="kubectl describe"
+  alias kgp="kg pods"
+  alias kgpw="kg pods --watch"
+  alias kgd="kg deploy"
+  alias kgn="kg nodes"
+  alias kdp="kd pod"
+  alias kdd="kd deploy"
+  alias ktop="k top pod"
+  alias kexec="k exec -ti "
+  alias klog="k logs"
+  alias klogf="k logs -f"
+  alias klogf5m="k logs --since 5m -f"
+  alias klogf1m="k logs --since 1m -f"
+  alias klogf1s="k logs --since 1s -f"
+  alias klogprev="k logs --tail 40 --previous"
