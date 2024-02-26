@@ -9,7 +9,6 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias awsv='aws-vault exec fadyio -- aws '
   alias copilot='gh copilot suggest'
   alias explain='gh copilot explain'
-  alias gh='hub'
   alias k='kubectl'
   alias mdkir='mkdir'
   alias sudp='sudo'

@@ -54,7 +54,7 @@ fi
 eval `keychain --eval --agents ssh id_ed25519`
 
 ############# A smarter cd command is z for zsh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 #############  sheldon plugin manager
 eval "$(sheldon source)"
