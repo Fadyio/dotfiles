@@ -5,7 +5,6 @@ chpwd() eza --icons --group-directories-first --color-scale all
 
 ##  utilities
 # Add aws Auto-completion
-  alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
   alias awsv='aws-vault exec fadyio -- aws '
   alias copilot='gh copilot suggest'
   alias explain='gh copilot explain'
@@ -19,6 +18,7 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias i3config='nvim ~/.config/i3/config'
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
+  alias pip='pip --break-system-packages'
   alias x='extract'
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
@@ -55,7 +55,7 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias gb='git branch '
   alias gc='git commit'
   alias gds='git diff --staged'
-  alias gl='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+  alias glog="git log --graph --format='format:%C(yellow)%h%C(reset) %s %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)'"
 # Switch to common branch, pull and prune
   alias g-main="git checkout main && git pull && git fetch -p"
   alias g-dev="git checkout dev && git pull && git fetch -p"
@@ -69,8 +69,23 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias pubkeycopy="cat ~/.ssh/id_rsa.pub | pbcopy"
   # Get week number
   alias week='date +%V'
-# Show IP
-  alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+  # Networking
+  alias ipp="dig +short myip.opendns.com @resolver1.opendns.com"
+  alias nmap_open_ports="nmap --open"
+  alias nmap_list_interfaces="nmap --iflist"
+  alias nmap_slow="sudo nmap -sS -v -T1"
+  alias nmap_fin="sudo nmap -sF -v"
+  alias nmap_full="sudo nmap -sS -T4 -PE -PP -PS80,443 -PY -g 53 -A -p1-65535 -v"
+  alias nmap_check_for_firewall="sudo nmap -sA -p1-65535 -v -T4"
+  alias nmap_ping_through_firewall="nmap -PS -PA"
+  alias nmap_fast="nmap -F -T5 --version-light --top-ports 300"
+  alias nmap_detect_versions="sudo nmap -sV -p1-65535 -O --osscan-guess -T4 -Pn"
+  alias nmap_check_for_vulns="nmap --script=vuln"
+  alias nmap_full_udp="sudo nmap -sS -sU -T4 -A -v -PE -PS22,25,80 -PA21,23,80,443,3389 "
+  alias nmap_traceroute="sudo nmap -sP -PE -PS22,25,80 -PA21,23,80,3389 -PU -PO --traceroute "
+  alias nmap_full_with_scripts="sudo nmap -sS -sU -T4 -A -v -PE -PP -PS21,22,23,25,80,113,31339 -PA80,113,443,10042 -PO --script all "
+  alias nmap_web_safe_osscan="sudo nmap -p 80,443 -O -v --osscan-guess --fuzzy "
+  alias nmap_ping_scan="nmap -n -sP"
 # Kubernetes
   alias k="kubectl"
   alias kg="kubectl get"

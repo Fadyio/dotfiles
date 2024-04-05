@@ -42,7 +42,6 @@ setopt PUSHD_SILENT         # Do not print the directory stack after pushd or po
 ########################## source alias and Plugins ##############################
 source ~/.dotfiles/.zsh/completion.zsh
 source ~/.dotfiles/.zsh/alias.zsh
-source ~/.dotfiles/.zsh/scripts.zsh
 source ~/.dotfiles/.zsh/fzf.zsh
 #################### start tmux automatically ####################################
 tmux attach &> /dev/null
@@ -50,11 +49,12 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 
+############# A smarter cd command is z for zsh
+eval "$(zoxide init --cmd cd zsh)"
+
 # Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
 
-############# A smarter cd command is z for zsh
-eval "$(zoxide init --cmd cd zsh)"
 
 #############  sheldon plugin manager
 eval "$(sheldon source)"

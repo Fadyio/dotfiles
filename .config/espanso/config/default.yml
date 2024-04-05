@@ -1,6 +1,0 @@
-matches:
-  # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
-  - trigger: ":hdelete"
-    replace: "atuin search --delete --search-mode prefix "

@@ -176,7 +176,7 @@ function upgrade {
   if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     paru -Syu
     elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew update && brew upgrade
+    brew update && brew upgrade && brew cleanup
   else
     echo "Unknown operating system."
   fi
@@ -191,3 +191,36 @@ function mcd() {
 function cjq () {
     curl -s "$@" | jq;
 }
+
+ssh-create() {
+    if [ ! -z "$1" ]; then
+        ssh-keygen -f $HOME/.ssh/$1 -t rsa -N '' -C "$1"
+        chmod 700 $HOME/.ssh/$1*
+    fi
+}
+
+# git log browser with FZF
+fglog() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+if (( ${+commands[compleat]} )); then
+  local prefix="${commands[compleat]:h:h}"
+  local setup="${prefix}/share/compleat-1.0/compleat_setup"
+
+  if [[ -f "$setup" ]]; then
+    if ! bashcompinit >/dev/null 2>&1; then
+      autoload -U bashcompinit
+      bashcompinit -i
+    fi
+
+    source "$setup"
+  fi
+fi

@@ -121,7 +121,7 @@ traceroute
 aardvark-dns
 fx
 fcp-bin
-yazi-bin
+yazi
 microsoft-edge-stable-bin
 zoxide
 fpp-git
@@ -130,3 +130,8 @@ lynis
 lux
 k9s
 terragrunt
+whois
+wireshark-qt
+uv
+iftop
+hping

@@ -1,58 +1,20 @@
 matches:
-  # Simple text replacement
+  # Simple stuff
   - trigger: ":darkpdf"
     replace: "document.querySelector('embed').style.filter = 'invert()'"
   - trigger: ":hdelete"
     replace: "atuin search --delete --search-mode prefix "
-  - trigger: ":hy"
-    replace: "{{< youtube id=\"$|$YOUTUBE_ID\" title=\"VIDEO_TITLE\" autoplay=\"TRUE_|_FALSE\" >}}"
-  - trigger: ":hg"
-    replace: "{{< gist GIT_USER_NAME GIST_ID >}}"
-  - trigger: ":hil"
-    replace: |-
-      {{< highlight $|$SYNTAX_LANG >}}
-
-      {{< /highlight >}}
-  - trigger: ":hy"
-    replace: "{{< youtube id=\"$|$YOUTUBE_ID\" title=\"VIDEO_TITLE\" autoplay=\"TRUE_|_FALSE\" >}}"
-  - trigger: ":him"
-    replace: "{{< image src=\"/uploads/$|$IMAGE_FILE_NAME\" alt=\"ALT_TEXT\" position=\"center\" style=\"border-radius: 30px;\" >}}"
-  # Print the current date
-  - trigger: ":date"
-    # But matches can also be dynamic:
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%m/%d/%Y"
-  # Print the output of a shell command
-  - trigger: ":shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "echo 'Hello from your shell'"
-  # A simple package to make writing Markdown easier
-  - triggers: [":block:", ":mb:"]
-    replace: |-
-      ```$|$
-      ```
-    force_clipboard: true
-  - triggers: [":code:", ":mc:"]
-    replace: |-
-      `$|$`
-    force_clipboard: true
-  - trigger: ":italic:"
-    replace: "*$|$*"
-  - trigger: ":strike:"
-    replace: "~~$|$~~"
-  - trigger: ":url:"
-    replace: "[$|$]()"
-  - triggers: [":image:", ":img:"]
-    replace: "![]($|$)"
-  - triggers: [":horizontal:", ":mh:"]
-    replace: "___"
-  - triggers: [":task:", ":mt:"]
-    replace: "- [ ] "
+  # My links
+  - trigger: ":me.e"
+    replace: "fady@fadyio.com"
+  - trigger: ":me.gh"
+    replace: "https://github.com/fadyio"
+  - trigger: ":me.ln"
+    replace: "https://linkedin.com/in/fadyio"
+  - trigger: ":me.site"
+    replace: "https://fadyio.com"
+  - trigger: ":me. flow"
+    replace: "https://stackoverflow.com/users/14895864/fady"
+  # GPT and AI stuff
+  - trigger: ":learngpt\\((?P<topic>.*)\\)"
+    replace: "\"Let's have a discussion about {{topic}} that right now I'm curious about, and you'll ask me questions to help me explore \n it further. We'll work together to build a deep understanding of the {{topic}}, and you'll provide \nfeedback to help me identify any misconceptions or gaps in my understanding, sort of like \nthe Feynman technique. We'll approach this with an open mind, and we'll be curious and inquisitive\nas we explore {{topic}} I want you to keep in mind that you do also ask specific questions that will push my understanding of said topic, it doesn't matter if I'm not capable of answering cause my goal is to learn more and more. Let's begin. \"\n"

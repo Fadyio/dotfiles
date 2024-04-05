@@ -33,3 +33,6 @@ github = 'le0me55i/zsh-extract'
 
 [plugins.expand]
 github = 'MenkeTechnologies/zsh-expand'
+
+[plugins.gitignore]
+remote = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/gitignore/gitignore.plugin.zsh"
