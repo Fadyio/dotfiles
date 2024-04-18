@@ -21,7 +21,6 @@ export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim -c "%! col -b" -c - +Man! '
-export PATH="$PATH:$NPM_PACKAGES/bin"
 export ZPWR_EXPAND_BLACKLIST=(ls zi z)
 
 ################################### Options #######################################

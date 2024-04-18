@@ -135,3 +135,5 @@ wireshark-qt
 uv
 iftop
 hping
+freeze
+jnv

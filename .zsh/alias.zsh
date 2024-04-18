@@ -6,6 +6,7 @@ chpwd() eza --icons --group-directories-first --color-scale all
 ##  utilities
 # Add aws Auto-completion
   alias awsv='aws-vault exec fadyio -- aws '
+  alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
   alias copilot='gh copilot suggest'
   alias explain='gh copilot explain'
   alias k='kubectl'
@@ -18,7 +19,6 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias i3config='nvim ~/.config/i3/config'
   alias pbcopy='xsel --clipboard --input'
   alias pbpaste='xsel --clipboard --output'
-  alias pip='pip --break-system-packages'
   alias x='extract'
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
