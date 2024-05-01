@@ -32,7 +32,7 @@ chpwd() eza --icons --group-directories-first --color-scale all
  # Changing "ls" to "exa"
   alias ls="eza --icons --color-scale all --long --header --git --sort=extension"
   alias la='eza -a --color=always --group-directories-first'  # all files and dirs
-  alias ll='eza -l --color=always --group-directories-first'  # long format
+  alias l="eza -l --icons --git -a"
   alias l.='eza -a | egrep "^\."'
   alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff

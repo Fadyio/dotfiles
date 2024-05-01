@@ -25,8 +25,8 @@ export FZF_FILE_HIGHLIGHTER
 
 FZF_DIR_HIGHLIGHTER='ls -l --color=always'
 (( $+commands[tree] )) && FZF_DIR_HIGHLIGHTER='tree -CtrL2'
-(( $+commands[exa]  )) && FZF_DIR_HIGHLIGHTER='exa --color=always -TL2'
-(( $+commands[lsd]  )) && FZF_DIR_HIGHLIGHTER='lsd --color=always --tree --depth=2'
+(( $+commands[exa]  )) && FZF_DIR_HIGHLIGHTER='eza --color=always -TL2'
+(( $+commands[lsd]  )) && FZF_DIR_HIGHLIGHTER='ls --color=always --tree --depth=2'
 export FZF_DIR_HIGHLIGHTER
 
 FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD ||
@@ -90,16 +90,6 @@ export FZF_ALT_C_OPTS="
 --preview '($FZF_DIR_HIGHLIGHTER {}) | head -200 2>/dev/null'
 --preview-window=right:50%
 "
-
-# FZF: Alt - E
-FZF_ALT_E_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_E_COMMAND
-FZF_ALT_E_OPTS="
---preview \"($FZF_FILE_HIGHLIGHTER {} || $FZF_DIR_HIGHLIGHTER {}) 2>/dev/null | head -200\"
---bind 'alt-e:execute($EDITOR {} >/dev/tty </dev/tty)'
---preview-window default:right:60%
-"
-export FZF_ALT_E_OPTS
 
 function Rg() {
     local SELECTED
@@ -187,11 +177,6 @@ function mcd() {
 	mkdir -p "$@" && cd "$_";
 }
 
-# curl and JSON prettify the response body
-function cjq () {
-    curl -s "$@" | jq;
-}
-
 ssh-create() {
     if [ ! -z "$1" ]; then
         ssh-keygen -f $HOME/.ssh/$1 -t rsa -N '' -C "$1"
@@ -224,3 +209,6 @@ if (( ${+commands[compleat]} )); then
     source "$setup"
   fi
 fi
+
+# navigation
+fv() { nvim "$(find . -type f -not -path '*/.*' | fzf)" }

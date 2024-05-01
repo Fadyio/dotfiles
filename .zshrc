@@ -54,7 +54,6 @@ eval "$(zoxide init --cmd cd zsh)"
 # Enable keychain in zsh
 eval `keychain --eval --agents ssh id_ed25519`
 
-
 #############  sheldon plugin manager
 eval "$(sheldon source)"
 

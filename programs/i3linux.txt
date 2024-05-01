@@ -111,7 +111,7 @@ nicotine+
 nmap
 pyenv
 httpie
-yq
+go-yq
 htmlq
 hugo-extended-cli
 ytfzf
@@ -137,3 +137,13 @@ iftop
 hping
 freeze
 jnv
+shellcheck
+the_silver_searcher
+delve
+gitleaks
+gnu-netcat
+kubectx
+krew
+bfg
+duf
+kustomize
