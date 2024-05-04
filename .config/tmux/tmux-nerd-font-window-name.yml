@@ -3,7 +3,7 @@ config:
   show-name: true
 icons:
   apt: ""
-  bash: ""
+  bash: ""
   beam.smp: ""
   beam: ""
   brew: ""
@@ -23,7 +23,7 @@ icons:
   lf: ""
   lfcd: ""
   yazi: ""
-  nvim: ""
+  nvim: ""
   nala: ""
   node: ""
   pacman: ""
@@ -41,4 +41,6 @@ icons:
   top: ""
   yay: ""
   yum: ""
-  zsh: 
+  zsh: ""
+  curl: "\U000F0626"
+  unzip: ""
