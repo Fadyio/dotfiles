@@ -36,8 +36,8 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias l.='eza -a | egrep "^\."'
   alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff
-  alias ytvid='yt-dlp  -P ~/Downloads -ciw --format mp4 --sponsorblock-remove sponsor -o "%(title)s.%(ext)s"'
-  alias ytlist='yt-dlp -P ~/Downloads -ciw --format mp4  --sponsorblock-remove sponsor -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias ytvid='yt-dlp  -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]" --sponsorblock-remove sponsor -o "%(title)s.%(ext)s"'
+  alias ytlist='yt-dlp -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]" --sponsorblock-remove sponsor -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias ytmp3="yt-dlp --sponsorblock-remove  sponsor --extract-audio  --audio-format mp3 "
   alias ytflac="yt-dlp --sponsorblock-remove sponsor --extract-audio --audio-format flac "
@@ -54,6 +54,8 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias ga='git add '
   alias gb='git branch '
   alias gc='git commit'
+  alias gco='git checkout'
+  alias gm='git merge'
   alias gds='git diff --staged'
   alias glog="git log --graph --format='format:%C(yellow)%h%C(reset) %s %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)'"
 # Switch to common branch, pull and prune
