@@ -1,24 +1,14 @@
-import = ["/home/f0dy/.dotfiles/.config/alacritty/themes/catppuccin_mocha.toml"]
+import = [
+  "/usr/lib/node_modules/alacritty-themes/themes/Catppuccin-Mocha.toml"
+]
 live_config_reload = true
 
 [font]
 size = 13
 
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Bold"
-
-[font.bold_italic]
-family = "JetBrainsMono Nerd Font"
-style = "Bold Italic"
-
-[font.italic]
-family = "JetBrainsMono Nerd Font"
-style = "Italic"
-
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Regular"
+  [font.normal]
+  family = "JetBrainsMono Nerd Font"
+  style = "Regular"
 
 [window]
 opacity = 0.9

@@ -34,6 +34,7 @@ setopt noglob
 unsetopt correct_all                          # stop autocorrect commands
 setopt correct
 export KEYTIMEOUT=1
+setopt nonomatch
 #::NOTE see that
 setopt AUTO_PUSHD           # Push the current directory visited on the stack.
 setopt PUSHD_IGNORE_DUPS    # Do not store duplicates in the stack.
