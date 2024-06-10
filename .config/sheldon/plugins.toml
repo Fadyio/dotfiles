@@ -1,6 +1,3 @@
-[plugins.powerlevel10k]
-github = 'romkatv/powerlevel10k'
-
 [plugins.syntax-highlighting]
 github = 'zdharma-continuum/fast-syntax-highlighting'
 
@@ -24,6 +21,9 @@ github = 'hlissner/zsh-autopair'
 
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
+
+[plugins.fzf-tab-source]
+github = 'Freed-Wu/fzf-tab-source'
 
 [plugins.auto-notify]
 github = 'MichaelAquilina/zsh-auto-notify'

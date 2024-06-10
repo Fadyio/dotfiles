@@ -1,101 +1,33 @@
-  # ____ ___  __  __ ____  _     _____ _____ ___ ___  _   _
-#  / ___/ _ \|  \/  |  _ \| |   | ____|_   _|_ _/ _ \| \ | |
-# | |  | | | | |\/| | |_) | |   |  _|   | |  | | | | |  \| |
-# | |__| |_| | |  | |  __/| |___| |___  | |  | | |_| | |\  |
-#  \____\___/|_|  |_|_|   |_____|_____| |_| |___\___/|_| \_|
- #
-
-# +---------+
-# | General |
-# +---------+
-
 # Should be called before compinit
-zmodload zsh/complist
+zmodload -i zsh/complist  # Load the zsh/complist module for advanced completion features.
 
-# enable homebrew autocompletion
-if type brew &>/dev/null
-then
-  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
-
-  autoload -Uz compinit
-  compinit
+# Enable Homebrew autocompletion
+if command -v brew &>/dev/null; then  # Check if Homebrew is installed.
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"  # Add Homebrew's completion scripts to the FPATH variable.
 fi
 
-# Enabling the Zsh Completion System
-autoload -Uz compinit && compinit
-autoload bashcompinit && bashcompinit
-_comp_options+=(globdots)		# Include hidden files.
+# Enable the Zsh Completion System
+autoload -Uz compinit  # Load the compinit function.
+compinit  # Initialize the Zsh completion system.
+_comp_options+=(globdots)  # Include hidden files in completions.
 
 # Enable shell autocompletion for kubectl
-source <(kubectl completion zsh)
+if command -v kubectl &>/dev/null; then  # Check if kubectl is installed.
+  source <(kubectl completion zsh)  # Enable shell autocompletion for kubectl.
+fi
 
-# +---------+
-# | Options |
-# +---------+
+# Autocompletion for Doppler
+if command -v doppler &>/dev/null; then  # Check if Doppler is installed.
+  source <(doppler completion 2> /dev/null)  # Enable autocompletion for Doppler.
+fi
 
-# setopt GLOB_COMPLETE      # Show autocompletion menu with globs
-setopt MENU_COMPLETE        # Automatically highlight first element of completion menu
-setopt AUTO_LIST            # Automatically list choices on ambiguous completion.
-setopt COMPLETE_IN_WORD     # Complete from both ends of a word.
+zle -C alias-expansion complete-word _generic  # Define a ZLE widget for alias expansion.
+zstyle ':completion:alias-expansion:*' completer _expand_alias  # Define the completer for alias expansion.
 
-# +---------+
-# | zstyles |
-# +---------+
+zstyle :compinstall filename "$HOME/.zsh/completion.zsh"  # Set the filename for compinstall.
 
-# Define completers
-# zstyle ':completion:*' completer _extensions _complete _approximate
-
-
-# Use cache for commands using cache
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$HOME/.zcompcache"
-
-# Complete the alias when _expand_alias is used as a function
-zstyle ':completion:*' complete true
-zle -C alias-expension complete-word _generic
-bindkey '^Xa' alias-expension
-zstyle ':completion:alias-expension:*' completer _expand_alias
-
-zstyle :compinstall filename "$HOME/.zsh/completion.zsh"
+# Rehash completion.
 zstyle ':completion:*' rehash true
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zstyle ':completion:*' expand suffix
-zstyle ':completion:*' file-sort modification
-zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' list-suffixes true
-
-# Allow you to select in a menu
-zstyle ':completion:*' menu select
-
-# Autocomplete options for cd instead of directory stack
-zstyle ':completion:*' complete-options true
-
-zstyle ':completion:*' file-sort modification
-
-zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
-zstyle ':completion:*:*:*:*:descriptions' format '%F{blue}-- %D %d --%f'
-zstyle ':completion:*:*:*:*:messages' format ' %F{purple} -- %d --%f'
-zstyle ':completion:*:*:*:*:warnings' format ' %F{red}-- no matches found --%f'
-# zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-# Colors for files and directory
-zstyle ':completion:*:*:*:*:default' list-colors ${(s.:.)LS_COLORS}
-
-# Only display some tags for the command cd
-zstyle ':completion:*:*:cd:*' tag-order local-directories directory-stack path-directories
-# zstyle ':completion:*:complete:git:argument-1:' tag-order !aliases
-
-# Required for completion to be in good groups (named after the tags)
-zstyle ':completion:*' group-name ''
-
-zstyle ':completion:*:*:-command-:*:*' group-order aliases builtins functions commands
-
-# See ZSHCOMPWID "completion matching control"
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-zstyle ':completion:*' keep-prefix true
-
-zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 
 # disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
@@ -106,16 +38,24 @@ zstyle ':completion:*:descriptions' format '[%d]'
 # set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# preview directory's content with exa when completing cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+zstyle ':completion:*' menu no
 
-# switch group using `,` and `.`
-zstyle ':fzf-tab:*' switch-group ',' '.'
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath' # remember to use single quote here!!!
 
-# add completion for mpv
-zstyle ':completion:*:*:mpv:*' file-patterns '*.(#i)(flv|mp4|webm|mkv|wmv|mov|avi|mp3|ogg|wma|flac|wav|aiff|m4a|m4b|m4v|gif|ifo)(-.) *(-/):directories' '*:all-files'
+# Define matcher lists for completion.
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Enable git bash completion for `g`
-if type __git_complete &> /dev/null; then
-  __git_complete g __git_main
-fi;
+if command -v __git_complete &> /dev/null; then  # Check if __git_complete is available.
+  __git_complete g __git_main  # Enable git bash completion for `g`.
+fi
+
+# This causes pasted URLs to be automatically quoted, without needing to disable globbing.
+# https://superuser.com/questions/649635/zsh-says-no-matches-found-when-trying-to-download-video-with-youtube-dl
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+
+autoload -Uz url-quote-magic
+zle -N self-insert url-quote-magic

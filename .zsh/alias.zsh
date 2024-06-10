@@ -9,7 +9,6 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
   alias copilot='gh copilot suggest'
   alias explain='gh copilot explain'
-  alias k='kubectl'
   alias mdkir='mkdir'
   alias sudp='sudo'
   alias :q="exit"
@@ -21,24 +20,25 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias pbpaste='xsel --clipboard --output'
   alias x='extract'
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
-  alias cputemp='sensors | awk '/^Core*/ {print $1$2, $3}''
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
   alias tldr='tldr --list | fzf --preview "tldr {1} --color=always" --preview-window=right,70% | xargs tldr'
   alias v='nvim'
   alias htp=wkhtmltopdf
   alias sblock='sudo bash ~/.dotfiles/scripts/smedia.sh'
   alias cat='bat --color=always'
+  alias y='yy'
   alias grep='grep --color=auto'
  # Changing "ls" to "exa"
-  alias ls="eza --icons --color-scale all --long --header --git --sort=extension"
+  alias j="zi"
+  alias ls="eza --icons --color-scale-mode gradient --long --header --git --sort=extension"
   alias la='eza -a --color=always --group-directories-first'  # all files and dirs
-  alias l="eza -l --icons --git -a"
-  alias l.='eza -a | egrep "^\."'
+  alias ll="eza -l --icons --git -a"
+  alias l="eza --oneline --all --long --no-user --icons=auto --no-permissions --time-style=long-iso"
+  alias l.='eza -a | egrep -E "^\."'
   alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff
   alias ytvid='yt-dlp  -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]" --sponsorblock-remove sponsor -o "%(title)s.%(ext)s"'
   alias ytlist='yt-dlp -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]" --sponsorblock-remove sponsor -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-  alias blist='yt-dlp --add-header 'Accept:*/*' -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
   alias ytmp3="yt-dlp --sponsorblock-remove  sponsor --extract-audio  --audio-format mp3 "
   alias ytflac="yt-dlp --sponsorblock-remove sponsor --extract-audio --audio-format flac "
   alias torrent='aria2c -d ~/Downloads'
@@ -57,7 +57,7 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias gco='git checkout'
   alias gm='git merge'
   alias gds='git diff --staged'
-  alias glog="git log --graph --format='format:%C(yellow)%h%C(reset) %s %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)'"
+  alias glog='git log --graph --topo-order --pretty='\''%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N'\'' --abbrev-commit'
 # Switch to common branch, pull and prune
   alias g-main="git checkout main && git pull && git fetch -p"
   alias g-dev="git checkout dev && git pull && git fetch -p"

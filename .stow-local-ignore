@@ -11,3 +11,9 @@ programs
 scripts
 Firefox
 ico
+taplo.toml
+.prettierignore
+.prettierrc.yml
+node_modules
+package.json
+package-lock.json

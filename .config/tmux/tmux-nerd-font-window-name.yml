@@ -1,56 +1,58 @@
 config:
-  fallback-icon: "?"
+  fallback-icon: '?'
   show-name: true
-  multi-pane-icon: ""
 icons:
-  apt: ""
-  bash: ""
-  beam.smp: ""
-  beam: ""
-  cmus: ""
-  brew: ""
-  cfdisk: ""
-  dnf: ""
-  docker: ""
-  dpkg: ""
-  emacs: ""
-  fdisk: ""
-  fish: ""
-  git: ""
-  gitui: ""
-  go: ""
-  aws: " "
-  awscli: " "
+  apt: ''
+  bash: ''
+  beam.smp: ''
+  beam: ''
+  cmus: ''
+  brew: ''
+  cfdisk: ''
+  dnf: ''
+  docker: ''
+  dpkg: ''
+  emacs: ''
+  fdisk: ''
+  fish: ''
+  git: ''
+  gitui: ''
+  go: ''
+  aws: ' '
+  awscli: ' '
   eksctl: "\U000F10FE"
   kubectl: "\U000F10FE"
   helm: "\U000F10FE"
   terraform: "\U000F1062"
-  htop: ""
-  lazydocker: ""
-  lazygit: ""
-  lf: ""
-  lfcd: ""
-  yazi: ""
-  nvim: ""
-  nala: ""
-  node: ""
-  pacman: ""
-  parted: ""
-  paru: ""
-  Python: ""
-  python: ""
-  ranger: ""
-  ruby: ""
-  rustc: ""
-  rustup: ""
-  tcsh: ""
-  tig: ""
-  tmux: ""
-  top: ""
-  yay: ""
-  yum: ""
-  zsh: ""
+  htop: ''
+  lazydocker: ''
+  lazygit: ''
+  lf: ''
+  lfcd: ''
+  yazi: ''
+  nvim: ''
+  nala: ''
+  node: ''
+  pacman: ''
+  parted: ''
+  paru: ''
+  Python: ''
+  python: ''
+  ranger: ''
+  ruby: ''
+  rustc: ''
+  rustup: ''
+  tcsh: ''
+  tig: ''
+  tmux: ''
+  top: ''
+  yay: ''
+  yum: ''
+  zsh: ''
   curl: "\U000F0626"
-  unzip: ""
-  cat: ""
-  bat: ""
+  unzip: ''
+  cat: ''
+  bat: ''
+  oha: "\U000F01D6"
+  journalctl: ''
+  'doppler': "\U000F0483"

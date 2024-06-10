@@ -1,5 +1,8 @@
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
 [manager]
-syntect_theme = "~/.dotfiles/.config/bat/themes/Catppuccin-Mocha.tmTheme"
 cwd = { fg = "#94e2d5" }
 
 # Hovered
