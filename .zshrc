@@ -34,7 +34,13 @@ source ~/.dotfiles/.zsh/function.zsh
 #################### start tmux automatically ####################################
 # Automatically start tmux if not already inside a tmux session
 if [ -z "$TMUX" ]; then
-    tmux attach-session -t default || tmux new-session -s default
+    tmux has-session -t default 2>/dev/null
+    if [ $? != 0 ]; then
+        tmux new-session -s default
+    else
+        tmux attach-session -t default
+    fi
+    exit  # Ensure the current shell exits after starting tmux
 fi
 
 ############# A smarter cd command is z for zsh
@@ -49,9 +55,4 @@ eval "$(sheldon source)"
 ################################## History #######################################
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
-bindkey '^r' _atuin_search_widget
-bindkey '^ ' autosuggest-accept
-_zsh_autosuggest_strategy_atuin_top() {
-    suggestion=$(atuin search --cmd-only --limit 1 --search-mode prefix $1)
-}
-ZSH_AUTOSUGGEST_STRATEGY=atuin_top
+bindkey '^r' atuin-search

@@ -10,27 +10,6 @@
 [[ $- != *i* ]] && return
 
 
-# Set file highlighter
-FZF_FILE_HIGHLIGHTER='bat --color=always'
-(( $+commands[rougify]   )) && FZF_FILE_HIGHLIGHTER='rougify'
-(( $+commands[coderay]   )) && FZF_FILE_HIGHLIGHTER='coderay'
-(( $+commands[highlight] )) && FZF_FILE_HIGHLIGHTER='highlight -lO ansi'
-(( $+commands[bat]       )) && FZF_FILE_HIGHLIGHTER='bat --color=always'
-export FZF_FILE_HIGHLIGHTER
-
-# Set directory highlighter
-FZF_DIR_HIGHLIGHTER='eza --color=always -TL2'
-(( $+commands[tree] )) && FZF_DIR_HIGHLIGHTER='tree -CtrL2'
-(( $+commands[exa]  )) && FZF_DIR_HIGHLIGHTER='eza --color=always -TL2'
-(( $+commands[lsd]  )) && FZF_DIR_HIGHLIGHTER='ls --color=always --tree --depth=2'
-export FZF_DIR_HIGHLIGHTER
-
-# set the default fzf command
-FZF_DEFAULT_COMMAND='(git ls-tree -r --name-only HEAD ||
-         find . -path "*/\.*" -prune -o -type f -print -o -type l -print | sed s/^..//) 2> /dev/null'
-(( $+commands[fd]     )) && FZF_DEFAULT_COMMAND='fd     --type f --hidden --follow --exclude .git 2>/dev/null'
-(( $+commands[fdfind] )) && FZF_DEFAULT_COMMAND='fdfind --type f --hidden --follow --exclude .git 2>/dev/null'
-export FZF_DEFAULT_COMMAND
 
 FZF_DEFAULT_OPTS="
 --exact
@@ -40,18 +19,9 @@ FZF_DEFAULT_OPTS="
 --border
 --color=fg:-1,bg:-1,hl:#ffaf5f,fg+:-1,bg+:-1,hl+:#ffaf5f
 --color=prompt:#5fff87,marker:#ff87d7,spinner:#ff87d7
---info inline
---height 80%
 --extended
---ansi
 --reverse
 --cycle
---bind ctrl-u:half-page-up,ctrl-d:half-page-down
---bind alt-a:select-all,ctrl-r:toggle-all
---bind ctrl-s:toggle-sort
---bind 'ctrl-e:execute($EDITOR {} >/dev/tty </dev/tty)'
---preview \"($FZF_FILE_HIGHLIGHTER {} || $FZF_DIR_HIGHLIGHTER {}) \"
---preview-window right:50%
 "
 export FZF_DEFAULT_OPTS
 export FZF_COMPLETION_TRIGGER='~~'
@@ -60,30 +30,6 @@ export FZF_COMPLETION_TRIGGER='~~'
     _fzf_compgen_path() { fd --hidden --follow --exclude ".git" . "$1" }
     _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }
 }
-
-# FZF: Ctrl - T
-FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_CTRL_T_COMMAND
-
-FZF_CTRL_T_OPTS="
---preview \"($FZF_FILE_HIGHLIGHTER {} || $FZF_DIR_HIGHLIGHTER {}) 2>/dev/null | head -200\"
---bind 'enter:execute(echo {})+abort'
---bind 'alt-e:execute($EDITOR {} >/dev/tty </dev/tty)'
---preview-window default:right:60%
-"
-export FZF_CTRL_T_OPTS
-
-# FZF: Alt - C
-FZF_ALT_C_COMMAND="command find -L . -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune -o -type d -print 2> /dev/null | cut -b3-"
-(( $+commands[fd] )) && FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git 2>/dev/null'
-(( $+commands[blsd] )) && FZF_ALT_C_COMMAND='blsd $dir | grep -v "^\.$"'
-export FZF_ALT_C_COMMAND
-
-export FZF_ALT_C_OPTS="
---exit-0
---preview '($FZF_DIR_HIGHLIGHTER {}) | head -200 2>/dev/null'
---preview-window=right:50%
-"
 
 # Ripgrep with live reload
 function RG() {
@@ -100,7 +46,7 @@ function RG() {
     ) && $EDITOR +$(cut -d: -f2 <<<"$SELECTED") $(cut -d: -f1 <<<"$SELECTED")
 }
 
-# Install packages using paru
+# Install packages using paru or brew on macOS
 function install() {
     if [[ "$(uname)" == "Darwin" ]]; then
         brew search "$1" | fzf --preview 'brew info {1}' | awk '{print $1}' | xargs -o brew install
@@ -168,14 +114,6 @@ zle -N fman
 # Create a new directory and enter it
 function mcd() {
     mkdir -p "$@" && cd "$_";
-}
-
-# Create SSH key
-function ssh-create() {
-    if [ -n "$1" ]; then
-        ssh-keygen -f $HOME/.ssh/$1 -t rsa -N '' -C "$1"
-        chmod 700 $HOME/.ssh/$1*
-    fi
 }
 
 # Git log browser with fzf

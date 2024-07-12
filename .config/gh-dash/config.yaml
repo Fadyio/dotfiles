@@ -1,0 +1,87 @@
+# yaml-language-server: $schema=https://dlvhdr.github.io/gh-dash/configuration/gh-dash/schema.json
+prSections:
+  - title: Mine
+    filters: is:open author:@me
+    layout:
+      author:
+        hidden: true
+  - title: Review
+    filters: is:open review-requested:@me
+  - title: Komodor
+    filters: repo:komodorio/mono
+  - title: Troubleshoot
+    filters: org:komodorio label:"Sprints - Troubleshooting" -author:@me
+  - title: gh-dash
+    filters: 'is:open repo:dlvhdr/gh-dash'
+  - title: Commented
+    filters: commenter:@me
+  - title: Closed
+    filters: is:closed author:@me
+    layout:
+      repo:
+        hidden: true
+      author:
+        hidden: true
+      reviewStatus:
+        hidden: true
+      lines:
+        hidden: true
+  - title: Subscribed
+    filters: 'repo:nvim-telescope/telescope.nvim repo:ldelossa/gh.nvim repo:neovim/neovim repo:withgraphite/graphite-cli repo:cli/cli'
+  - title: LSP
+    filters: '-author:app/dependabot -author:app/github-action repo:TypeFox/monaco-languageclient repo:typescript-language-server/typescript-language-server repo:CodinGame/monaco-vscode-api'
+issuesSections:
+  - title: Creator
+    filters: author:@me
+  - title: Commented
+    filters: is:open commenter:@me
+  - title: dlvhdr
+    filters: org:dlvhdr
+  - title: gh-dash
+    filters: is:open repo:dlvhdr/gh-dash
+  - title: Assigned
+    filters: is:open assignee:@me
+pager:
+  diff: delta
+defaults:
+  layout:
+    prs:
+      repoName:
+        grow: true,
+        width: 10
+        hidden: false
+  preview:
+    open: true
+    width: 55
+  prsLimit: 20
+  issuesLimit: 20
+repoPaths:
+  dlvhdr/gh-dash: ~/code/personal/gh-dash
+  komodorio/*: ~/code/komodor/*
+keybindings:
+  prs:
+    - key: C
+      command: >
+        tmux new-window -c {{.RepoPath}} ' nvim -c ":silent Octo pr edit {{.PrNumber}}" '
+
+    - key: b
+      command: cd {{.RepoPath}} && gh pr view {{.PrNumber}} --json statusCheckRollup | command jq -rcj '.statusCheckRollup.[] | select(.context == "buildkite/mono") | .targetUrl' | xargs open
+    - key: a
+      command: >
+        gh pr review --repo {{.RepoName}} --approve --body "$(gum input --prompt='Approval Comment: ')" {{.PrNumber}}
+
+theme:
+  colors:
+    text:
+      primary: '#E2E1ED'
+      secondary: '#666CA6'
+      inverted: '#242347'
+      faint: '#797d9c'
+      warning: '#F23D5C'
+      success: '#3DF294'
+    background:
+      selected: '#292e42'
+    border:
+      primary: '#383B5B'
+      secondary: '#39386B'
+      faint: '#2B2B40'

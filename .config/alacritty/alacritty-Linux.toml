@@ -3,16 +3,8 @@ import = [
 ]
 live_config_reload = true
 
-
-[colors]
-draw_bold_text_with_bright_colors = true
-
 [font]
 size = 13
-
-[font.glyph_offset]
-x = 0
-y = 0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
@@ -25,16 +17,6 @@ style = "Bold"
 [font.italic]
 family = "JetBrainsMono Nerd Font"
 
-[mouse]
-hide_when_typing = true
-
-[[mouse.bindings]]
-action = "PasteSelection"
-mouse = "Middle"
-
-[selection]
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-
 [shell]
 program = "/bin/zsh"
 
@@ -45,18 +27,12 @@ opacity = 0.9
 columns = 160
 lines = 80
 
-[window.padding]
-x = 4
-y = 4
-
 [cursor]
-blink_interval = 500
-blink_timeout = 5
 unfocused_hollow = false
-
-[cursor.style]
-blinking = "Off"
-shape = "Block"
 
 [env]
 TERM = "xterm-256color"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"

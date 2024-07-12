@@ -1,4 +1,0 @@
-
-    Type about:config in the address bar
-    Find browser.uidensity and change the value from 0 to 1
-

@@ -172,6 +172,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
 # open start some applications on specific workspace
 for_window [class="Spotify"] move to workspace $ws6
+for_window [class="sioyek"] move to workspace $ws8
 
 ##------------------------ Window Rules ------------------------
 # Open specific applications in floating mode

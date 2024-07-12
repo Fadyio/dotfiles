@@ -99,12 +99,12 @@
           "type": "cmake"
         },
         {
-          "background": "#ffffff",
-          "foreground": "#06aad5",
+          "background": "#1E0342",
+          "foreground": "#6FDCE3",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
-          "template": "\ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "trailing_diamond": "<transparent,#1E0342>\ue0b2</>",
           "type": "go"
         },
         {
@@ -150,12 +150,12 @@
           }
         },
         {
-          "background": "#ffffff",
-          "foreground": "#000081",
+          "background": "#1E0342",
+          "foreground": "#6FDCE3",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
           "template": "\ue620 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<transparent,#ffffff>\ue0b2</>",
+          "trailing_diamond": "<transparent,#1E0342>\ue0b2</>",
           "type": "lua"
         },
         {

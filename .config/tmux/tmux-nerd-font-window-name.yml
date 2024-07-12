@@ -1,11 +1,10 @@
 config:
   fallback-icon: '?'
   show-name: true
+  multi-pane-icon: ''
 icons:
   apt: ''
   bash: ''
-  beam.smp: ''
-  beam: ''
   cmus: ''
   brew: ''
   cfdisk: ''
@@ -15,8 +14,9 @@ icons:
   emacs: ''
   fdisk: ''
   fish: ''
-  git: ''
-  gitui: ''
+  git: ''
+  gh: ''
+  gitui: ''
   go: ''
   aws: ' '
   awscli: ' '
@@ -26,7 +26,7 @@ icons:
   terraform: "\U000F1062"
   htop: ''
   lazydocker: ''
-  lazygit: ''
+  lazygit: ''
   lf: ''
   lfcd: ''
   yazi: ''
@@ -55,4 +55,5 @@ icons:
   bat: ''
   oha: "\U000F01D6"
   journalctl: ''
-  'doppler': "\U000F0483"
+  doppler: "\U000F0483"
+  find: ''
