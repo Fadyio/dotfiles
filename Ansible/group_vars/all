@@ -12,4 +12,5 @@ user:
 dotfiles:
     installation: "true"
     url: https://github.com/Fadyio/dotfiles.git
+    hostGist: https://gist.github.com/Fadyio/1e29e575a28ea5a39bbf1ace87692993
     destination: .dotfiles

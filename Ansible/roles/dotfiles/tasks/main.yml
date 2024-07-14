@@ -14,4 +14,11 @@
     mode: '0644'
   become: true
   become_user: root
+
+- name: Clone GitHub Gist to /etc
+  ansible.builtin.git:
+    repo: "{{ dotfiles.hostGist }}"
+    dest: /etc/hosts
+  become: true
+  become_user: root
 ...
