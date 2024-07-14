@@ -120,6 +120,10 @@
     - ffmpeg-audio-thumbnailer
     - git-delta
     - github-cli
+    - dracula-gtk-them
+    - catppuccin-cursors-mocha
+    - epapirus-icon-theme-git
+    - papirus-icon-theme-git
     - gitleaks
     - grype-bin
     - hadolint-bin
