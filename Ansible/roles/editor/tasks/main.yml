@@ -1,0 +1,73 @@
+---
+- name: install vim
+  pacman:
+    name: neovim
+    state: present
+
+- name: Make github directory
+  file:
+    path: "/home/{{ ansible_user }}/github"
+    state: directory
+
+- name: Clone neovim config repo
+  ansible.builtin.git:
+    repo: "https://github.com/fadyio/nvim.git"
+    dest: "/home/{{ ansible_user }}/github/nvim"
+
+- name: Create symbolic link for neovim config
+  ansible.builtin.file:
+    src: "/home/{{ ansible_user }}/github/nvim"
+    dest: "/home/{{ ansible_user }}/.config/nvim"
+    state: link
+
+
+- name: install vscode extensions
+  ansible.builtin.command: "code --install-extension {{ item }}"
+  become_user: "{{ user.name }}"
+  register: ext_install
+  changed_when: ext_install.rc != 0
+  loop:
+    - albert.tabout
+    - amazonwebservices.amazon-q-vscode
+    - amazonwebservices.aws-toolkit-vscode
+    - catppuccin.catppuccin-vsc
+    - deerawan.vscode-dash
+    - eamodio.gitlens
+    - formulahendry.code-runner
+    - github.copilot
+    - github.copilot-chat
+    - github.remotehub
+    - github.vscode-github-actions
+    - github.vscode-pull-request-github
+    - golang.go
+    - gruntfuggly.todo-tree
+    - hashicorp.hcl
+    - hashicorp.terraform
+    - hbenl.vscode-test-explorer
+    - ms-azuretools.vscode-docker
+    - ms-kubernetes-tools.vscode-kubernetes-tools
+    - ms-python.debugpy
+    - ms-python.python
+    - ms-vscode-remote.remote-containers
+    - ms-vscode-remote.remote-ssh
+    - ms-vscode-remote.remote-ssh-edit
+    - ms-vscode.remote-explorer
+    - ms-vscode.remote-repositories
+    - ms-vscode.remote-server
+    - ms-vscode.test-adapter-converter
+    - ms-vscode.vscode-speech
+    - oderwat.indent-rainbow
+    - pkief.material-icon-theme
+    - rangav.vscode-thunder-client
+    - redhat.ansible
+    - redhat.vscode-yaml
+    - rust-lang.rust-analyzer
+    - sumneko.lua
+    - tamasfe.even-better-toml
+    - usernamehw.errorlens
+
+- name: Create alacritty link for alacritty config
+  ansible.builtin.file:
+    src: "/home/{{ ansible_user }}/.dotfiles/.config/alacritty/alacritty-Linux.toml"
+    dest: "/home/{{ ansible_user }}/.config/alacritty/alacritty.toml"
+    state: link

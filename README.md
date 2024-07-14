@@ -13,13 +13,13 @@
 <br/>
 
 ## Screenshots
-![Arch](/assets/Arch1.png)
-![Arch](/assets/Arch2.png)
-![Arch](/assets/Arch3.png)
-![Arch](/assets/Arch4.png)
-![Arch](/assets/Arch5.png)
-![Arch](/assets/Arch6.png)
-![Anki](/assets/Anki.png)
+![Arch](/Assets/Arch1.png)
+![Arch](/Assets/Arch2.png)
+![Arch](/Assets/Arch3.png)
+![Arch](/Assets/Arch4.png)
+![Arch](/Assets/Arch5.png)
+![Arch](/Assets/Arch6.png)
+![Anki](/Assets/Anki.png)
 
 </div>
 

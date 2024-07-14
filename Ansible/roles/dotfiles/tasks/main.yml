@@ -1,0 +1,17 @@
+---
+- name: Stow dotfiles
+  ansible.builtin.command:
+    cmd: stow -d /home/{{ user.name }}/{{ dotfiles.destination }} -t /home/{{ user.name }}
+  become: true
+  become_user: "{{ user.name }}"
+
+- name: Copy keyd configuration file
+  ansible.builtin.copy:
+    src: ~/.config/keyd/default.conf
+    dest: /etc/keyd/default.conf
+    owner: root
+    group: root
+    mode: '0644'
+  become: true
+  become_user: root
+...

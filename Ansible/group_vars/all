@@ -1,0 +1,15 @@
+##
+# User configuration
+# ==================
+##
+user:
+    name: F0dy
+    group: users
+    shell: /bin/zsh
+
+# Dotfile configuration
+# =====================
+dotfiles:
+    installation: "true"
+    url: https://github.com/Fadyio/dotfiles.git
+    destination: .dotfiles
