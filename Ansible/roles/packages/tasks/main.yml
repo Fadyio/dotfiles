@@ -30,14 +30,12 @@
     - copyq
     - delve
     - docker
-    - dropbox
     - dunst
     - eza
     - fd
     - feh
     - ffmpeg
     - ffmpegthumbnailer
-    - firefox
     - flameshot
     - fzf
     - gnome-keyring
@@ -48,7 +46,6 @@
     - helm
     - htop
     - hugo
-    - imagewriter
     - jq
     - keepassxc
     - keychain
@@ -64,7 +61,6 @@
     - sheldon
     - shellcheck
     - shotwell
-    - sioyek
     - thunderbird
     - terraform
     - tesseract
@@ -73,54 +69,54 @@
     - the_silver_searcher
     - thunar
     - tmux
-    - ueberzugpp
-    - ulauncher
     - unclutter
     - unrar
     - unzip
     - wget
     - zathura
     - zoxide
+    - stow
 
-- name: Create aur_builder user
+- name: Create the `aur_builder` user
+  become: yes
   ansible.builtin.user:
     name: aur_builder
     create_home: yes
     group: wheel
 
-- name: Allow aur_builder to run sudo pacman without password
+- name: Allow the `aur_builder` user to run `sudo pacman` without a password
+  become: yes
   ansible.builtin.lineinfile:
-    path: /etc/sudoers.d/aur_builder
+    path: /etc/sudoers.d/11-install-aur_builder
     line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
     create: yes
-    mode: '0440'
+    mode: 0644
+    validate: 'visudo -cf %s'
 
-- name: Clone paru repository
-  ansible.builtin.git:
-    repo: https://aur.archlinux.org/paru.git
-    dest: /tmp/paru
-    update: no
-  become: yes
-
-- name: Build and install paru
-  ansible.builtin.command: makepkg -si --noconfirm
-  args:
-    chdir: /tmp/paru
-  become: yes
-  become_user: aur_builder
 
 - name: Install AUR packages
-  ansible.builtin.command: paru -S --noconfirm "{{ item }}"
+  kewlfft.aur.aur:
+    name: "{{ item}}"
+    state: present
+  become: yes
+  become_user: aur_builder
   loop:
     - anki-bin
+    - dropbox
+    - imagewriter
+    - sioyek
+    - ueberzugpp
+    - ulauncher
     - appimagelauncher-bin
     - atuin
     - doppler-cli-bin
     - epub-thumbnailer-git
+    - picom-arian8j2-git
     - ffmpeg-audio-thumbnailer
+    - ttf-font-awesome-5
     - git-delta
     - github-cli
-    - dracula-gtk-them
+    - dracula-gtk-theme
     - catppuccin-cursors-mocha
     - epapirus-icon-theme-git
     - papirus-icon-theme-git
@@ -133,9 +129,10 @@
     - keyd
     - localsend-bin
     - mods-bin
+    - floorp-bin
+    - microsoft-edge-stable-bin
     - oh-my-posh-bin
     - oha
-    - picom-arian8j2-git
     - ripgrep-all
     - slack-desktop
     - spotify
@@ -143,7 +140,6 @@
     - thunar-archive-plugin-git
     - tumbler-devel
     - tumbler-extra-thumbnailers
-    - ungoogled-chromium-bin
     - vhs
     - visual-studio-code-bin
     - yazi
@@ -156,26 +152,4 @@
     - ttf-0xproto-nerd
     - ttf-atkinson-hyperlegible
     - ansible-lint
-  become: yes
-  become_user: aur_builder
-
-- name: Delete aur_builder user
-  ansible.builtin.user:
-    name: aur_builder
-    state: absent
-    remove: yes
-
-- name: Remove aur_builder sudoers file
-  ansible.builtin.file:
-    path: /etc/sudoers.d/aur_builder
-    state: absent
-
-- name: install CLI dashboard for GitHub
-  ansible.builtin.command: gh extension install dlvhdr/gh-dash
-
-- name: Install tmux package manager (tpm)
-  ansible.builtin.git:
-    repo: https://github.com/tmux-plugins/tpm.git
-    dest: ~/.tmux/plugins/tpm
-    version: master
-    clone: yes
+    - tmux-plugin-manager

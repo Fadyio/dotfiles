@@ -6,20 +6,19 @@
 
 - name: Make github directory
   file:
-    path: "/home/{{ ansible_user }}/github"
+    path: "/home/{{ user.name }}/github"
     state: directory
 
 - name: Clone neovim config repo
   ansible.builtin.git:
     repo: "https://github.com/fadyio/nvim.git"
-    dest: "/home/{{ ansible_user }}/github/nvim"
+    dest: "/home/{{ user.name }}/github/nvim"
 
 - name: Create symbolic link for neovim config
   ansible.builtin.file:
-    src: "/home/{{ ansible_user }}/github/nvim"
-    dest: "/home/{{ ansible_user }}/.config/nvim"
+    src: "/home/{{ user.name }}/github/nvim"
+    dest: "/home/{{ user.name }}/.config/nvim"
     state: link
-
 
 - name: install vscode extensions
   ansible.builtin.command: "code --install-extension {{ item }}"
@@ -46,7 +45,6 @@
     - hbenl.vscode-test-explorer
     - ms-azuretools.vscode-docker
     - ms-kubernetes-tools.vscode-kubernetes-tools
-    - ms-python.debugpy
     - ms-python.python
     - ms-vscode-remote.remote-containers
     - ms-vscode-remote.remote-ssh
@@ -68,6 +66,6 @@
 
 - name: Create alacritty link for alacritty config
   ansible.builtin.file:
-    src: "/home/{{ ansible_user }}/.dotfiles/.config/alacritty/alacritty-Linux.toml"
-    dest: "/home/{{ ansible_user }}/.config/alacritty/alacritty.toml"
+    src: "/home/{{ user.name }}/.dotfiles/.config/alacritty/alacritty-Linux.toml"
+    dest: "/home/{{ user.name }}/.config/alacritty/alacritty.toml"
     state: link

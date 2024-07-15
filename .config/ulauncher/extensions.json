@@ -2,49 +2,49 @@
     "com.github.brpaz.ulauncher-awesomelists": {
         "id": "com.github.brpaz.ulauncher-awesomelists",
         "url": "https://github.com/brpaz/ulauncher-awesomelists",
-        "updated_at": "2024-05-02T14:13:16.974174",
+        "updated_at": "2024-07-15T00:49:37.605357",
         "last_commit": "a48a0b11cef4c2fb5375b11834ce0378be2d15d3",
         "last_commit_time": "2021-12-12T15:44:13"
     },
     "com.github.kuenzelit.ulauncher-firefox-bookmarks": {
         "id": "com.github.kuenzelit.ulauncher-firefox-bookmarks",
         "url": "https://github.com/KuenzelIT/ulauncher-firefox-bookmarks",
-        "updated_at": "2024-05-02T14:13:19.684126",
+        "updated_at": "2024-07-15T00:49:40.645581",
         "last_commit": "77f1de0adfc2e79ce767f645ae8ad0a0dda2783e",
         "last_commit_time": "2019-12-07T17:27:46"
     },
     "com.github.glovecc.ulauncher-github-search": {
         "id": "com.github.glovecc.ulauncher-github-search",
         "url": "https://github.com/Glovecc/ulauncher-github-search",
-        "updated_at": "2024-05-02T14:13:23.133989",
+        "updated_at": "2024-07-15T00:49:44.882507",
         "last_commit": "ee3ea43e905cf184449c328f0dadaa4395f3ec0c",
         "last_commit_time": "2022-01-14T13:46:35"
     },
     "com.github.friday.ulauncher-clipboard": {
         "id": "com.github.friday.ulauncher-clipboard",
         "url": "https://github.com/friday/ulauncher-clipboard",
-        "updated_at": "2024-05-02T14:13:25.777722",
+        "updated_at": "2024-07-15T00:49:47.379773",
         "last_commit": "dde8e6c9db80b0c9301ebdc9b13c4383b4789bc8",
         "last_commit_time": "2023-11-27T22:23:17"
     },
     "com.github.iboyperson.ulauncher-system": {
         "id": "com.github.iboyperson.ulauncher-system",
         "url": "https://github.com/iboyperson/ulauncher-system",
-        "updated_at": "2024-05-02T14:13:28.949679",
+        "updated_at": "2024-07-15T00:49:51.676818",
         "last_commit": "7dedd992709fa2297735cddf852404144d4da47c",
         "last_commit_time": "2023-11-14T16:53:20"
     },
     "com.github.rmassidda.ulauncher-firefox-history": {
         "id": "com.github.rmassidda.ulauncher-firefox-history",
         "url": "https://github.com/rmassidda/ulauncher-firefox-history",
-        "updated_at": "2024-05-02T14:13:31.517877",
+        "updated_at": "2024-07-15T00:49:54.588202",
         "last_commit": "b1d8e9399a466fe7c8dccd2f6d94ad014a260812",
         "last_commit_time": "2024-03-01T22:15:25"
     },
     "com.github.pascalbe-dev.ulauncher-repo-opener": {
         "id": "com.github.pascalbe-dev.ulauncher-repo-opener",
         "url": "https://github.com/pascalbe-dev/ulauncher-repo-opener",
-        "updated_at": "2024-05-02T14:13:33.736175",
+        "updated_at": "2024-07-15T00:49:57.332569",
         "last_commit": "e72ec2961270c32d5b15192abbfc77020f37bbcc",
         "last_commit_time": "2024-01-29T09:18:00"
     }

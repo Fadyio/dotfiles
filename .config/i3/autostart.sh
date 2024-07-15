@@ -5,4 +5,4 @@ copyq &
 flameshot &
 unclutter &
 picom &
-sh ~/.dotfiles/scripts/feh-wall.sh &
+sh ~/.dotfiles/Scripts/feh-wall.sh &

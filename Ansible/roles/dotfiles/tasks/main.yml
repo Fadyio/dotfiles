@@ -1,9 +1,23 @@
 ---
+- name: Change default shell to zsh
+  ansible.builtin.user:
+    name: "{{ user.name }}"
+    shell: /bin/zsh
+  become: yes
+
 - name: Stow dotfiles
-  ansible.builtin.command:
-    cmd: stow -d /home/{{ user.name }}/{{ dotfiles.destination }} -t /home/{{ user.name }}
-  become: true
+  ansible.builtin.shell: stow .
+  args:
+    chdir: "/home/{{ user.name }}/.dotfiles"
+  become: yes
   become_user: "{{ user.name }}"
+
+
+- name: Move GitHub Gist to /etc
+  ansible.builtin.command: 
+      cmd: wget -O /etc/hosts https://gist.githubusercontent.com/Fadyio/1e29e575a28ea5a39bbf1ace87692993/raw/4f5db22cd56de6df8e84d085dedfea774f803f32/hosts
+  become: true
+  become_user: root
 
 - name: Copy keyd configuration file
   ansible.builtin.copy:
@@ -15,10 +29,21 @@
   become: true
   become_user: root
 
-- name: Clone GitHub Gist to /etc
-  ansible.builtin.git:
-    repo: "{{ dotfiles.hostGist }}"
-    dest: /etc/hosts
-  become: true
-  become_user: root
+
+- name: Enable keyd service
+  ansible.builtin.systemd:
+    name: keyd
+    enabled: yes
+  become: yes
+
+- name: Start keyd service
+  ansible.builtin.systemd:
+    name: keyd
+    state: started
+  become: yes
+
+- name: Reload keyd configuration
+  ansible.builtin.command: sudo keyd reload
+  become: yes
+
 ...

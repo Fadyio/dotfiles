@@ -43,11 +43,6 @@ luac.out
 *.x86_64
 *.hex
 
-.config/ranger/plugins
-.config/nnn/bookmarks
-.config/nnn/sessions
-.config/nnn/mounts
-.tmux/resurrect
 .config/gh
 .config/mpv/watch_later
 .config/alacritty/alacritty.yml

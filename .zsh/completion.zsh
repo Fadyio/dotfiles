@@ -1,3 +1,6 @@
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
+
 # Should be called before compinit
 zmodload -i zsh/complist  # Load the zsh/complist module for advanced completion features.
 
