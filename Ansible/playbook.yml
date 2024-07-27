@@ -1,9 +1,7 @@
----
 - name: Install my Dev arch linux environment
   hosts: hosts
   connection: local
   become: true
-
   roles:
     #    - role: packages
     - role: dotfiles

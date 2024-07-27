@@ -6,16 +6,16 @@ live_config_reload = true
 [font]
 size = 13
 
-[font.normal]
-family = "JetBrainsMono Nerd Font"
-style = "Regular"
+  [font.normal]
+  family = "JetBrainsMono Nerd Font"
+  style = "Regular"
 
-[font.bold]
-family = "JetBrainsMono Nerd Font"
-style = "Bold"
+  [font.bold]
+  family = "JetBrainsMono Nerd Font"
+  style = "Bold"
 
-[font.italic]
-family = "JetBrainsMono Nerd Font"
+  [font.italic]
+  family = "JetBrainsMono Nerd Font"
 
 [shell]
 program = "/bin/zsh"
@@ -23,9 +23,9 @@ program = "/bin/zsh"
 [window]
 opacity = 0.9
 
-[window.dimensions]
-columns = 160
-lines = 80
+  [window.dimensions]
+  columns = 160
+  lines = 80
 
 [cursor]
 unfocused_hollow = false

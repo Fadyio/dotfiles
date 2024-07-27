@@ -1,12 +1,10 @@
----
 - name: Update and upgrade Arch system
   pacman:
-    update_cache: yes
-    upgrade: yes
-
+    update_cache: true
+    upgrade: true
 - name: Install pacman packages
   pacman:
-    name: "{{ item }}"
+    name: '{{ item }}'
     state: present
   loop:
     - git
@@ -14,6 +12,7 @@
     - zsh
     - vim
     - tmux
+    - trivy
     - xclip
     - adobe-source-code-pro-fonts
     - alacritty
@@ -60,8 +59,8 @@
     - ripgrep
     - sheldon
     - shellcheck
-    - shotwell
-    - thunderbird
+    - nomacs
+    - playerctl
     - terraform
     - tesseract
     - tesseract-data-eng
@@ -76,29 +75,25 @@
     - zathura
     - zoxide
     - stow
-
 - name: Create the `aur_builder` user
-  become: yes
+  become: true
   ansible.builtin.user:
     name: aur_builder
-    create_home: yes
+    create_home: true
     group: wheel
-
 - name: Allow the `aur_builder` user to run `sudo pacman` without a password
-  become: yes
+  become: true
   ansible.builtin.lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
     line: 'aur_builder ALL=(ALL) NOPASSWD: /usr/bin/pacman'
-    create: yes
+    create: true
     mode: 0644
     validate: 'visudo -cf %s'
-
-
 - name: Install AUR packages
   kewlfft.aur.aur:
-    name: "{{ item}}"
+    name: '{{ item}}'
     state: present
-  become: yes
+  become: true
   become_user: aur_builder
   loop:
     - anki-bin
@@ -134,7 +129,6 @@
     - oh-my-posh-bin
     - oha
     - ripgrep-all
-    - slack-desktop
     - spotify
     - spotify-adblock-git
     - thunar-archive-plugin-git
