@@ -37,12 +37,11 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias l.='eza -a | egrep -E "^\."'
   alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff
-  alias ytvid='yt-dlp  -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]" --sponsorblock-remove sponsor -o "%(title)s.%(ext)s"'
-  alias ytlist='yt-dlp -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]" --sponsorblock-remove sponsor -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-  alias ytmp3="yt-dlp --sponsorblock-remove  sponsor --extract-audio  --audio-format mp3 "
-  alias ytflac="yt-dlp --sponsorblock-remove sponsor --extract-audio --audio-format flac "
+  alias ytvid='yt-dlp  -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]"  --embed-chapters --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction  -o "%(title)s.%(ext)s"'
+  alias ytlist='yt-dlp -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]"  --embed-chapters --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+  alias ytmp3="yt-dlp --sponsorblock-remove  sponsor,intro,outro,selfpromo,interaction  --embed-chapters --extract-audio  --audio-format mp3 "
+  alias ytflac="yt-dlp --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction   --embed-chapters  --extract-audio --audio-format flac "
   alias torrent='aria2c -d ~/Downloads'
-  alias downsite='wget -r -p -U Mozilla --wait=10 --limit-rate=35K'
 # confirm before overwriting something
   alias cp="cp -riv"
   alias mv='mv -iv'

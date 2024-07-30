@@ -11,6 +11,8 @@
     - base-devel
     - zsh
     - vim
+    - cronie
+    - dns-over-https
     - tmux
     - trivy
     - xclip
