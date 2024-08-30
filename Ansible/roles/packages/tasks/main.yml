@@ -65,6 +65,8 @@
     - playerctl
     - terraform
     - tesseract
+    - python-poetry
+    - lurk
     - tesseract-data-eng
     - tesseract-data-osd
     - the_silver_searcher
@@ -126,8 +128,8 @@
     - keyd
     - localsend-bin
     - mods-bin
-    - floorp-bin
     - microsoft-edge-stable-bin
+    - firefox
     - oh-my-posh-bin
     - oha
     - ripgrep-all
@@ -149,3 +151,4 @@
     - ttf-atkinson-hyperlegible
     - ansible-lint
     - tmux-plugin-manager
+    - devbox-bin

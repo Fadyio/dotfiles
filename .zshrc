@@ -56,3 +56,6 @@ eval "$(sheldon source)"
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
 bindkey '^r' atuin-search
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/f0dy/.pulumi/bin
