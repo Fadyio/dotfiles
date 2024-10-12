@@ -11,10 +11,11 @@
     - base-devel
     - zsh
     - vim
+    - firefox
     - cronie
     - dns-over-https
     - tmux
-    - trivy
+    - httpie
     - xclip
     - adobe-source-code-pro-fonts
     - alacritty
@@ -46,7 +47,6 @@
     - grep
     - helm
     - htop
-    - hugo
     - jq
     - keepassxc
     - keychain
@@ -65,7 +65,6 @@
     - playerctl
     - terraform
     - tesseract
-    - python-poetry
     - lurk
     - tesseract-data-eng
     - tesseract-data-osd
@@ -108,7 +107,6 @@
     - ulauncher
     - appimagelauncher-bin
     - atuin
-    - doppler-cli-bin
     - epub-thumbnailer-git
     - picom-arian8j2-git
     - ffmpeg-audio-thumbnailer
@@ -117,28 +115,23 @@
     - github-cli
     - dracula-gtk-theme
     - catppuccin-cursors-mocha
+    - revive
     - epapirus-icon-theme-git
     - papirus-icon-theme-git
     - gitleaks
     - grype-bin
     - hadolint-bin
     - i3status-rust
-    - jnv
     - k9s
     - keyd
     - localsend-bin
-    - mods-bin
     - microsoft-edge-stable-bin
-    - firefox
     - oh-my-posh-bin
     - oha
     - ripgrep-all
-    - spotify
-    - spotify-adblock-git
     - thunar-archive-plugin-git
     - tumbler-devel
     - tumbler-extra-thumbnailers
-    - vhs
     - visual-studio-code-bin
     - yazi
     - fixjson

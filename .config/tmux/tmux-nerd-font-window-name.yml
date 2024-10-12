@@ -38,6 +38,7 @@ icons:
   paru: ''
   Python: ''
   python: ''
+  python3: ''
   ranger: ''
   ruby: ''
   rustc: ''
@@ -56,5 +57,5 @@ icons:
   oha: "\U000F01D6"
   journalctl: ''
   doppler: "\U000F0483"
+  sudo: "\U000F0483"
   find: ''
-  ssh: "\U000F07E5"

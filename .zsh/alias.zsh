@@ -15,13 +15,10 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias v='nvim'
   alias y='yy'
   alias grep='grep --color=auto'
- # Changing "ls" to "exa"
   alias j="zi"
   alias ls="eza --icons --color-scale-mode gradient --long --header --git --sort=extension"
   alias la='eza -a --color=always --group-directories-first'  # all files and dirs
   alias l="eza --oneline --all --long --no-user --icons=auto --no-permissions --time-style=long-iso"
-  alias l.='eza -a | egrep -E "^\."'
-  alias tree="eza --tree --icons --color-scale --level=2"
 ## download stuff
   alias ytvid='yt-dlp  -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]"  --embed-chapters --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction  -o "%(title)s.%(ext)s"'
   alias ytlist='yt-dlp -P ~/Downloads -ciw --format "bv*[height<=720]+ba*[ext=m4a]"  --embed-chapters --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction  -o  "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
@@ -34,10 +31,12 @@ chpwd() eza --icons --group-directories-first --color-scale all
   alias mkdir='mkdir -vp'
 ## Git stuff
   alias g='git'
+  alias gleaks="gitleaks detect --source . -v"
 # Switch to common branch, pull and prune
   alias g-main="git checkout main && git pull && git fetch -p"
   alias g-dev="git checkout dev && git pull && git fetch -p"
   alias vs="code ."
+  alias grype='grype dir:. -o table'
 # terraform Alias
   alias tf="terraform"
   alias tfp="terraform plan"

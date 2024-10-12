@@ -1,31 +1,28 @@
 #!/usr/bin/zsh
-#  ╭──────────────────────────────────────────────────────────╮
-#  │                 Author: Fady Nagh                        │
-#  │                                                          │
-#  │                 Email: Fady@Fadyio.com                   │
-#  │                                                          │
-#  ╰──────────────────────────────────────────────────────────╯
 
-# checks if the shell is not interactive and returns if true to prevent the script from running in non-interactive shells
+# Check if the shell is not interactive and return if true
 [[ $- != *i* ]] && return
 
-
-
-FZF_DEFAULT_OPTS="
---exact
---prompt '❯ '
---pointer '➤'
---marker '┃'
---border
---color=fg:-1,bg:-1,hl:#ffaf5f,fg+:-1,bg+:-1,hl+:#ffaf5f
---color=prompt:#5fff87,marker:#ff87d7,spinner:#ff87d7
---extended
---reverse
---cycle
+# FZF configuration
+export FZF_DEFAULT_OPTS="
+  --exact
+  --prompt '❯ '
+  --pointer '➤'
+  --marker '┃'
+  --border
+  --color=fg:-1,bg:-1,hl:#ffaf5f,fg+:-1,bg+:-1,hl+:#ffaf5f
+  --color=prompt:#5fff87,marker:#ff87d7,spinner:#ff87d7
+  --extended
+  --reverse
+  --cycle
+  --preview 'bat --style=numbers --color=always --line-range :500 {}'
+  --preview-window='right:60%'
 "
-export FZF_DEFAULT_OPTS
-export FZF_COMPLETION_TRIGGER='~~'
 
+# Set default command for file searching
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
+
+# Use fd for FZF if available
 (( $+commands[fd] )) && {
     _fzf_compgen_path() { fd --hidden --follow --exclude ".git" . "$1" }
     _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }
@@ -92,40 +89,9 @@ function fkill() {
     fi
 }
 
-# Man page browser with fzf
-function fman() {
-    batman="man {1} | col -bx | bat --language=man --plain --color always --theme=\"Monokai Extended\""
-    man -k . | sort \
-        | awk -v cyan=$(tput setaf 6) -v blue=$(tput setaf 4) -v res=$(tput sgr0) -v bld=$(tput bold) '{ $1=cyan bld $1; $2=res blue;} 1' \
-        | fzf \
-            -q "$1" \
-            --ansi \
-            --tiebreak=begin \
-            --prompt=' Man > ' \
-            --preview-window '50%,rounded,<50(up,85%,border-bottom)' \
-            --preview "${batman}" \
-            --bind "enter:execute(man {1})" \
-            --bind "alt-c:+change-preview(cht.sh {1})+change-prompt(ﯽ Cheat > )" \
-            --bind "alt-m:+change-preview(${batman})+change-prompt( Man > )" \
-            --bind "alt-t:+change-preview(tldr --color=always {1})+change-prompt(ﳁ TLDR > )"
-}
-zle -N fman
-
 # Create a new directory and enter it
 function mcd() {
     mkdir -p "$@" && cd "$_";
-}
-
-# Git log browser with fzf
-function fglog() {
-    git log --graph --color=always \
-        --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-    fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-        --bind "ctrl-m:execute:
-            (grep -o '[a-f0-9]\{7\}' | head -1 |
-            xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-            {}
-FZF-EOF"
 }
 
 # yazi function
@@ -137,3 +103,17 @@ function yy() {
     fi
     rm -f -- "$tmp"
 }
+
+# gitignore.io completion
+function gi() { curl -fLw '\n' https://www.toptal.com/developers/gitignore/api/"${(j:,:)@}" }
+
+_gitignoreio_get_command_list() {
+  curl -sfL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n"
+}
+
+_gitignoreio () {
+  compset -P '*,'
+  compadd -S '' `_gitignoreio_get_command_list`
+}
+
+compdef _gitignoreio gi

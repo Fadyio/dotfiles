@@ -30,8 +30,6 @@ filter_mode = "global"
 ## possible values: auto, full, compact
 style = "compact"
 
-keymap_mode = "vim-normal"
-
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
 inline_height = 16

@@ -1,8 +1,6 @@
+shell = "zsh"
 [plugins.syntax-highlighting]
 github = 'zdharma-continuum/fast-syntax-highlighting'
-
-[plugins.git-extra]
-github = 'unixorn/git-extra-commands'
 
 [plugins.completions]
 github = 'zsh-users/zsh-completions'
@@ -16,9 +14,6 @@ github = 'jeffreytse/zsh-vi-mode'
 [plugins.you-should-use]
 github = 'MichaelAquilina/zsh-you-should-use'
 
-[plugins.autopair]
-github = 'hlissner/zsh-autopair'
-
 [plugins.fzf-tab]
 github = 'Aloxaf/fzf-tab'
 
@@ -28,11 +23,5 @@ github = 'Freed-Wu/fzf-tab-source'
 [plugins.auto-notify]
 github = 'MichaelAquilina/zsh-auto-notify'
 
-[plugins.extract]
-github = 'le0me55i/zsh-extract'
-
 [plugins.expand]
 github = 'MenkeTechnologies/zsh-expand'
-
-[plugins.gitignore]
-remote = "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/gitignore/gitignore.plugin.zsh"
