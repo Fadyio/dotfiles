@@ -47,5 +47,5 @@ history_filter = [
   "^gh copilot suggest",
   "^mods",
   "^doppler",
-
+  "^qrencode",
 ]
