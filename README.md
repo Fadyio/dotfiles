@@ -1,12 +1,12 @@
 # My Dotfiles
 
-<img src="https://raw.githubusercontent.com/Fadyio/Fadyio.com/main/static/img/logo.svg" height="400">
+<img src="https://raw.githubusercontent.com/Fadyio/Fadyio.com/refs/heads/main/public/static/logo.svg" height="400">
 
 <div align="center">
 
-![](https://img.shields.io/github/last-commit/Fadyio/Linux-dotfiles?&style=for-the-badge&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41)
-![](https://img.shields.io/github/stars/Fadyio/Linux-dotfiles?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41)
-[![](https://img.shields.io/github/repo-size/Fadyio/Linux-dotfiles?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)](https://github.com/Fadyio/Linux-dotfiles)
+![](https://img.shields.io/github/last-commit/Fadyio/dotfiles?&style=for-the-badge&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41)
+![](https://img.shields.io/github/stars/Fadyio/dotfiles?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41)
+[![](https://img.shields.io/github/repo-size/Fadyio/Linux-dotfiles?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)](https://github.com/Fadyio/dotfiles)
 
 
 </div>
