@@ -1,3 +1,4 @@
+[general]
 import = [
   "/usr/lib/node_modules/alacritty-themes/themes/Catppuccin-Mocha.toml"
 ]
@@ -17,8 +18,8 @@ size = 13
   [font.italic]
   family = "JetBrainsMono Nerd Font"
 
-[shell]
-program = "/bin/zsh"
+[terminal]
+shell = "/bin/zsh"
 
 [window]
 opacity = 0.9

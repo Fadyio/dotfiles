@@ -1,14 +1,12 @@
 # Load the zsh/complist module for advanced completion features
 zmodload -i zsh/complist
+autoload -U +X bashcompinit && bashcompinit
+autoload -U +X compinit && compinit
 
 # Enable Homebrew autocompletion
 if command -v brew &>/dev/null; then
   FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 fi
-
-# Enable the Zsh Completion System
-autoload -Uz compinit
-compinit
 
 # Include hidden files in completions
 setopt globdots
@@ -63,3 +61,6 @@ unsetopt BEEP                                 # This disables the terminal beep
 unsetopt correct_all                          # stop autocorrect commands
 setopt AUTO_LIST                              # Automatically list choices on ambiguous completion
 setopt COMPLETE_IN_WORD                       # Complete from both ends of a word
+
+# add adguardvpn_cli completion
+[ -s "/opt/adguardvpn_cli/bash-completion.sh" ] && \. "/opt/adguardvpn_cli/bash-completion.sh"
