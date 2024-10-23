@@ -125,3 +125,6 @@ abbr aria2c-daemon "aria2c -D"
 # Hishtory Config:
 export PATH="$PATH:/home/f0dy/.hishtory"
 source /home/f0dy/.hishtory/config.fish
+
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /Users/fadynagh/.cache/lm-studio/bin

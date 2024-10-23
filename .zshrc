@@ -38,7 +38,9 @@ fi
 eval "$(zoxide init zsh)"
 
 # Enable keychain in zsh only on Linux
-eval `keychain --eval --agents ssh id_ed25519`
+if [[ "$(uname -s)" == "Linux" ]] && [[ -f /etc/arch-release ]]; then
+    eval `keychain --eval --agents ssh id_ed25519`
+fi
 
 #############  sheldon plugin manager for zsh
 eval "$(sheldon source)"
@@ -46,3 +48,6 @@ eval "$(sheldon source)"
 ################################## History #######################################
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/fadynagh/.cache/lm-studio/bin"
