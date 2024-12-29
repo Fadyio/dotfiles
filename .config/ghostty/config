@@ -1,0 +1,7 @@
+window-save-state = never
+window-theme = dark
+window-decoration = false
+gtk-single-instance = true
+gtk-titlebar = false
+gtk-wide-tabs = false
+gtk-adwaita = false

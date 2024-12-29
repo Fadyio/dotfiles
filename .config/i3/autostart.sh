@@ -1,6 +1,7 @@
 sh ~/.screenlayout/hdmi.sh &
 ulauncher &
 copyq &
+maestral_qt &
 flameshot &
 unclutter &
 picom &
