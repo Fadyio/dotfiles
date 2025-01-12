@@ -34,7 +34,7 @@
 
 **Wallpaper Loader**: [Feh](https://feh.finalrewind.org)
 
-**Terminal**: [Alacritty](https://alacritty.org/)
+**Terminal**: [Ghostty](https://ghostty.org)
 
 **Search menu**: [Ulauncher](https://ulauncher.io/)
 

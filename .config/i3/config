@@ -10,7 +10,7 @@ set $mod Mod4
 bindsym $mod+Shift+a exec anki
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec ghostty
 
 # kill focused window
 bindsym $mod+Shift+q kill
