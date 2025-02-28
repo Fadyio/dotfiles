@@ -1,8 +1,3 @@
-#  ╭──────────────────────────────────────────────────────────╮
-#  │                   This is my Zsh config                  │
-#  │                   Email: me@fadyio.com                   │
-#  │                   Github: @Fadyio                        │
-#  ╰──────────────────────────────────────────────────────────╯
 # ############################ customize prompt #########################
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
   eval "$(oh-my-posh init zsh --config ~/.ohmyposh.json)"
@@ -16,12 +11,15 @@ export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
 export MANPAGER='nvim +Man!'
+
 ################################### Options #######################################
 bindkey "\e[3~" delete-char                   # make the delete key act nourmal
+
 ########################## source alias and Plugins ##############################
 source ~/.dotfiles/.zsh/completion.zsh
 source ~/.dotfiles/.zsh/alias.zsh
 source ~/.dotfiles/.zsh/function.zsh
+
 #################### start tmux automatically ####################################
 # Automatically start tmux if not already inside a tmux session
 if [ -z "$TMUX" ]; then
@@ -48,6 +46,3 @@ eval "$(sheldon source)"
 ################################## History #######################################
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
-
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/fadynagh/.cache/lm-studio/bin"

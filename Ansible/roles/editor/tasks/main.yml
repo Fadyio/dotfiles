@@ -1,71 +1,57 @@
----
 - name: install vim
   pacman:
     name: neovim
     state: present
-
 - name: Make github directory
   file:
-    path: "/home/{{ user.name }}/github"
+    path: '/home/{{ user.name }}/github'
     state: directory
-
 - name: Clone neovim config repo
   ansible.builtin.git:
-    repo: "https://github.com/fadyio/nvim.git"
-    dest: "/home/{{ user.name }}/github/nvim"
-
+    repo: 'https://github.com/fadyio/nvim.git'
+    dest: '/home/{{ user.name }}/github/nvim'
 - name: Create symbolic link for neovim config
   ansible.builtin.file:
-    src: "/home/{{ user.name }}/github/nvim"
-    dest: "/home/{{ user.name }}/.config/nvim"
+    src: '/home/{{ user.name }}/github/nvim'
+    dest: '/home/{{ user.name }}/.config/nvim'
     state: link
-
-- name: install vscode extensions
-  ansible.builtin.command: "code --install-extension {{ item }}"
-  become_user: "{{ user.name }}"
+- name: Install vscode extensions
+  ansible.builtin.command: 'code --install-extension {{ item }}'
+  become_user: '{{ user.name }}'
   register: ext_install
   changed_when: ext_install.rc != 0
   loop:
-    - albert.tabout
-    - amazonwebservices.amazon-q-vscode
     - amazonwebservices.aws-toolkit-vscode
+    - astro-build.astro-vscode
+    - bradlc.vscode-tailwindcss
     - catppuccin.catppuccin-vsc
-    - deerawan.vscode-dash
-    - eamodio.gitlens
-    - formulahendry.code-runner
     - github.copilot
     - github.copilot-chat
     - github.remotehub
     - github.vscode-github-actions
     - github.vscode-pull-request-github
     - golang.go
-    - gruntfuggly.todo-tree
     - hashicorp.hcl
     - hashicorp.terraform
-    - hbenl.vscode-test-explorer
     - ms-azuretools.vscode-docker
     - ms-kubernetes-tools.vscode-kubernetes-tools
+    - ms-python.debugpy
     - ms-python.python
+    - ms-python.vscode-pylance
     - ms-vscode-remote.remote-containers
     - ms-vscode-remote.remote-ssh
     - ms-vscode-remote.remote-ssh-edit
+    - ms-vscode.cmake-tools
+    - ms-vscode.copilot-mermaid-diagram
     - ms-vscode.remote-explorer
     - ms-vscode.remote-repositories
     - ms-vscode.remote-server
     - ms-vscode.test-adapter-converter
-    - ms-vscode.vscode-speech
     - oderwat.indent-rainbow
     - pkief.material-icon-theme
-    - rangav.vscode-thunder-client
     - redhat.ansible
+    - redhat.vscode-xml
     - redhat.vscode-yaml
-    - rust-lang.rust-analyzer
+    - saoudrizwan.claude-dev
     - sumneko.lua
-    - tamasfe.even-better-toml
-    - usernamehw.errorlens
-
-- name: Create alacritty link for alacritty config
-  ansible.builtin.file:
-    src: "/home/{{ user.name }}/.dotfiles/.config/alacritty/alacritty-Linux.toml"
-    dest: "/home/{{ user.name }}/.config/alacritty/alacritty.toml"
-    state: link
+    - vscodevim.vim

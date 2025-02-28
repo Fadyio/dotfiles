@@ -10,13 +10,11 @@ auto_sync = true
 ## enable or disable automatic update checks
 update_check = true
 
-show_help = false
-
 ## address of the sync server
 sync_address = "https://api.atuin.sh"
 
-## how often to sync history. note that this is only triggered when a command
-sync_frequency = "1h"
+## how often to sync history 
+sync_frequency = "6h"
 
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy, skim
@@ -32,7 +30,7 @@ style = "compact"
 
 ## the maximum number of lines the interface should take up
 ## set it to 0 to always go full screen
-inline_height = 16
+inline_height = 10
 
 ## what to do when the escape key is pressed when searching
 ## possible values: return-original, return-query
@@ -45,7 +43,7 @@ exit_mode = "return-original"
 ## https://docs.rs/regex/latest/regex/#syntax
 history_filter = [
   "^gh copilot suggest",
-  "^mods",
+  "^gh copilot explain",
   "^doppler",
   "^qrencode",
 ]

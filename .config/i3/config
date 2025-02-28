@@ -1,13 +1,5 @@
-## Email:me@fadyio.com
-## Github: @fadyio
-################################################################################################
-##                                         i3 keybinds                                        ##
-################################################################################################
 # set the mod key to the winkey:
 set $mod Mod4
-
-# start anki
-bindsym $mod+Shift+a exec anki
 
 # start a terminal
 bindsym $mod+Return exec ghostty
@@ -19,16 +11,11 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# quit i3 session
-bindsym Control+Shift+q exit
-
 # enter resize mod
 bindsym $mod+r mode "Resize"
 
 # start program launcher
 bindsym $mod+d 	exec --no-startup-id ulauncher-toggle
-exec always --no-startup-id parep -f '“alacritty --c
-
 
 # launch flameshot gui for screenshot
 bindsym Print exec flameshot gui
@@ -66,12 +53,12 @@ bindsym $mod+Shift+Right move right
 
 # -- Function keys --
 bindsym XF86AudioMute 			              exec --no-startup-id "amixer -D pulse set Master 1+ toggle"
-bindsym XF86AudioLowerVolume 		              exec --no-startup-id "amixer set Master 3%-"
-bindsym XF86AudioRaiseVolume 		              exec --no-startup-id "amixer set Master 3%+"
-bindsym XF86AudioNext 			              exec --no-startup-id "playerctl --player=cmus,spotify next"
-bindsym XF86AudioPrev 			              exec --no-startup-id "playerctl --player=cmus,spotify previous"
-bindsym XF86AudioPlay 			              exec --no-startup-id "playerctl --player=cmus,spotify play-pause"
-bindsym XF86AudioStop 			              exec --no-startup-id "playerctl --player=cmus,spotify stop"
+bindsym XF86AudioLowerVolume 		          exec --no-startup-id "amixer set Master 3%-"
+bindsym XF86AudioRaiseVolume 		          exec --no-startup-id "amixer set Master 3%+"
+bindsym XF86AudioNext 			              exec --no-startup-id "playerctl --player=cmus,spotify,mpv next"
+bindsym XF86AudioPrev 			              exec --no-startup-id "playerctl --player=cmus,spotify,mpv previous"
+bindsym XF86AudioPlay 			              exec --no-startup-id "playerctl --player=cmus,spotify,mpv play-pause"
+bindsym XF86AudioStop 			              exec --no-startup-id "playerctl --player=cmus,spotify,mpv stop"
 
 # split orientation
 bindsym $mod+v split v;exec notify-send 'tile vertically'
@@ -81,16 +68,15 @@ bindsym $mod+q split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+Shift+z layout stacking
-bindsym $mod+Shift+x layout tabbed
-bindsym $mod+Shift+c layout toggle split
+# bindsym $mod+Shift+z layout stacking
+# bindsym $mod+Shift+x layout tabbed
+# bindsym $mod+Shift+c layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+Shift+space focus mode_toggle
-
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
@@ -98,55 +84,74 @@ bindsym $mod+Shift+Tab workspace prev
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 
-# Use Mouse+$mod to drag floating windows
-floating_modifier $mod
-workspace_auto_back_and_forth yes
-
-
 ##-- Autostart ---------------------------
 exec_always --no-startup-id 	~/.config/i3/autostart.sh
-exec gammastep
 exec_always --no-startup-id dunst
 
-################################################################################################
-##                                         i3wm settings                                      ##
-################################################################################################
-
 ##-- Colors and Fonts------------------------------
-# class                 border  backgr. text    indicator child_border
-client.focused          #DA6E89 #DA6E89 #FFFFFF #98C379   #DA6E89
-client.focused_inactive #61AFEF #61AFEF #1E222A #98C379   #61AFEF
-client.unfocused        #2C3038 #2C3038 #FFFFFF #98C379   #2C3038
-client.urgent           #C678DD #C678DD #FFFFFF #98C379   #C678DD
-client.placeholder      #1E222A #1E222A #FFFFFF #98C379   #1E222A
-client.background       #1E222A
-
-# define colors for windows:
-#class		        	          border		  bground		 text		 indicator	child_border
-client.focused		            $lightblue	$darkblue	 $white		$purple		$mediumgrey
-client.unfocused	            $darkblue	  $darkblue	 $grey		$purple		$darkgrey
-client.focused_inactive	      $darkblue	  $darkblue	 $grey		$purple		$black
-client.urgent		              $urgentred	$urgentred $white		$purple		$yellowbrown
+set $rosewater #f5e0dc
+set $flamingo #f2cdcd
+set $pink #f5c2e7
+set $mauve #cba6f7
+set $red #f38ba8
+set $maroon #eba0ac
+set $peach #fab387
+set $yellow #f9e2af
+set $green #a6e3a1
+set $teal #94e2d5
+set $sky #89dceb
+set $sapphire #74c7ec
+set $blue #89b4fa
+set $lavender #b4befe
+set $text #cdd6f4
+set $subtext1 #bac2de
+set $subtext0 #a6adc8
+set $overlay2 #9399b2
+set $overlay1 #7f849c
+set $overlay0 #6c7086
+set $surface2 #585b70
+set $surface1 #45475a
+set $surface0 #313244
+set $base #1e1e2e
+set $mantle #181825
+set $crust #11111b
+# target                 title     bg    text   indicator  border
+client.focused           $lavender $base $text  $rosewater $lavender
+client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
+client.unfocused         $overlay0 $base $text  $rosewater $overlay0
+client.urgent            $peach    $base $peach $overlay0  $peach
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
+client.background        $base
 
 font pango: JetBrainsMono Nerd Font
+
+bar {
+    position top
+    status_command /usr/bin/i3status-rs /home/f0dy/.config/i3status-rust/config.toml
+  colors {
+    background         $base
+    statusline         $text
+    focused_statusline $text
+    focused_separator  $base
+
+    # target           border bg        text
+    focused_workspace  $base  $mauve    $crust
+    active_workspace   $base  $surface2 $text
+    inactive_workspace $base  $base     $text
+    urgent_workspace   $base  $red      $crust
+  }
+}
+
 ##-- Workspaces ---------------------
-
-# Define names for default workspaces for which we configure key bindings later on.
-# We use variables to avoid repeating the names in multiple places.
-
-# Workspace names
-# to display names or symbols instead of plain workspace numbers you can use
-# something like: set $ws1 1:mail
-#                 set $ws2 2:
 set $ws1 "1: "
 set $ws2 "2:󰈹 "
 set $ws3 "3:󰠮 "
 set $ws4 "4: "
-set $ws5 "5: "
-set $ws6 "6: "
+set $ws5 "5: "
+set $ws6 "6: "
 set $ws7 "7: "
-set $ws8 "8: "
-set $ws9 "9: "
+set $ws8 "8: "
+set $ws9 "9: "
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -170,53 +175,18 @@ bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9; workspace $ws9
 
-# open start some applications on specific workspace
-for_window [class="Spotify"] move to workspace $ws6
-for_window [class="sioyek"] move to workspace $ws8
-
 ##------------------------ Window Rules ------------------------
 # Open specific applications in floating mode
 for_window [class="Arandr"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
-for_window [class="Lxappearance|Nitrogen"] floating enable
+for_window [class="Lxappearance|Nitrogen|feh"] floating enable
 for_window [class="Pavucontrol|Xfce4-power-manager-settings|Nm-connection-editor"] floating enable
-for_window [class="feh|Gpicview|Gimp"] floating enable
-for_window [class="Kvantum Manager|qt5ct"] floating enable
 for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="Clipgrab"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
 for_window [class="GParted"] floating enable border normal
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-
-#-- Resize / Move / Gaps ------------------------
-mode "Move" {
-       # These bindings trigger as soon as you enter the Move mode
-
-       bindsym Left move left 20px
-       bindsym Down move down  20px
-       bindsym Up move up 20px
-       bindsym Right move right 20px
-
-       # back to normal: Enter or Escape or $mod+r
-       bindsym Return mode "default"
-       bindsym Escape mode "default"
-       bindsym $mod+m mode "default"
-}
-bindsym $mod+Shift+m mode "Move"
 
 # smart borders
 hide_edge_borders smart
-
-
-##-- Gaps --------------------------------
-
-# Title bar text alignment
-title_align center
-
-# Uncomment this to enable title bars
-#for_window [class=".*"] border normal 4
 
 # Uncomment this to disable title bars
 for_window [class=".*"] border pixel 0
@@ -228,25 +198,9 @@ gaps outer 2
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
 
-# Activate smart borders (always)
-#smart_borders on
-
 set $mode_gaps Gaps: (o)uter, (i)nner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
-
-mode "$mode_gaps_outer" {
-       bindsym plus  gaps outer current plus 5
-       bindsym minus gaps outer current minus 5
-       bindsym 0     gaps outer current set 0
-
-       bindsym Shift+plus  gaps outer all plus 5
-       bindsym Shift+minus gaps outer all minus 5
-       bindsym Shift+0     gaps outer all set 0
-
-       bindsym Return mode "$mode_gaps"
-       bindsym Escape mode "default"
-}
 
 mode "$mode_gaps_inner" {
        bindsym plus  gaps inner current plus 5
@@ -265,7 +219,6 @@ mode "$mode_gaps_inner" {
 
 mode "Resize" {
 # These bindings trigger as soon as you enter the resize mode
-
 bindsym Left resize shrink width 10 px or 10 ppt
 bindsym Down resize grow height 10 px or 10 ppt
 bindsym Up resize shrink height 10 px or 10 ppt
@@ -280,29 +233,3 @@ bindsym Return mode "default"
 bindsym Escape mode "default"
 bindsym $mod+r mode "default"
 }
-
-
-
-bar {
-    position top
-    status_command /usr/bin/i3status-rs /home/f0dy/.config/i3status-rust/config.toml
-    colors {
-        background #000000
-        focused_workspace #282828 #282828 #FFFFFF #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #333333 #AAAAAA #888888
-        urgent_workspace   #2f343a #900000 #ffffff
-        statusline #AAAAAA
-    }
-}
-
-mode "$mode_display" {
-    bindsym h exec --no-startup-id xrandr --output DP1 --off --output HDMI1 --mode 1280x720 --pos 1600x90 --rotate normal --output VGA1 --mode 1600x900 --pos 0x0 --rotate normal --output VIRTUAL1 --off
-    bindsym v exec --no-startup-id xrandr --output DP1 --off --output HDMI1 --off --output VGA1 --mode 1600x900 --pos 0x0 --rotate normal --output VIRTUAL1 --off
-
-    # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-
-bindsym $mod+Shift+d mode "$mode_display"

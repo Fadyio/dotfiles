@@ -6,9 +6,9 @@
 # FZF configuration
 export FZF_DEFAULT_OPTS="
   --exact
-  --prompt '❯ '
-  --pointer '➤'
-  --marker '┃'
+  --prompt ' '
+  --pointer '󰁕'
+  --marker '󰄲 '
   --border
   --color=fg:-1,bg:-1,hl:#ffaf5f,fg+:-1,bg+:-1,hl+:#ffaf5f
   --color=prompt:#5fff87,marker:#ff87d7,spinner:#ff87d7
@@ -87,11 +87,6 @@ function fkill() {
     if [ -n "$pid" ]; then
         echo $pid | xargs kill -${1:-9}
     fi
-}
-
-# Create a new directory and enter it
-function mcd() {
-    mkdir -p "$@" && cd "$_";
 }
 
 # yazi function

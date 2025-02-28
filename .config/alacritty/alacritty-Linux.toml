@@ -1,7 +1,4 @@
 [general]
-import = [
-  "/usr/lib/node_modules/alacritty-themes/themes/Catppuccin-Mocha.toml"
-]
 live_config_reload = true
 
 [font]

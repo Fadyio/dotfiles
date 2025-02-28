@@ -45,8 +45,7 @@ luac.out
 
 .config/gh
 .config/mpv/watch_later
-.config/alacritty/alacritty.yml
-### DotfilesSh ###
 local-patch
 patched-src
 **/.DS_Store
+.ansible

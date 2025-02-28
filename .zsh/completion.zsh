@@ -16,36 +16,28 @@ if command -v kubectl &>/dev/null; then
   source <(kubectl completion zsh)
 fi
 
-# Set up alias expansion
-zle -C alias-expansion complete-word _generic
-zstyle ':completion:alias-expansion:*' completer _expand_alias
-
 # Rehash completion
 zstyle ':completion:*' rehash true
 
 # Disable sort when completing `git checkout`
 zstyle ':completion:*:git-checkout:*' sort false
 
-# Set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
 zstyle ':completion:*:descriptions' format '[%d]'
 
-# Set list-colors to enable filename colorizing
+# set list-colors to enable filename colorizing
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# Force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+# force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
 zstyle ':completion:*' menu no
 
 # preview directory's content with eza when completing cd
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --pager=always ${(Q)realpath}'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color-scale-mode gradient --long --header --git --sort=extension $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color-scale-mode gradient --long --header --git --sort=extension ${(Q)realpath}'
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # Define matcher lists for completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-# Enable git bash completion for `g`
-if command -v __git_complete &> /dev/null; then
-  __git_complete g __git_main
-fi
 
 # Enable URL quoting magic
 autoload -Uz bracketed-paste-magic
@@ -61,6 +53,3 @@ unsetopt BEEP                                 # This disables the terminal beep
 unsetopt correct_all                          # stop autocorrect commands
 setopt AUTO_LIST                              # Automatically list choices on ambiguous completion
 setopt COMPLETE_IN_WORD                       # Complete from both ends of a word
-
-# add adguardvpn_cli completion
-[ -s "/opt/adguardvpn_cli/bash-completion.sh" ] && \. "/opt/adguardvpn_cli/bash-completion.sh"

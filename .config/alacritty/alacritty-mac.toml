@@ -1,6 +1,5 @@
 [general]
 live_config_reload = true
-import = ["~/.dotfiles/.config/alacritty/themes/iterm.toml"]
 
 [window]
 opacity = 0.9

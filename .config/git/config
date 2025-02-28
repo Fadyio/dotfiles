@@ -1,52 +1,86 @@
 [user]
-  name =  Fady
-  email = Fady@Fadyio.com
+  name =  Fady Nagh          
+  email = Fady@Fadyio.com    
   signingkey = Fady@Fadyio.com
+
 [core]
-  editor = nvim
-  mergeoptions = --no-edit
-  pager = delta
-	excludesfile = /Users/fadynagh/.gitignore_global
+  editor = nvim              
+  pager = delta              # Use delta for displaying diffs and logs
+
 [commit]
-  gpgsign = true
+  gpgsign = true             # Automatically sign all commits with GPG
+  verbose = true             # Show diff in commit message editor
+
+[column]
+  ui = auto                  # Format output in columns when appropriate
+
+[branch]
+  sort = -committerdate      # Sort branches by most recent commit date first
+
 [tag]
-  gpgsign = true
+  gpgsign = true             # Automatically sign all tags with GPG
+  sort = version:refname     # Sort tags with version numbers semantically
+
 [interactive]
-  diffFilter = delta --color-only
+  diffFilter = delta --color-only # Use delta for interactive add interface
+
 [init]
-  defaultBranch = main
+  defaultBranch = main       # Create 'main' branch instead of 'master' in new repos
+
 [delta]
-  line-numbers = true
-  navigate = true
+  line-numbers = true        # Show line numbers in diffs
+  navigate = true            # Enable navigation between diff sections
+  side-by-side = true        # Show diffs side by side
 [difftool]
-  prompt = false
+  prompt = false             # Don't ask before launching difftool
+
+[diff]
+  algorithm = histogram      # Use histogram diff algorithm (better than default)
+  colorMoved = plain         # Color moved lines differently
+  mnemonicPrefix = true      # Use a/b/c/ prefixes instead of old/new
+  renames = true             # Detect renamed files during diff
+
+[push]
+  default = simple           # Push current branch to upstream branch of same name
+  autoSetupRemote = true     # Auto-create upstream tracking branch when pushing
+  followTags = true          # Include tags related to pushed branches
+
+[fetch]
+  prune = true               # Remove local references to deleted remote branches
+  pruneTags = true           # Remove local tags that no longer exist on remote
+  all = true                 # Fetch from all remotes by default
+
+[help]
+  autocorrect = prompt       # Suggest corrections for mistyped commands
+
 [color]
-  ui = true
+  ui = true                  # Enable color output in terminal
+
 [color "diff-highlight"]
-  oldNormal = red bold
-  oldHighlight = red bold 52
-  newNormal = green bold
-  newHighlight = green bold 22
+  oldNormal = red bold       # Format for unchanged parts of removed lines
+  oldHighlight = red bold 52 # Format for changed parts of removed lines
+  newNormal = green bold     # Format for unchanged parts of added lines
+  newHighlight = green bold 22 # Format for changed parts of added lines
+
 [color "diff"]
-  meta = 11
-  frag = magenta bold
-  func = 146 bold
-  commit = yellow bold
-  old = red bold
-  new = green bold
-  whitespace = red reverse
+  meta = 11                  # Color for meta information
+  frag = magenta bold        # Color for chunk header
+  func = 146 bold            # Color for function in diff header
+  commit = yellow bold       # Color for commit headers
+  old = red bold             # Color for removed lines
+  new = green bold           # Color for added lines
+  whitespace = red reverse   # Color for whitespace errors
+
 [alias]
-    # one-line log
+  # one-line log format for quick overview
   l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-  # list all the alias
-  la = "!git config -l | grep alias | cut -c 7-"
 
 ; Force GitHub to use SSH
 [url "ssh://git@github.com/"]
-  insteadOf = https://github.com/
+  insteadOf = https://github.com/ # Convert HTTPS GitHub URLs to SSH automatically
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f       # Convert large files to LFS pointers
+  smudge = git-lfs smudge -- %f     # Convert LFS pointers back to files
+  process = git-lfs filter-process  # Bidirectional conversion for LFS
+  required = true                   # Require Git LFS for this repository

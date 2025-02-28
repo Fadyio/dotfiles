@@ -14,6 +14,7 @@ icons:
   emacs: ''
   fdisk: ''
   fish: ''
+  sh: ''
   git: ''
   gh: ''
   gitui: ''
@@ -54,6 +55,7 @@ icons:
   unzip: ''
   cat: ''
   bat: ''
+  devbox: "\U000F1105"
   oha: "\U000F01D6"
   journalctl: ''
   doppler: "\U000F0483"

@@ -1,9 +1,3 @@
-"                ╭─────────────────────────────────────────────╮
-"                │ Written by Fady nagh from http://fadyio.com │
-"                │             Email:me@fadyio.com             │
-"                │               Github: @fadyio               │
-"                ╰─────────────────────────────────────────────╯
-
 " Better paste
 vnoremap <silent> p "_dP
 

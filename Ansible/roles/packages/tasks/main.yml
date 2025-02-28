@@ -1,90 +1,10 @@
-- name: Update and upgrade Arch system
-  pacman:
-    update_cache: true
-    upgrade: true
-- name: Install pacman packages
-  pacman:
-    name: '{{ item }}'
-    state: present
-  loop:
-    - git
-    - base-devel
-    - zsh
-    - vim
-    - firefox
-    - cronie
-    - dns-over-https
-    - tmux
-    - httpie
-    - xclip
-    - adobe-source-code-pro-fonts
-    - alacritty
-    - android-tools
-    - ansible
-    - arandr
-    - archlinux-keyring
-    - aria2
-    - ark
-    - bash-completion
-    - bat
-    - cmus
-    - containerd
-    - copyq
-    - delve
-    - docker
-    - dunst
-    - eza
-    - fd
-    - feh
-    - ffmpeg
-    - ffmpegthumbnailer
-    - flameshot
-    - fzf
-    - gnome-keyring
-    - go
-    - go-tools
-    - go-yq
-    - grep
-    - helm
-    - htop
-    - jq
-    - keepassxc
-    - keychain
-    - kubectl
-    - kustomize
-    - lua
-    - mousepad
-    - mpv
-    - nmap
-    - pavucontrol
-    - qbittorrent
-    - ripgrep
-    - sheldon
-    - shellcheck
-    - nomacs
-    - playerctl
-    - terraform
-    - tesseract
-    - lurk
-    - tesseract-data-eng
-    - tesseract-data-osd
-    - the_silver_searcher
-    - thunar
-    - tmux
-    - unclutter
-    - unrar
-    - unzip
-    - wget
-    - zathura
-    - zoxide
-    - stow
 - name: Create the `aur_builder` user
   become: true
   ansible.builtin.user:
     name: aur_builder
     create_home: true
     group: wheel
-- name: Allow the `aur_builder` user to run `sudo pacman` without a password
+- name: Allow the `aur_builder` user to run `sudo` without a password
   become: true
   ansible.builtin.lineinfile:
     path: /etc/sudoers.d/11-install-aur_builder
@@ -96,52 +16,144 @@
   kewlfft.aur.aur:
     name: '{{ item}}'
     state: present
+    upgrade: true
+    update_cache: true
+    use: paru
   become: true
   become_user: aur_builder
   loop:
+    - android-tools
     - anki-bin
-    - dropbox
-    - imagewriter
-    - sioyek
-    - ueberzugpp
-    - ulauncher
-    - appimagelauncher-bin
+    - ansible
+    - ansible-lint
+    - arandr
+    - aria2
+    - ark
     - atuin
+    - base
+    - base-devel
+    - bash-completion
+    - bat
+    - calibre
+    - catppuccin-cursors-mocha
+    - chaotic-keyring
+    - chaotic-mirrorlist
+    - cheat
+    - cmus
+    - containerd
+    - copyq
+    - delve
+    - dns-over-https
+    - docker
+    - dracula-gtk-theme
+    - dunst
+    - epapirus-icon-theme-git
     - epub-thumbnailer-git
-    - picom-arian8j2-git
+    - eza
+    - fd
+    - feh
+    - ffmpeg
     - ffmpeg-audio-thumbnailer
-    - ttf-font-awesome-5
+    - ffmpegthumbnailer
+    - flameshot
+    - fzf
+    - ghostty
+    - gimp
+    - git
     - git-delta
     - github-cli
-    - dracula-gtk-theme
-    - catppuccin-cursors-mocha
-    - revive
-    - epapirus-icon-theme-git
-    - papirus-icon-theme-git
     - gitleaks
+    - gnu-free-fonts
+    - gnu-netcat
+    - go
+    - golangci-lint-bin
+    - go-tools
+    - go-yq
+    - gpart
+    - gparted
+    - grub
     - grype-bin
+    - gsound
     - hadolint-bin
+    - heimdall
+    - helm
+    - htop
+    - i3blocks
+    - i3lock
+    - i3status
     - i3status-rust
+    - i3-wm
+    - imagewriter
+    - jq
+    - jre-openjdk
     - k9s
+    - keepassxc
+    - keychain
     - keyd
+    - kubectl
+    - kustomize
     - localsend-bin
+    - lua
+    - lxappearance-gtk3
+    - maestral-qt
     - microsoft-edge-stable-bin
-    - oh-my-posh-bin
+    - mousepad
+    - mpv
+    - mpv-mpris
+    - neovim
+    - neovim-qt
+    - nmap
+    - nomacs
+    - obsidian
     - oha
+    - oh-my-posh-bin
+    - paru
+    - pavucontrol
+    - picom-arian8j2-git
+    - playerctl
+    - pulseaudio
+    - pulseaudio-alsa
+    - python-pip
+    - qbittorrent
+    - revive
+    - ripgrep
     - ripgrep-all
+    - ruby
+    - sheldon
+    - shellcheck
+    - slack-desktop
+    - sql-formatter
+    - stow
+    - tcpdump
+    - terraform
+    - tesseract
+    - tesseract-data-eng
+    - the_silver_searcher
+    - thunar
     - thunar-archive-plugin-git
+    - tmux
+    - traceroute
+    - ttf-font-awesome-5
+    - ttf-jetbrains-mono-nerd
     - tumbler-devel
     - tumbler-extra-thumbnailers
+    - ueberzugpp
+    - ulauncher
+    - unclutter
+    - unrar
+    - unzip
+    - vala
+    - vhs
+    - vi
+    - vim
     - visual-studio-code-bin
-    - yazi
-    - fixjson
-    - sql-formatter
-    - golangci-lint-bin
+    - wget
+    - whois
+    - xarchiver
+    - xclip
     - yamlfmt
-    - ttf-jetbrains-mono-nerd
-    - ttf-sourcecodepro-nerd
-    - ttf-0xproto-nerd
-    - ttf-atkinson-hyperlegible
-    - ansible-lint
-    - tmux-plugin-manager
-    - devbox-bin
+    - yazi
+    - zathura
+    - zathura-pdf-mupdf
+    - zoxide
+    - zsh

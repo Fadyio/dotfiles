@@ -1,8 +1,8 @@
-- name: Install my Dev arch linux environment
+- name: Install Arch Linux Development Environment
   hosts: hosts
   connection: local
   become: true
   roles:
-    #    - role: packages
+    - role: packages
     - role: dotfiles
     - role: editor

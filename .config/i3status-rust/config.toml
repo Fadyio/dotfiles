@@ -1,20 +1,12 @@
-#                 ╭─────────────────────────────────────────────╮
-#                 │ Written by @Fadynagh from http://fadyio.com │
-#                 │             Email:me@fadyio.com             │
-#                 │               Github: @Fadyio               │
-#                 ╰─────────────────────────────────────────────╯
 icons_format = "{icon}"
 
 [theme]
-theme = "slick"
+theme = "ctp-mocha"
 
 [icons]
-icons = "awesome5"
+icons = "awesome6"
 [icons.overrides]
-bat = " | | "
-bat_full = " |X| "
-bat_charging = " |^| "
-bat_discharging = " |v| "
+cpu = " "
 
 
 [[block]]
@@ -23,12 +15,11 @@ info_type = "available"
 alert_unit = "GB"
 alert = 10.0
 warning = 15.0
-format = "   $available "
+format = "  $available "
 format_alt = " $icon $available / $total "
 [block.theme_overrides]
-idle_bg = "#45475a"
-idle_fg = "#94e2d5"
-
+idle_bg = "#313244"  
+idle_fg = "#cba6f7"
 
 [[block]]
 block = "memory"
@@ -39,33 +30,33 @@ warning_mem = 70
 critical_mem = 90
 [block.theme_overrides]
 idle_bg = "#45475a"
-idle_fg = "#74c7ec"
+idle_fg = "#94e2d5"
 
 [[block]]
 block = "cpu"
 interval = 1
 format_alt = " $icon $frequency{ $boost|} "
 [block.theme_overrides]
-idle_bg = "#313244"
-idle_fg = "#f9e2af"
+idle_bg = "#585b70"
+idle_fg = "#a6e3a1"
 
 [[block]]
 block = "net"
 device = "eno1"
 [block.theme_overrides]
 idle_bg = "#1e1e2e"
-idle_fg = "#89b4fa"
+idle_fg = "#94e2d5"
 
 [[block]]
 block = "sound"
 [block.theme_overrides]
 idle_bg = "#181825"
-idle_fg = "#fab387"
+idle_fg = "#f9e2af"
 
 [[block]]
 block = "time"
 interval = 60
 format = " $icon $timestamp.datetime(f:'%m/%d %I:%M %p') "
 [block.theme_overrides]
-idle_bg = "#11111b"
+idle_bg = "#181825"
 idle_fg = "#a6e3a1"
