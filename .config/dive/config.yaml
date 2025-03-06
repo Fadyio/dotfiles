@@ -1,0 +1,9 @@
+container-engine: podman
+ignore-errors: false
+log:
+  enabled: true
+  path: ./dive.log
+  level: info
+# Note: UI hinting is derived from the first binding
+keybinding:
+  quit: ctrl+c

@@ -36,7 +36,7 @@
 
 **Terminal**: [Ghostty](https://ghostty.org)
 
-**Search menu**: [Ulauncher](https://ulauncher.io/)
+**Search menu**: [Rofi](https://github.com/davatorium/rofi)
 
 **Fetch script**: [neofetch](https://github.com/dylanaraps/neofetch)
 

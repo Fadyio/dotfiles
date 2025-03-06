@@ -1,0 +1,53 @@
+matches:
+  - trigger: ':prompteng'
+    replace: |
+      I want you to become my Prompt Engineer. Your goal is to help me craft the best possible prompt for my needs. The prompt will be used by you, ChatGPT. You will follow the following process:
+      1. Your first response will be to ask me what the prompt should be about. I will provide my answer, but we will need to improve it through continual iterations by going through the next steps.
+      2. Based on my input, you will generate two sections:
+         a) **Revised Prompt** – Provide your rewritten prompt, ensuring it is clear, concise, and easily understood by you.
+         b) **Questions** – Ask any relevant questions about additional information needed to refine the prompt.
+      3. We will continue this iterative process with me providing additional information and you updating the **Revised Prompt** section until I confirm that we are done.
+  - trigger: ':mentor'
+    replace: |
+      You are an elite {topic}. And I am your student whom you must pass on your knowledge and expertise. In a series of sessions, you have to fulfill this duty and see that I have mastered {topic} by giving me tests that I would encounter in the real world.
+  - trigger: ':cvreview'
+    replace: |
+      I have attached my resume and the job description for the **{Job Title}** position at **{Company Name}**. Please assist me by performing the following two tasks:
+      1. **Resume Analysis:**
+         - **Alignment Assessment:** Compare my resume with the job description and identify how my skills, experiences, and qualifications align with the requirements of the position.
+         - **Gap Identification:** Highlight any areas where my resume may be lacking or where additional skills and experiences are needed to meet the job requirements.
+      2. **Improvement Recommendations:**
+         - **Tailoring Suggestions:** Provide specific recommendations on how I can modify or enhance my resume to better match the job description. This may include emphasizing certain skills, rephrasing experiences, or adding relevant projects.
+         - **Skill Development:** Suggest any additional skills, certifications, or experiences I should pursue to strengthen my candidacy for this role.
+      **Attachments:**
+      - [Your Resume]
+      - [Job Description for **{Job Title}** at **{Company Name}**]
+  - trigger: ':optimizeprompt'
+    replace: |
+      I will provide a prompt for you to optimize before giving it to another AI system. Your goal is to thoroughly enhance the prompt so it equips the AI to engage in intelligent, contextually aware conversations and produce high-quality research reports.
+      To create an exceptional prompt, apply the following optimization process:
+      1. **Eliminate ambiguity:** Meticulously analyze every aspect of the prompt, clarifying any language that could be misinterpreted. Define key terms, spell out acronyms, add explanatory details, and rephrase sentences to achieve crystal clarity.
+      2. **Maximize specificity:** Enrich the prompt with precise details, facts, examples, and context that will enable nuanced, on-target AI responses. Use exact metrics, timeframes, scopes, and parameters. Anticipate the AI's informational needs and proactively include all relevant specifics.
+      3. **Streamline and focus:** Scrutinize each sentence, pruning ruthlessly to eliminate anything nonessential. Ensure the core objectives are prominently stated and not obscured by tangential details. Rewrite the prompt to be as concise and purposeful as possible.
+      4. **Provide comprehensive context:** Step into the AI's shoes and explain all references to current events, niche topics, technical concepts, or historical information it may not be familiar with. Err on the side of over-contextualizing to ensure complete understanding. Clarify the "why" behind the human's request and their ultimate goals.
+      5. **Detail exact output requirements:** Go beyond just stating the basic deliverable, and provide in-depth specifications for the response format, structure, length, content, style, tone, complexity level, key points, examples, and research citations. Include a mock-up of your ideal output for reference.
+      6. **Fine-tune the scope:** Evaluate if the prompt scope is calibrated to yield the desired breadth and depth of insights. Refine overly broad prompts to be laser-focused on the core issue. Expand overly narrow prompts to allow more comprehensive, multifaceted responses. Aim for the perfect dimensionality.
+      7. **Eliminate bias and opinion:** Scour the prompt for any subjective statements, unproven assumptions, leading language, or partisan framing. Remove or rewrite these elements to be rigorously objective, balancing all perspectives. The prompt should set the stage for an impartial, evidence-based exploration of the topic.
+      8. **Illustrate with on-point examples:** For any remaining areas of ambiguity, provide concise examples that precisely demonstrate your expectations. Ensure they directly relate to the prompt's core focus and don't introduce confusion. Explicitly call out any examples that portray edge cases.
+      9. **Pressure-test for perfection:** Review the optimized prompt through the AI's lens, hunting for any remaining weaknesses, inconsistencies or points of confusion. Refine the language to be as seamless and easy to follow as possible. Continue honing until the prompt is watertight.
+      As you work through these optimization steps, keep the end goal in mind: empowering the AI to engage in substantive, emotionally intelligent discourse and produce well-researched, insightful outputs.
+  - trigger: ':anki'
+    replace: |
+      > Generate **plain text** Anki flashcards from the given input. The flashcards should be **double-sided**, with the front containing a question or prompt and the back containing the corresponding answer or explanation.
+
+      > - Use **only direct information** from the input to create the flashcards.
+      > - Automatically apply **Cloze deletions** for key concepts where appropriate; otherwise, use **Basic** note type.
+      > - Format each flashcard with the structure:
+      >   ```
+      >   Front: [question or prompt]
+      >   Back: [answer or explanation]
+      >   ```
+      > - Use `{{c1::hidden text}}` for **Cloze deletions**.
+      > - Separate each flashcard with "---".
+      > - If the input is lengthy, split it into multiple logically connected flashcards.
+      > - Do not generate images or tags.

@@ -24,6 +24,14 @@
   loop:
     - android-tools
     - anki-bin
+    - tokei
+    - uv
+    - ctop
+    - termshark
+    - dive
+    - espanso-x11
+    - firefox
+    - chromium
     - ansible
     - ansible-lint
     - arandr
@@ -44,7 +52,7 @@
     - copyq
     - delve
     - dns-over-https
-    - docker
+    - podman
     - dracula-gtk-theme
     - dunst
     - epapirus-icon-theme-git
@@ -80,7 +88,6 @@
     - htop
     - i3blocks
     - i3lock
-    - i3status
     - i3status-rust
     - i3-wm
     - imagewriter
@@ -96,11 +103,10 @@
     - lua
     - lxappearance-gtk3
     - maestral-qt
-    - microsoft-edge-stable-bin
     - mousepad
     - mpv
-    - mpv-mpris
     - neovim
+    - papirus-icon-theme
     - neovim-qt
     - nmap
     - nomacs
@@ -113,12 +119,10 @@
     - playerctl
     - pulseaudio
     - pulseaudio-alsa
-    - python-pip
     - qbittorrent
     - revive
     - ripgrep
     - ripgrep-all
-    - ruby
     - sheldon
     - shellcheck
     - slack-desktop
@@ -138,11 +142,10 @@
     - tumbler-devel
     - tumbler-extra-thumbnailers
     - ueberzugpp
-    - ulauncher
+    - rofi
     - unclutter
     - unrar
     - unzip
-    - vala
     - vhs
     - vi
     - vim

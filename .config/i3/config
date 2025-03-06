@@ -15,7 +15,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+r mode "Resize"
 
 # start program launcher
-bindsym $mod+d 	exec --no-startup-id ulauncher-toggle
+bindsym $mod+d 	exec --no-startup-id rofi -show drun
 
 # launch flameshot gui for screenshot
 bindsym Print exec flameshot gui

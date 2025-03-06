@@ -6,7 +6,7 @@ theme = "ctp-mocha"
 [icons]
 icons = "awesome6"
 [icons.overrides]
-cpu = " "
+cpu = ""
 
 
 [[block]]
@@ -18,7 +18,7 @@ warning = 15.0
 format = "  $available "
 format_alt = " $icon $available / $total "
 [block.theme_overrides]
-idle_bg = "#313244"  
+idle_bg = "#313244"
 idle_fg = "#cba6f7"
 
 [[block]]

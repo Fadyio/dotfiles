@@ -1,10 +1,10 @@
 [user]
-  name =  Fady Nagh          
-  email = Fady@Fadyio.com    
+  name =  Fady Nagh
+  email = Fady@Fadyio.com
   signingkey = Fady@Fadyio.com
 
 [core]
-  editor = nvim              
+  editor = nvim
   pager = delta              # Use delta for displaying diffs and logs
 
 [commit]
@@ -31,6 +31,7 @@
   line-numbers = true        # Show line numbers in diffs
   navigate = true            # Enable navigation between diff sections
   side-by-side = true        # Show diffs side by side
+
 [difftool]
   prompt = false             # Don't ask before launching difftool
 
@@ -55,6 +56,9 @@
 
 [color]
   ui = true                  # Enable color output in terminal
+
+[merge]
+  conflictstyle = zdiff3
 
 [color "diff-highlight"]
   oldNormal = red bold       # Format for unchanged parts of removed lines

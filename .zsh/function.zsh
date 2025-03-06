@@ -28,21 +28,6 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
     _fzf_compgen_dir() { fd --type d --hidden --follow --exclude ".git" . "$1" }
 }
 
-# Ripgrep with live reload
-function RG() {
-    local RG_PREFIX INITIAL_QUERY SELECTED
-    RG_PREFIX="rg --column --null --line-number --no-heading --color=always --smart-case "
-    INITIAL_QUERY="$1"
-    SELECTED=$(FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY' || true" \
-        fzf --bind "change:reload:$RG_PREFIX {q} || true" \
-        --ansi --disabled --query "$INITIAL_QUERY" \
-        --delimiter : \
-        --bind 'alt-e:execute($EDITOR +{2} {1} >/dev/tty </dev/tty)' \
-        --preview 'bat --style=numbers,header,changes,snip --color=always --highlight-line {2} {1}' \
-        --preview-window 'default:right:60%:~1:+{2}+3/2:border-left'
-    ) && $EDITOR +$(cut -d: -f2 <<<"$SELECTED") $(cut -d: -f1 <<<"$SELECTED")
-}
-
 # Install packages using paru or brew on macOS
 function install() {
     if [[ "$(uname)" == "Darwin" ]]; then
