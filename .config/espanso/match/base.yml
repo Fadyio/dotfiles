@@ -7,9 +7,6 @@ matches:
          a) **Revised Prompt** – Provide your rewritten prompt, ensuring it is clear, concise, and easily understood by you.
          b) **Questions** – Ask any relevant questions about additional information needed to refine the prompt.
       3. We will continue this iterative process with me providing additional information and you updating the **Revised Prompt** section until I confirm that we are done.
-  - trigger: ':mentor'
-    replace: |
-      You are an elite {topic}. And I am your student whom you must pass on your knowledge and expertise. In a series of sessions, you have to fulfill this duty and see that I have mastered {topic} by giving me tests that I would encounter in the real world.
   - trigger: ':cvreview'
     replace: |
       I have attached my resume and the job description for the **{Job Title}** position at **{Company Name}**. Please assist me by performing the following two tasks:
@@ -38,16 +35,70 @@ matches:
       As you work through these optimization steps, keep the end goal in mind: empowering the AI to engage in substantive, emotionally intelligent discourse and produce well-researched, insightful outputs.
   - trigger: ':anki'
     replace: |
-      > Generate **plain text** Anki flashcards from the given input. The flashcards should be **double-sided**, with the front containing a question or prompt and the back containing the corresponding answer or explanation.
+      **Task:**
+      Generate **plain text** Anki flashcards based on the provided input. The flashcards should be **double-sided**, with the **front** containing a clear question or prompt and the **back** providing the corresponding answer or explanation.
+      ### **Requirements:**
+      1. **Use Only Given Information:**
+         - Extract content directly from the input without adding external knowledge.
+         - Ensure accuracy by maintaining the original meaning and context.
+      2. **Flashcard Types:**
+         - **Cloze Deletions:** Apply `{{c1::hidden text}}` formatting for key concepts, ensuring deletions are meaningful and logically structured.
+         - **Basic Note Type:** If Cloze deletions are not suitable, format the flashcard as a standard Q&A pair.
+      3. **Formatting Guidelines:**
+         - **Structure Each Flashcard as Follows:**
+           ```
+           Front: [Question or Prompt]
+           Back: [Answer or Explanation]
+           ```
+         - **Cloze Deletion Example:**
+           ```
+           Front: {{c1::Mitochondria}} is the powerhouse of the cell.
+           Back: Mitochondria is the powerhouse of the cell.
+           ```
+         - **Separate each flashcard using `---`.**
+      4. **Handling Lengthy Inputs:**
+         - If the input is extensive, break it into multiple logically connected flashcards.
+         - Maintain coherence by ensuring each flashcard provides a complete, standalone piece of information.
+      5. **Exclusions:**
+         - Do not generate images, tags, or additional metadata.
+         - Avoid subjective interpretations or unnecessary paraphrasing.
+      ---
+      ### **Example Output:**
+      **Input:**
+      *"The capital of France is Paris. The Eiffel Tower is a famous landmark in Paris."*
+      **Generated Flashcards:**
+      ```
+      Front: What is the capital of France?
+      Back: Paris
+      ---
+      Front: What is a famous landmark in Paris?
+      Back: The Eiffel Tower
+      ```
+  - trigger: ':note'
+    replace: |
+      Generate and enhance notes from raw information, ensuring they are well-structured, clear, and concise. The notes should be optimized for technical and study purposes, using a mix of bullet points and short explanatory paragraphs.
 
-      > - Use **only direct information** from the input to create the flashcards.
-      > - Automatically apply **Cloze deletions** for key concepts where appropriate; otherwise, use **Basic** note type.
-      > - Format each flashcard with the structure:
-      >   ```
-      >   Front: [question or prompt]
-      >   Back: [answer or explanation]
-      >   ```
-      > - Use `{{c1::hidden text}}` for **Cloze deletions**.
-      > - Separate each flashcard with "---".
-      > - If the input is lengthy, split it into multiple logically connected flashcards.
-      > - Do not generate images or tags.
+      ### **Guidelines:**
+      - Keep explanations **simple and to the point** while maintaining **technical accuracy**.
+      - If the input is **unstructured or incomplete**, **organize it logically** and **fill in missing details** based on context.
+      - Use **bullet points** for clarity and **short paragraphs** for explanation.
+      - Avoid **unnecessary complexity or length**—focus on making the content **easy to understand**.
+  - trigger: ':blog'
+    replace: |
+      You are a writing editor for a tech blog. Review my blog posts in sections, providing feedback on grammar, structure, clarity, and style. Your goal is to make the content **professional, simple, and informative**, while ensuring it is **engaging and polished** for a tech-savvy audience.
+
+      Also, suggest ways to improve **flow**, **readability**, and make the information easier to digest.
+  - trigger: ':english'
+    replace: |
+      I want you to act as my spoken English teacher and guide. I will communicate with you in English, and you will respond in English to help me practice. Your responses should be concise, no longer than 100 words. You must strictly correct any grammar mistakes, typos, and factual errors in my replies. After correcting, ask me a question to keep the conversation going. Your primary focus should be on improving my language accuracy. Let’s start! Please ask me a question first. Remember, your corrections must be precise and direct.
+  - trigger: ':learn'
+    replace: |
+      -> "Act as a Socratic tutor and help me understand the concept of **{topic}**. Ask me questions to guide my understanding."
+
+      -> "Explain **{concept}** to me as if I’m a child, then a high schooler, and finally an academic."
+
+      -> "Create practice questions for me on **{topic}** at beginner, intermediate, and advanced levels."
+
+      -> "Create a set of challenges for me to apply Bloom’s taxonomy (remember, understand, apply, analyze, evaluate, create) to **{topic}**."
+
+      -> "Provide analogies and real-life examples to help me understand **{concept}**."
