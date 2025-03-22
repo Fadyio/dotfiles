@@ -46,3 +46,6 @@ eval "$(sheldon source)"
 ################################## History #######################################
 # Atuin replaces your existing shell history with a SQLite database
 eval "$(atuin init zsh)"
+
+# add this to gpg for macos
+export GPG_TTY=$(tty)
