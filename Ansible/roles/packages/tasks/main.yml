@@ -25,6 +25,7 @@
     - android-tools
     - anki-bin
     - tokei
+    - luarocks
     - uv
     - ctop
     - termshark

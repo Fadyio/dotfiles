@@ -1,15 +1,34 @@
 # My Dotfiles
 
-
 <div align="center">
-<img src="https://raw.githubusercontent.com/Fadyio/Fadyio.com/refs/heads/main/public/static/logo.svg" height="400">
-
-![](https://img.shields.io/github/last-commit/Fadyio/dotfiles?&style=for-the-badge&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41)
-![](https://img.shields.io/github/stars/Fadyio/dotfiles?style=for-the-badge&logo=starship&color=8bd5ca&logoColor=D9E0EE&labelColor=302D41)
-[![](https://img.shields.io/github/repo-size/Fadyio/dotfiles?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41)](https://github.com/Fadyio/dotfiles)
-
-
+  <img alt="Logo" src="https://github.com/Fadyio/Fadyio.com/blob/main/public/static/logo.svg" height="200"/>
 </div>
+
+<p align="center">
+  <a href="https://github.com/Fadyio/dotfiles/stargazers">
+    <img
+      alt="Stargazers"
+      src="https://img.shields.io/github/stars/Fadyio/dotfiles?style=for-the-badge&logo=starship&color=c678dd&logoColor=d9e0ee&labelColor=282a36"
+    />
+  </a>
+  <a href="https://github.com/Fadyio/dotfiles/issues">
+    <img
+      alt="Issues"
+      src="https://img.shields.io/github/issues/Fadyio/dotfiles?style=for-the-badge&logo=gitbook&color=f0c062&logoColor=d9e0ee&labelColor=282a36"
+    />
+  </a>
+  <a href="https://github.com/Fadyio/dotfiles/contributors">
+    <img
+      alt="Contributors"
+      src="https://img.shields.io/github/contributors/Fadyio/dotfiles?style=for-the-badge&logo=opensourceinitiative&color=abcf84&logoColor=d9e0ee&labelColor=282a36"
+    />
+  </a>
+    <a href="https://github.com/Fadyio/dotfiles">
+    <img src="https://img.shields.io/github/repo-size/Fadyio/dotfiles?color=%23DDB6F2&label=SIZE&logo=codesandbox&style=for-the-badge&logoColor=D9E0EE&labelColor=302D41" alt="Repo Size">
+  </a>
+
+  <img src="https://img.shields.io/github/last-commit/Fadyio/dotfiles?&style=for-the-badge&color=C9CBFF&logoColor=D9E0EE&labelColor=302D41" alt="Last Commit">
+</p>
 
 ## Table of Contents
 
@@ -68,9 +87,8 @@ These instructions assume you have Git and GNU Stow installed.
    This will symlink the necessary files into your home directory.  If you only want specific parts, you can use `stow .zsh .zshrc` to only install the zsh configuration.
 
 
-## Contributing
+## License
 
-Contributions are welcome! Please open an issue or submit a pull request.
+<p align="center"><a href="https://github.com/fadyio/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>
 
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+Copyright (c) 2025 [@Fadyio.com](https://fadyio.com).
