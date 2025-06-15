@@ -3,6 +3,10 @@
 # Check if the shell is not interactive and return if true
 [[ $- != *i* ]] && return
 
+# Initialization Mode for Zsh vi mode to work with Atuin
+# see: https://github.com/jeffreytse/zsh-vi-mode/issues/297
+ZVM_INIT_MODE=sourcing
+
 # FZF configuration
 export FZF_DEFAULT_OPTS="
   --exact

@@ -37,7 +37,7 @@ eval "$(zoxide init zsh)"
 
 # Enable keychain in zsh only on Linux
 if [[ "$(uname -s)" == "Linux" ]] && [[ -f /etc/arch-release ]]; then
-    eval `keychain --eval --agents ssh id_ed25519`
+    eval `keychain --eval id_ed25519`
 fi
 
 #############  sheldon plugin manager for zsh

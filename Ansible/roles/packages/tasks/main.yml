@@ -32,8 +32,10 @@
     - dive
     - espanso-x11
     - firefox
-    - chromium
     - ansible
+    - act
+    - bruno-bin
+    - bore
     - ansible-lint
     - arandr
     - aria2

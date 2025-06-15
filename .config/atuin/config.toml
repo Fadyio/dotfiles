@@ -46,4 +46,5 @@ history_filter = [
   "^gh copilot explain",
   "^doppler",
   "^qrencode",
+  "^export",
 ]
