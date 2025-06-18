@@ -1,15 +1,15 @@
 shell = "zsh"
-[plugins.syntax-highlighting]
-github = 'zdharma-continuum/fast-syntax-highlighting'
-
-[plugins.completions]
-github = 'zsh-users/zsh-completions'
-
 [plugins.autosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
 
+[plugins.syntax-highlighting]
+github = 'zdharma-continuum/fast-syntax-highlighting'
+
 [plugins.vim-mod]
 github = 'jeffreytse/zsh-vi-mode'
+
+[plugins.completions]
+github = 'zsh-users/zsh-completions'
 
 [plugins.you-should-use]
 github = 'MichaelAquilina/zsh-you-should-use'
