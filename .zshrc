@@ -10,6 +10,7 @@ export GREP_COLORS="ms=01;31:mc=01;36:sl=:cx=:fn=01;35:ln=01;32:bn=01;32:se=01;3
 export LANG=en_US.UTF-8
 export LC_CTYPE="en_US.UTF-8"
 export PATH=~/.local/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
 export MANPAGER='nvim +Man!'
 
 ################################### Options #######################################

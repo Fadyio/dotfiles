@@ -38,6 +38,9 @@
     - bore
     - ansible-lint
     - arandr
+    - fx
+    - evince
+    - crush-bin
     - aria2
     - ark
     - atuin

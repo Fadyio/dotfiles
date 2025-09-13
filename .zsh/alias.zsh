@@ -6,6 +6,7 @@
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
   alias v='nvim'
+  alias hx='helix'
   alias y='yy'
   alias grep='grep --color=auto'
   alias j="zi"
