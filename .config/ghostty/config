@@ -12,7 +12,6 @@ font-family-italic = JetBrainsMono Nerd Font
 font-family-bold-italic = JetBrainsMono Nerd Font
 gtk-titlebar = false
 gtk-wide-tabs = false
-gtk-adwaita = false
 theme = catppuccin-mocha
 cursor-opacity = 0.45
 cursor-style = bar
