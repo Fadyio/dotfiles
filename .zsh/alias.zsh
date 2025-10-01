@@ -1,7 +1,5 @@
 ##  utilities
   alias awscmp='complete -C '/usr/local/bin/aws_completer' aws'
-  alias copilot='gh copilot suggest'
-  alias explain='gh copilot explain'
   alias c='clear'
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'

@@ -22,6 +22,7 @@
   become: true
   become_user: aur_builder
   loop:
+    - nushell
     - android-tools
     - anki-bin
     - tokei

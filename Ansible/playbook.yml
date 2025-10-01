@@ -1,8 +1,45 @@
-- name: Install Arch Linux Development Environment
-  hosts: hosts
+- name: bootstrap arch dev env
+  hosts: all
   connection: local
   become: true
+  gather_facts: true
+  collections:
+    - ansible.posix
+    - community.general
+
+  vars_files:
+    - group_vars/all/packages.yml
+    - group_vars/all/users.yml
+
+  pre_tasks:
+    - name: refresh package cache
+      ansible.builtin.pacman:
+        update_cache: true
+      when: ansible_os_family == "Archlinux"
+      tags: always
+
+    - name: load vaulted secrets
+      ansible.builtin.include_vars:
+        file: vault.yml
+      no_log: true
+      tags: always
+
   roles:
     - role: packages
+      tags: [packages]
     - role: dotfiles
+      tags: [dotfiles]
     - role: editor
+      tags: [editor]
+
+  post_tasks:
+    - name: sanity check core binaries
+      ansible.builtin.command: "{{ item }} --version"
+      loop:
+        - atuin
+        - zsh
+        - code
+      register: sanity_check
+      changed_when: false
+      failed_when: sanity_check.rc != 0
+      tags: verify

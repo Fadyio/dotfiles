@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # start a terminal
-bindsym $mod+Return exec ghostty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill

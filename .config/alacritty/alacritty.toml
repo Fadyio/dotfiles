@@ -1,0 +1,32 @@
+[general]
+live_config_reload = true
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[font]
+size = 13
+
+  [font.normal]
+  family = "JetBrainsMono Nerd Font"
+  style = "Regular"
+
+  [font.bold]
+  family = "JetBrainsMono Nerd Font"
+  style = "Bold"
+
+  [font.italic]
+  family = "JetBrainsMono Nerd Font"
+
+[terminal]
+shell = "/bin/zsh"
+
+[cursor]
+unfocused_hollow = false
+
+[env]
+TERM = "xterm-256color"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
