@@ -23,7 +23,7 @@ source ~/.dotfiles/.zsh/function.zsh
 
 #################### start tmux automatically ####################################
 # Automatically start tmux if not already inside a tmux session
-if [ -z "$TMUX" ]; then
+if [[ -z "$TMUX" && -z "$VSCODE_RESOLVING_ENVIRONMENT" ]]; then
     tmux has-session -t default 2>/dev/null
     if [ $? != 0 ]; then
         tmux new-session -s default
@@ -31,7 +31,7 @@ if [ -z "$TMUX" ]; then
         tmux attach-session -t default
     fi
     exit  # Ensure the current shell exits after starting tmux
-fi
+fi 
 
 ############# A smarter cd command is z for zsh
 eval "$(zoxide init zsh)"

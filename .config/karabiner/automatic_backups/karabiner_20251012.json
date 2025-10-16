@@ -32,7 +32,6 @@
                         "product_id": 30213,
                         "vendor_id": 3141
                     },
-                    "ignore_vendor_events": true,
                     "simple_modifications": [
                         {
                             "from": { "key_code": "left_command" },
@@ -45,13 +44,8 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "key_code": "right_command" }]
-                        },
-                        {
-                            "from": { "key_code": "delete_forward" },
-                            "to": [{ "key_code": "delete_or_backspace" }]
                         }
-                    ],
-                    "treat_as_built_in_keyboard": true
+                    ]
                 }
             ],
             "virtual_hid_keyboard": {
