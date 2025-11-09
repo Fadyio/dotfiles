@@ -3,7 +3,7 @@
   alias c='clear'
   alias memory='ps axch -o cmd:15,%mem --sort=-%mem | head'
   alias cpu='ps axch -o cmd:15,%cpu --sort=-%cpu | head'
-  alias v='hx'
+  alias v='nvim'
   alias y='yy'
   alias grep='grep --color=auto'
   alias j="zi"

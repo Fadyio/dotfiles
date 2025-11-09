@@ -32,8 +32,8 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu no
 
 # preview directory's content with eza when completing cd
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'bat --color=always --pager=always ${(Q)realpath}'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons --color-scale-mode gradient --long --header --git --sort=extension ${(Q)realpath}'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always --icons --color-scale-mode gradient --long --header --git --sort=extension ${(Q)realpath}'
+zstyle ':fzf-tab:complete:*:*' fzf-preview '[[ -d ${(Q)realpath} ]] && eza -1 --color=always --icons ${(Q)realpath} || bat --color=always --style=numbers --line-range=:500 ${(Q)realpath} 2>/dev/null'
 zstyle ':fzf-tab:*' use-fzf-default-opts yes
 
 # Define matcher lists for completion

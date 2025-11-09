@@ -31,15 +31,10 @@ if [[ -z "$TMUX" && -z "$VSCODE_RESOLVING_ENVIRONMENT" ]]; then
         tmux attach-session -t default
     fi
     exit  # Ensure the current shell exits after starting tmux
-fi 
+fi
 
 ############# A smarter cd command is z for zsh
-eval "$(zoxide init zsh)"
-
-# Enable keychain in zsh only on Linux
-if [[ "$(uname -s)" == "Linux" ]] && [[ -f /etc/arch-release ]]; then
-    eval `keychain --eval id_ed25519`
-fi
+eval "$(zoxide init zsh --cmd cd)"
 
 #############  sheldon plugin manager for zsh
 eval "$(sheldon source)"
