@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 @Fadyio.com.
+Copyright (c) 2026 @Fadyio.com.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

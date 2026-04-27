@@ -91,4 +91,4 @@ These instructions assume you have Git and GNU Stow installed.
 
 <p align="center"><a href="https://github.com/fadyio/dotfiles/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>
 
-Copyright (c) 2025 [@Fadyio.com](https://fadyio.com).
+Copyright (c) 2026 [@Fadyio.com](https://fadyio.com)

@@ -1,8 +1,0 @@
-{
-  "ansible.python.interpreterPath": "/bin/python",
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "text": "Be extremely detailed with the file changes and the reason for the change."
-    }
-  ]
-}

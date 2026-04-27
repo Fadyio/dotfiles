@@ -1,7 +1,7 @@
 [user]
   name =  Fady Nagh
   email = Fady@Fadyio.com
-  signingkey = Fady@Fadyio.com
+  signingkey = B32E4B958EAB3137
 
 [core]
   editor = nvim
@@ -75,16 +75,6 @@
   new = green bold           # Color for added lines
   whitespace = red reverse   # Color for whitespace errors
 
-[alias]
-  # one-line log format for quick overview
-  l = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-
 ; Force GitHub to use SSH
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/ # Convert HTTPS GitHub URLs to SSH automatically
-
-[filter "lfs"]
-  clean = git-lfs clean -- %f       # Convert large files to LFS pointers
-  smudge = git-lfs smudge -- %f     # Convert LFS pointers back to files
-  process = git-lfs filter-process  # Bidirectional conversion for LFS
-  required = true                   # Require Git LFS for this repository

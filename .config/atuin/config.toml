@@ -18,7 +18,7 @@ sync_frequency = "6h"
 
 ## which search mode to use
 ## possible values: prefix, fulltext, fuzzy, skim
-search_mode = "fulltext"
+search_mode = "fuzzy"
 
 ## which filter mode to use
 ## possible values: global, host, session, directory
@@ -42,8 +42,6 @@ exit_mode = "return-original"
 ## For details on the supported regular expression syntax, see
 ## https://docs.rs/regex/latest/regex/#syntax
 history_filter = [
-  "^gh copilot suggest",
-  "^gh copilot explain",
   "^doppler",
   "^qrencode",
   "^export",
