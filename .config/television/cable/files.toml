@@ -1,0 +1,36 @@
+[[channels]]
+[metadata]
+name = "files"
+display_name = "Files"
+description = "A channel to select files and directories"
+icon = "󰉋"
+
+[source]
+command = ["fd -t f -t d", "fd -t f -t d -H"]
+
+[preview]
+command = """
+if [ -d "{}" ]; then
+    eza --icons --color-scale-mode gradient --long --header --git --sort=extension "{}"
+else
+    bat -n --color=always "{}"
+fi
+"""
+shell = "bash"
+env = { BAT_THEME = "ansi" }
+
+[keybindings]
+shortcut = "f1"
+f12 = "actions:edit"
+ctrl-up = "actions:goto_parent_dir"
+
+[actions.edit]
+description = "Opens selection in editor"
+command = "${EDITOR:-vim} '{}'"
+shell = "bash"
+mode = "execute"
+
+[actions.goto_parent_dir]
+description = "Re-opens tv in the parent directory"
+command = "tv files .."
+mode = "execute"

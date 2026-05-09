@@ -1,0 +1,170 @@
+// Zed settings
+{
+  "cli_default_open_behavior": "new_window",
+  "context_servers": {
+    "mcp-server-context7": {
+      "enabled": true,
+      "remote": false,
+      "settings": {},
+    },
+  },
+  "auto_install_extensions": {
+    "git-firefly": true,
+    "dockerfile": true,
+    "html": true,
+    "toml": true,
+    "catppuccin": true,
+    "sql": true,
+    "make": true,
+    "material-icon-theme": true,
+    "svelte": true,
+    "terraform": true,
+    "astro": true,
+    "mcp-server-context7": true,
+  },
+  "agent_servers": {
+    "codex-acp": {
+      "type": "registry",
+    },
+    "github-copilot-cli": {
+      "type": "registry",
+    },
+    "gemini": {
+      "type": "registry",
+    },
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false,
+    },
+  },
+  "collaboration_panel": {
+    "button": false,
+  },
+  "git_panel": {
+    "show_count_badge": true,
+    "file_icons": true,
+    "tree_view": false,
+  },
+  "outline_panel": {
+    "button": true,
+  },
+  "terminal": {
+    "toolbar": {
+      "breadcrumbs": false,
+    },
+    "keep_selection_on_copy": true,
+    "copy_on_select": true,
+    "font_family": "JetBrainsMono Nerd Font",
+    "show_count_badge": false,
+  },
+  "project_panel": {
+    "hide_hidden": false,
+    "hide_root": true,
+    "git_status_indicator": true,
+    "diagnostic_badges": true,
+    "bold_folder_labels": true,
+    "git_status": true,
+    "folder_icons": true,
+    "file_icons": true,
+    "entry_spacing": "comfortable",
+  },
+  "active_pane_modifiers": {},
+  "use_system_window_tabs": false,
+  "bottom_dock_layout": "contained",
+  "tab_bar": {
+    "show_pinned_tabs_in_separate_row": false,
+    "show_tab_bar_buttons": true,
+    "show": true,
+  },
+  "tabs": {
+    "close_position": "left",
+    "file_icons": true,
+    "git_status": true,
+  },
+  "title_bar": {
+    "show_menus": false,
+    "show_branch_status_icon": true,
+  },
+  "status_bar": {
+    "show_active_file": true,
+  },
+  "close_on_file_delete": true,
+  "search": {
+    "center_on_match": false,
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": true,
+    },
+  },
+  "semantic_tokens": "combined",
+  "colorize_brackets": true,
+  "inlay_hints": {
+    "enabled": true,
+  },
+  "completion_detail_alignment": "left",
+  "indent_guides": {
+    "background_coloring": "disabled",
+    "coloring": "indent_aware",
+    "active_line_width": 2,
+    "line_width": 3,
+  },
+  "soft_wrap": "editor_width",
+  "toolbar": {
+    "code_actions": true,
+  },
+  "vim": {
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": false,
+  },
+  "relative_line_numbers": "enabled",
+  "auto_signature_help": true,
+  "which_key": {
+    "delay_ms": null,
+    "enabled": true,
+  },
+  "agent_buffer_font_size": 15.5,
+  "vim_mode": true,
+  "rounded_selection": true,
+  "current_line_highlight": "line",
+  "cursor_shape": "bar",
+  "text_rendering_mode": "platform_default",
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+  "edit_predictions": {
+    "copilot": {
+      "enable_next_edit_suggestions": false,
+    },
+    "provider": "copilot",
+  },
+  "agent": {
+    "use_modifier_to_send": true,
+    "notify_when_agent_waiting": "all_screens",
+    "single_file_review": true,
+    "default_model": {
+      "effort": "high",
+      "provider": "copilot_chat",
+      "model": "gpt-5-mini",
+      "enable_thinking": false,
+    },
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5-mini",
+        "enable_thinking": false,
+        "effort": "high",
+      },
+    ],
+    "model_parameters": [],
+  },
+
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 16.0,
+  "buffer_font_size": 15,
+  "theme": "Catppuccin Mocha",
+}

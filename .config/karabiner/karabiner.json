@@ -5,6 +5,21 @@
                 "parameters": { "basic.to_if_alone_timeout_milliseconds": 500 },
                 "rules": [
                     {
+                        "description": "Hold Menu Key for 500ms to trigger MacWhisper",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "application",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 500 },
+                                "to_if_alone": [{ "key_code": "application" }],
+                                "to_if_held_down": [{ "key_code": "f18" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Post Esc if Caps is tapped, Control if held.",
                         "manipulators": [
                             {
@@ -35,6 +50,10 @@
                     "ignore_vendor_events": true,
                     "simple_modifications": [
                         {
+                            "from": { "key_code": "delete_forward" },
+                            "to": [{ "key_code": "delete_or_backspace" }]
+                        },
+                        {
                             "from": { "key_code": "left_command" },
                             "to": [{ "key_code": "left_option" }]
                         },
@@ -45,10 +64,6 @@
                         {
                             "from": { "key_code": "right_option" },
                             "to": [{ "key_code": "right_command" }]
-                        },
-                        {
-                            "from": { "key_code": "delete_forward" },
-                            "to": [{ "key_code": "delete_or_backspace" }]
                         }
                     ],
                     "treat_as_built_in_keyboard": true

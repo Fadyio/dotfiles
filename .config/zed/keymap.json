@@ -1,0 +1,77 @@
+[
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      // Toggle File Explorer (Project Panel)
+      "space e": "project_panel::ToggleFocus",
+
+      // Use SendKeystrokes to simulate the "black hole" register delete
+      "x": ["workspace::SendKeystrokes", "\" _ x"],
+
+      // Window Navigation (Fixed to correct Zed internal names)
+      "ctrl-h": "pane::ActivatePreviousItem", // or workspace::ActivatePaneLeft
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+
+      // Splits
+      "space s v": "pane::SplitRight",
+      "space s h": "pane::SplitDown",
+
+      // Buffer Navigation
+      "shift-l": "pane::ActivateNextItem",
+      "shift-h": "pane::ActivatePreviousItem",
+
+      // Escape search highlights
+      "esc esc": "editor::Cancel",
+
+      // Leader + x to close the current tab (item)
+      "space x": "pane::CloseActiveItem",
+
+      // Save
+      "space w": "workspace::Save",
+
+      // Toggle Agent Tab (Space ai)
+      "space a": "workspace::ToggleLeftDock",
+      // Leader f group (Files)
+      "space f f": "file_finder::Toggle", // Telescope find_files
+      "space f r": "projects::OpenRecent", // Telescope old projects
+      "space f g": "pane::DeploySearch", // Telescope live_grep
+      "space f s": "outline::Toggle", // Telescope lsp_document_symbols
+    },
+  },
+  {
+    "context": "Editor && (vim_mode == visual || vim_mode == visual_block)",
+    "bindings": {
+      // Use SendKeystrokes for the "black hole" paste
+      "p": ["workspace::SendKeystrokes", "\" _ d P"],
+
+      // Move text up and down with Shift + J / K
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+
+      // Keep your other visual mode essentials
+      ">": "editor::Indent",
+      "<": "editor::Outdent",
+    },
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      // THE FIX: Jump back to the editor (Right) from the sidebar
+      "space e": "workspace::ActivatePaneRight",
+
+      // Standard tree navigation
+      "h": "project_panel::CollapseSelectedEntry",
+      "l": "project_panel::ExpandSelectedEntry",
+      "enter": "project_panel::OpenPermanent",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      // From the explorer: Close it and go back to editor
+      "space e": "workspace::ToggleRightDock",
+    },
+  },
+]

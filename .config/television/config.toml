@@ -1,0 +1,135 @@
+# General settings
+# ----------------------------------------------------------------------------
+# Application tick rate in milliseconds. Controls how frequently the UI updates.
+tick_rate = 50
+# The default channel to use when no channel is specified on the command line.
+default_channel = "files"
+# Maximum number of entries to keep in the search history. Set to 0 to disable history functionality.
+history_size = 0
+# When false: history navigation is scoped to the current channel
+global_history = false
+
+[ui]
+# Percentage of terminal space to allocate for the Television UI.
+ui_scale = 100
+# What orientation should tv be (landscape or portrait)
+orientation = "landscape"
+# The theme to use for the UI
+theme = "catppuccin"
+
+[ui.input_bar]
+# Where to place the input bar in the UI (top or bottom)
+position = "top"
+# The input prompt string (defaults to ">" if not specified)
+prompt = "  "
+
+# Border style. Valid values: "none", "plain", "rounded", "thick".
+border_type = "rounded"
+
+[ui.status_bar]
+# Status bar separators (bubble):
+#separator_open = ""
+separator_close = ""
+# Status bar separators (box):
+hidden = false
+
+[ui.results_panel]
+# Border style. Valid values: "none", "plain", "rounded", "thick".
+border_type = "rounded"
+
+[ui.preview_panel]
+# Preview panel size (percentage of screen width/height)
+size = 65
+scrollbar = false
+border_type = "rounded"
+hidden = false
+
+[ui.help_panel]
+# Whether to split the help panel by categories
+show_categories = true
+hidden = true
+
+[ui.remote_control]
+# Whether to show channel descriptions in remote control mode
+show_channel_descriptions = true
+# Whether to sort channels alphabetically
+sort_alphabetically = true
+
+[keybindings]
+esc = "quit"
+ctrl-c = "quit"
+
+# Navigation and selection
+# -----------------------
+down = "select_next_entry"
+ctrl-n = "select_next_entry"
+up = "select_prev_entry"
+ctrl-p = "select_prev_entry"
+
+# Data operations
+# --------------
+ctrl-y = "copy_entry_to_clipboard"
+ctrl-r = "reload_source"
+ctrl-s = "cycle_sources"
+
+# UI Features
+# ----------
+ctrl-t = "toggle_remote_control"
+ctrl-x = "toggle_action_picker"
+ctrl-o = "toggle_preview"
+
+# Input field actions
+# ----------------------------------------
+backspace = "delete_prev_char"
+ctrl-w = "delete_prev_word"
+ctrl-u = "delete_line"
+delete = "delete_next_char"
+left = "go_to_prev_char"
+right = "go_to_next_char"
+home = "go_to_input_start"
+ctrl-a = "go_to_input_start"
+end = "go_to_input_end"
+ctrl-e = "go_to_input_end"
+
+[shell_integration]
+fallback_channel = "files"
+
+[shell_integration.channel_triggers]
+"alias" = ["alias", "unalias"]
+"env" = ["export", "unset"]
+"dirs" = ["cd", "ls", "rmdir", "z"]
+"files" = [
+  "cat",
+  "less",
+  "head",
+  "tail",
+  "vim",
+  "nano",
+  "bat",
+  "cp",
+  "mv",
+  "rm",
+  "touch",
+  "chmod",
+  "chown",
+  "ln",
+  "tar",
+  "zip",
+  "unzip",
+  "gzip",
+  "gunzip",
+  "xz",
+]
+"git-diff" = ["git add", "git restore"]
+"git-branch" = [
+  "git checkout",
+  "git switch",
+  "git branch",
+  "git merge",
+  "git rebase",
+  "git pull",
+  "git push",
+]
+"git-log" = ["git log", "git show"]
+"docker-images" = ["docker run"]
+"git-repos" = ["nvim", "code", "hx", "git clone"]

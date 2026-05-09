@@ -44,7 +44,7 @@ zplug_safe() {
         print -P "%F{33}▓▒░ Installing $repo...%f"
         git clone --depth=1 "https://github.com/$repo.git" "$dir"
     fi
-    
+
     # Explicit file targeting is safer than pure globs
     if [[ -f "$dir/${repo:t}.plugin.zsh" ]]; then
         source "$dir/${repo:t}.plugin.zsh"
@@ -77,37 +77,25 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:descriptions' format $'\e[2;37mCompleting %d\e[m'
 zstyle ':completion:*:git-checkout:*' sort false
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+complete -C '/usr/local/bin/aws_completer' aws
+source <(kubectl completion zsh)
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 # ── Plugins & UI (Strict Load Order Required) ─────────────────────────
 
-# 1. tv-tab (Must be first after compinit)
 zplug_safe "fadyio/tv-tab"
-
-zstyle ':tv-tab:*' tv-command tv
-zstyle ':tv-tab:*' tv-flags --layout=landscape --inline
-zstyle ':tv-tab:*' tv-min-height 8
-if [[ -x "$(command -v eza)" ]]; then
-    zstyle ':tv-tab:complete:cd:*' tv-preview 'eza -1 --color=always -- "$realpath"'
-else
-    zstyle ':tv-tab:complete:cd:*' tv-preview 'ls -la -- "$realpath"'
-fi
-zstyle ':tv-tab:complete:cd:*' tv-flags --layout=landscape --inline --preview-size=60
-
-# 2. Autosuggestions
 zplug_safe "zsh-users/zsh-autosuggestions"
-
-# 3. Syntax Highlighting (Must be after completion and autosuggestions)
 zplug_safe "zdharma-continuum/fast-syntax-highlighting"
 
-# 4. Zoxide
+# Zoxide
 [[ -x "$(command -v zoxide)" ]] && eval "$(zoxide init zsh --cmd cd)"
 
 # 5. Vi-Mode & Atuin (Conflict Resolution)
-# Vi-mode lazy-loads and wipes out external keybindings. We MUST use 
+# Vi-mode lazy-loads and wipes out external keybindings. We MUST use
 # 'zvm_after_init' to load Atuin and custom binds so they survive the wipe.
 function zvm_after_init() {
     [[ -x "$(command -v atuin)" ]] && eval "$(atuin init zsh)"
-    
+
     # Ensure Delete key works in both Insert and Normal vi-modes
     bindkey "\e[3~" delete-char
     bindkey -a "\e[3~" delete-char
@@ -125,11 +113,33 @@ alias mkdir='mkdir -vp'
 alias ls='eza --icons --color-scale-mode gradient --long --header --git --sort=extension'
 alias gleaks='betterleaks detect --source . -v'
 alias g-main='git checkout main && git pull && git fetch -p'
-alias ytvid='yt-dlp -P ~/Downloads -ciw --format "bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/best" --merge-output-format mp4 --embed-chapters --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction --no-playlist -o "%(title)s.%(ext)s"'
-alias ytlist='yt-dlp -P ~/Downloads -ciw --retries 20 --fragment-retries 10 --retry-sleep 3 --concurrent-fragments 4 --format "bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/best" --embed-chapters --embed-metadata --embed-thumbnail --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction --sleep-requests 0.5 --sleep-interval 2 --max-sleep-interval 6 -o "%(playlist|YouTube Videos)s/%(playlist_index)02d - %(title)s.%(ext)s"'
+# ytvid implementation function (called via alias with noglob so arguments aren't globbed)
+ytvid_impl() {
+    yt-dlp --remote-components ejs:github -P ~/Downloads -ciw \
+        --format 'bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/best' \
+        --merge-output-format mp4 \
+        --embed-chapters \
+        --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction \
+        --no-playlist \
+        -o '%(title)s.%(ext)s' -- "$@"
+}
+# Alias that prefixes noglob so the shell doesn't attempt filename globbing on the URL before calling the function
+alias ytvid='noglob ytvid_impl'
+# ytlist implementation function (called via alias with noglob so arguments aren't globbed)
+ytlist_impl() {
+    yt-dlp --remote-components ejs:github -P ~/Downloads -ciw \
+        --retries 20 --fragment-retries 10 --retry-sleep 3 --concurrent-fragments 4 \
+        --format 'bv*[height<=720][ext=mp4]+ba[ext=m4a]/bv*[height<=720]+ba/best' \
+        --embed-chapters --embed-metadata --embed-thumbnail \
+        --sponsorblock-remove sponsor,intro,outro,selfpromo,interaction \
+        --sleep-requests 0.5 --sleep-interval 2 --max-sleep-interval 6 \
+        -o '%(playlist|YouTube Videos)s/%(playlist_index)02d - %(title)s.%(ext)s' -- "$@"
+}
+# Alias that prefixes noglob so the shell doesn't attempt filename globbing on the URL before calling the function
+alias ytlist='noglob ytlist_impl'
 
 # ── Functions ─────────────────────────────────────────────────────────
-chpwd() { 
+chpwd() {
     if [[ -x "$(command -v eza)" ]]; then
         eza --icons --group-directories-first --color-scale all
     fi
